@@ -1,0 +1,19 @@
+// CONTENT aggregate - merges per-category content modules into one lookup keyed
+// by registry slug.
+import { sortingGraphsContent } from './content/sortingGraphs.js'
+import { treesContent } from './content/treesStructures.js'
+import { algosExtraContent } from './content/algosExtra.js'
+import { mathCoreContent } from './content/mathCore.js'
+import { csCoreContent } from './content/csCore.js'
+import { vizExtraContent } from './content/vizExtra.js'
+import { araExtraContent } from './content/araExtra.js'
+
+export const CONTENT = {
+  ...sortingGraphsContent,
+  ...treesContent,
+  ...algosExtraContent,
+  ...mathCoreContent,
+  ...csCoreContent,
+  ...vizExtraContent,
+  ...araExtraContent,
+}
