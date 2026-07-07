@@ -55,8 +55,8 @@ export default function Home() {
                 <Icon style={{ width: 20, height: 20 }} />
               </div>
               <h3>{cat.name}</h3>
-              <p>{items.map((a) => a.name).slice(0, 4).join(' · ')}{items.length > 4 ? ' …' : ''}</p>
-              <div className="count">{items.length} {tk('algorithms')} · {viz} {tk('interactive')}</div>
+              <p>{items.map((a) => a.name).slice(0, 4).join(' | ')}{items.length > 4 ? ' …' : ''}</p>
+              <div className="count">{items.length} {tk('algorithms')} | {viz} {tk('interactive')}</div>
             </div>
           )
         })}
