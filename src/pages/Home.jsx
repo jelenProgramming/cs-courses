@@ -5,8 +5,8 @@ import { useLang } from '../i18n.jsx'
 const HERO = {
   title: { en: 'See the algorithm think.', de: 'Sieh den Algorithmus denken.' },
   body: {
-    en: 'Every algorithm and data structure from the first year of Computer Science at FERI Maribor - animated step by step, with a plain-language explanation of what happens on every move. Built for the moment a concept finally clicks before an exam.',
-    de: 'Jeder Algorithmus und jede Datenstruktur aus dem ersten Studienjahr Informatik an der FERI Maribor - Schritt für Schritt animiert, mit einer verständlichen Erklärung zu jedem Zug. Gebaut für den Moment, in dem es vor einer Prüfung endlich Klick macht.',
+    en: 'Every core algorithm and data structure you meet in a computer science degree, animated step by step, with a plain-language explanation of what happens on every move. Built for the moment a concept finally clicks for you.',
+    de: 'Jeder wichtige Algorithmus und jede Datenstruktur, die dir im Informatikstudium begegnet, Schritt für Schritt animiert, mit einer verständlichen Erklärung zu jedem Zug. Gebaut für den Moment, in dem es bei dir endlich Klick macht.',
   },
   tip: {
     en: '<strong>Tip:</strong> algorithms marked ★ are the ones most likely to show up as "trace this by hand" exam questions - Dijkstra, Floyd-Warshall, Huffman, edit distance, LZW.',

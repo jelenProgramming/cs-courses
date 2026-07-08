@@ -1,18 +1,17 @@
 import { useLang } from '../i18n.jsx'
 
-// ─────────────────────────────────────────────────────────────────────────────
-// EDIT YOUR CONTACT DETAILS HERE  ← replace the placeholder values below
+// -----------------------------------------------------------------------------
+// EDIT YOUR CONTACT DETAILS HERE  <- replace the placeholder values below
 const CONTACT = {
   name: 'David Jelen',
   github: 'https://github.com/jelenProgramming',
   email: 'jelenprogramming@gmail.com',
   linkedin: 'https://linkedin.com/in/david-jelen-007067419',
 }
-// ─────────────────────────────────────────────────────────────────────────────
+// -----------------------------------------------------------------------------
 
 const COURSES = [
   { name: { en: 'Programming I', de: 'Programmierung I' }, refs: [
-    'Žumer, V., & Brest, J. (2006). Strukturirano in objektno usmerjeno programiranje v C++. FERI.',
     'Prata, S. (2005). C++ primer plus, 5th ed. Sams.',
     'Lippman, Lajoie, Moo (2013). C++ primer, 5th ed. Addison-Wesley.',
   ]},
@@ -23,26 +22,21 @@ const COURSES = [
     'Cormen, Leiserson, Rivest, Stein (2009). Introduction to Algorithms, 3rd ed. MIT Press.',
   ]},
   { name: { en: 'Applications of Computer Algorithms', de: 'Anwendungen von Computeralgorithmen' }, refs: [
-    'Žalik, B. (2023). Aplikacije računalniških algoritmov. Univerza v Mariboru. doi:10.18690/um.feri.6.2023',
     'Salomon & Motta (2010). Handbook of Data Compression, 5th ed. Springer.',
     'Adjeroh, Bell, Mukherjee (2008). The Burrows-Wheeler Transform. Springer.',
   ]},
   { name: { en: 'Discrete Structures', de: 'Diskrete Strukturen' }, refs: [
-    'Peterin, I. (2020). Diskretne strukture. Univerzitetna založba UM; FERI.',
-    'Discrete mathematics lecture notes, FRI UL - matematika.fri.uni-lj.si/ds/ds.pdf',
+    'Rosen, K. H. (2019). Discrete Mathematics and Its Applications, 8th ed. McGraw-Hill.',
   ]},
   { name: { en: 'Mathematical Analysis', de: 'Mathematische Analysis' }, refs: [
     'Course lecture notes: limits & continuity, derivatives, integrals, sequences & series.',
   ]},
   { name: { en: 'Databases I', de: 'Datenbanken I' }, refs: [
-    'T. Mohorič: Podatkovne baze. Bi-TIM, 2002.',
-    'B. Brumen: SQL osnove strukturiranega poizvedovalnega jezika. DZS, 2013.',
     'Connolly & Begg (2015). Database Systems, 6th ed. Pearson.',
     'Elmasri & Navathe (2016). Fundamentals of Database Systems, 7th ed. Pearson.',
   ]},
   { name: { en: 'Foundations of Computer Systems', de: 'Grundlagen der Computersysteme' }, refs: [
     'Brookshear, J. G. (2012). Computer Science: An Overview, 11th ed. Addison-Wesley.',
-    'Fajfar, I. (2020). Algoritmi in podatkovne strukture: uvod za inženirje. Založba FE.',
   ]},
   { name: { en: 'Foundations of the World Wide Web', de: 'Grundlagen des World Wide Web' }, refs: [
     'Meloni, J. C. (2015). Sams Teach Yourself HTML, CSS, and JavaScript All in One, 2nd ed.',
@@ -62,8 +56,8 @@ export default function Info() {
       <div className="page-head">
         <h1 className="page-title">{t({ en: 'Info & Sources', de: 'Info & Quellen' })}</h1>
         <p className="page-desc">{t({
-          en: 'An interactive, bilingual study companion for the first-year Computer Science (RIT) curriculum at FERI, University of Maribor - plus the universal CS core. Built to make the concepts click before exams.',
-          de: 'Ein interaktiver, zweisprachiger Lernbegleiter für das Informatik-Erstsemester (RIT) an der FERI, Universität Maribor - plus den universellen Informatik-Kern.',
+          en: 'An interactive, bilingual companion for the core algorithms, data structures and mathematics of a computer science degree. Built to make each concept click for you, one animated step at a time.',
+          de: 'Ein interaktiver, zweisprachiger Begleiter für die zentralen Algorithmen, Datenstrukturen und die Mathematik eines Informatikstudiums. Gebaut, damit jedes Konzept bei dir Klick macht, Schritt für Schritt.',
         })}</p>
       </div>
 
@@ -83,8 +77,8 @@ export default function Info() {
       <div className="panel" style={{ marginTop: 14 }}>
         <h3 className="section">{t({ en: 'Sources & references', de: 'Quellen & Referenzen' })}</h3>
         <p className="muted" style={{ margin: '8px 0 4px', fontSize: 13 }}>{t({
-          en: 'The reference literature published for each FERI course. All explanations, code and visualizations are original; algorithms and mathematical facts are not copyrightable.',
-          de: 'Die für jeden FERI-Kurs veröffentlichte Referenzliteratur. Alle Erklärungen, der Code und die Visualisierungen sind eigenständig.',
+          en: 'Standard reference works for each subject, listed for further reading. All explanations, code and visualizations here are original; algorithms and mathematical facts are not copyrightable.',
+          de: 'Standardwerke zu jedem Fachgebiet, angegeben zur Vertiefung. Alle Erklärungen, der Code und die Visualisierungen sind eigenständig.',
         })}</p>
       </div>
 

@@ -2,8 +2,8 @@ import { useState } from 'react'
 import AlgoDetail from '../../components/AlgoDetail.jsx'
 import { useLang } from '../../i18n.jsx'
 
-const LEFT = [{ id: 1, name: 'Ana' }, { id: 2, name: 'Bojan' }, { id: 3, name: 'Cara' }]
-const RIGHT = [{ uid: 2, city: 'Maribor' }, { uid: 3, city: 'Ljubljana' }, { uid: 4, city: 'Celje' }]
+const LEFT = [{ id: 1, name: 'Ana' }, { id: 2, name: 'Ben' }, { id: 3, name: 'Cara' }]
+const RIGHT = [{ uid: 2, city: 'Berlin' }, { uid: 3, city: 'Vienna' }, { uid: 4, city: 'Zurich' }]
 const JOINS = ['INNER', 'LEFT', 'RIGHT', 'FULL']
 
 function compute(type) {
