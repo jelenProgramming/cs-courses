@@ -11,7 +11,7 @@ function hanoiSteps(n) {
   for (let d = n; d >= 1; d--) pegs[0].push(d)
   const snap = (msg) => steps.push({ pegs: pegs.map((p) => p.slice()), n, message: msg })
   const names = ['A', 'B', 'C']
-  snap({ en: `Move ${n} disks from A to C using B. The trick: move n−1 to the spare, move the big one, move n−1 back. Pure recursion.`, de: `${n} Scheiben von A nach C mit B bewegen. Der Trick: n−1 auf den freien Stab, die grosse bewegen, n−1 zurueck. Reine Rekursion.` })
+  snap({ en: `Move ${n} disks from A to C using B. The trick: move n-1 to the spare, move the big one, move n-1 back. Pure recursion.`, de: `${n} Scheiben von A nach C mit B bewegen. Der Trick: n-1 auf den freien Stab, die grosse bewegen, n-1 zurueck. Reine Rekursion.` })
   function move(k, from, to, via) {
     if (k === 0) return
     move(k - 1, from, via, to)
@@ -20,7 +20,7 @@ function hanoiSteps(n) {
     move(k - 1, via, to, from)
   }
   move(n, 0, 2, 1)
-  snap({ en: `Done in ${2 ** n - 1} moves — always exactly 2^n − 1.`, de: `Fertig in ${2 ** n - 1} Zuegen — immer genau 2^n − 1.` })
+  snap({ en: `Done in ${2 ** n - 1} moves - always exactly 2^n - 1.`, de: `Fertig in ${2 ** n - 1} Zuegen - immer genau 2^n - 1.` })
   return steps
 }
 export default function Page({ content }) {

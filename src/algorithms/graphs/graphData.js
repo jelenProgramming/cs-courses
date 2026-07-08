@@ -20,7 +20,7 @@ export const SAMPLE = {
     { id: 5, x: 80, y: 220 },
     { id: 6, x: 300, y: 185 },
   ],
-  // [u, v, weight] — undirected
+  // [u, v, weight] - undirected
   edges: [
     [0, 1, 7], [0, 5, 5], [0, 6, 9],
     [1, 2, 8], [1, 6, 4],
@@ -77,5 +77,5 @@ export function randomGraph(n = 6) {
 }
 
 export const INF = Infinity
-export const fmt = (x) => (x === INF ? '∞' : x === null ? '–' : String(x))
-export const lbl = (i) => (i == null || i < 0 ? '–' : NODE_LABELS[i])
+export const fmt = (x) => (x === INF ? '∞' : x === null ? '-' : String(x))
+export const lbl = (i) => (i == null || i < 0 ? '-' : NODE_LABELS[i])

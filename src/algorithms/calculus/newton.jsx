@@ -12,7 +12,7 @@ function newtonSteps() {
   const steps = []
   let x = 2.5
   const snap = (extra, msg) => steps.push({ x, ...extra, message: msg })
-  snap({}, { en: "Newton's method finds a root of f(x)=x²−2 (i.e. √2). Start at a guess; follow the tangent down to the x-axis; repeat.", de: "Newtons Verfahren findet eine Nullstelle von f(x)=x²−2 (also √2). Mit einer Schaetzung beginnen; der Tangente zur x-Achse folgen; wiederholen." })
+  snap({}, { en: "Newton's method finds a root of f(x)=x²-2 (i.e. √2). Start at a guess; follow the tangent down to the x-axis; repeat.", de: "Newtons Verfahren findet eine Nullstelle von f(x)=x²-2 (also √2). Mit einer Schaetzung beginnen; der Tangente zur x-Achse folgen; wiederholen." })
   for (let i = 0; i < 5; i++) {
     const fx = f(x), dfx = df(x)
     const xn = x - fx / dfx

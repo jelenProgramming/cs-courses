@@ -8,7 +8,7 @@ import { useLang } from '../i18n.jsx'
 export default function StatusBar({ player }) {
   const { step, index, total } = player
   const { t } = useLang()
-  const msg = t(step.message) || '—'
+  const msg = t(step.message) || '-'
   return (
     <div className="status-bar">
       <span className="step-num">{index + 1} / {total}</span>

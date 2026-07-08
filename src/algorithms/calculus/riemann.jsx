@@ -22,7 +22,7 @@ export default function Page({ content }) {
     <div>
       <div className="panel">
         <div style={{ textAlign: 'center', marginBottom: 10, fontFamily: 'var(--mono)', fontSize: 14, color: 'var(--text)' }}>
-          ∫<sub>a</sub><sup>b</sup> f(x) dx = lim<sub>n→∞</sub> Σ f(xᵢ)·Δx
+          ∫<sub>a</sub><sup>b</sup> f(x) dx = lim<sub>n→∞</sub> Σ f(xᵢ)∗Δx
         </div>
         <div className="viz-stage" style={{ alignItems: 'center', minHeight: H + 10 }}>
           <svg viewBox={`0 0 ${W} ${H}`} style={{ maxWidth: W, width: '100%' }}>

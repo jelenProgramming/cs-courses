@@ -11,7 +11,7 @@ export const mathCoreContent = {
     ],
     paper: [
       { en: 'Write the matrix. For each k (outer), scan row i and column k: wherever R[i][k]=1, OR row k into row i.', de: 'Matrix schreiben. Pro k (aussen) Zeile i und Spalte k scannen: wo R[i][k]=1, Zeile k in Zeile i ODER-verknuepfen.' },
-      { en: 'Do k = A, then B, then C… in order. k is always the outermost loop - the same rule as Floyd-Warshall.', de: 'k = A, dann B, dann C… der Reihe nach. k ist stets die aeusserste Schleife - dieselbe Regel wie Floyd-Warshall.' },
+      { en: 'Do k = A, then B, then C... in order. k is always the outermost loop - the same rule as Floyd-Warshall.', de: 'k = A, dann B, dann C... der Reihe nach. k ist stets die aeusserste Schleife - dieselbe Regel wie Floyd-Warshall.' },
     ],
     complexity: [
       { case: { en: 'All cases', de: 'Alle Faelle' }, time: 'O(V³)', space: 'O(V²)', cls: 'avg', note: { en: 'Three nested loops over all nodes; k must be the outer loop, exactly like Floyd-Warshall.', de: 'Drei verschachtelte Schleifen; k muss aussen sein, genau wie Floyd-Warshall.' } },
@@ -29,7 +29,7 @@ export const mathCoreContent = {
       { en: 'The remainders shrink fast, so it terminates in logarithmically many steps.', de: 'Die Reste schrumpfen schnell, daher endet es in logarithmisch vielen Schritten.' },
     ],
     paper: [
-      { en: 'Write a = q·b + r repeatedly. Each line, the old b becomes the new a, and r becomes the new b.', de: 'Wiederholt a = q·b + r schreiben. Pro Zeile wird das alte b zum neuen a und r zum neuen b.' },
+      { en: 'Write a = q∗b + r repeatedly. Each line, the old b becomes the new a, and r becomes the new b.', de: 'Wiederholt a = q∗b + r schreiben. Pro Zeile wird das alte b zum neuen a und r zum neuen b.' },
       { en: 'Stop when r = 0; the last non-zero remainder (the current b) is the gcd.', de: 'Stoppen, wenn r = 0; der letzte Rest ungleich 0 (das aktuelle b) ist der ggT.' },
     ],
     complexity: [
@@ -75,7 +75,7 @@ export const mathCoreContent = {
     how: [
       { en: 'Given x ≡ aᵢ (mod mᵢ) for pairwise-coprime mᵢ, let M = product of all mᵢ.', de: 'Gegeben x ≡ aᵢ (mod mᵢ) fuer paarweise teilerfremde mᵢ, sei M = Produkt aller mᵢ.' },
       { en: 'For each i compute Mᵢ = M/mᵢ and its inverse mod mᵢ.', de: 'Fuer jedes i Mᵢ = M/mᵢ und sein Inverses mod mᵢ berechnen.' },
-      { en: 'Sum aᵢ·Mᵢ·(Mᵢ⁻¹) and take mod M for the unique answer.', de: 'aᵢ·Mᵢ·(Mᵢ⁻¹) summieren und mod M fuer die eindeutige Antwort.' },
+      { en: 'Sum aᵢ∗Mᵢ∗(Mᵢ⁻¹) and take mod M for the unique answer.', de: 'aᵢ∗Mᵢ∗(Mᵢ⁻¹) summieren und mod M fuer die eindeutige Antwort.' },
     ],
     complexity: [
       { case: { en: 'All cases', de: 'Alle Faelle' }, time: 'O(k log M)', space: 'O(k)', cls: 'avg', note: { en: 'k = number of congruences. The moduli MUST be pairwise coprime for a unique solution.', de: 'k = Anzahl Kongruenzen. Die Moduln MUESSEN paarweise teilerfremd sein.' } },
@@ -85,19 +85,19 @@ export const mathCoreContent = {
     ],
   },
   'combinatorics': {
-    tldr: { en: 'Counting without listing. Built on two rules - <strong>sum</strong> (disjoint choices add) and <strong>product</strong> (independent steps multiply) - giving permutations P(n,k)=n!/(n−k)! (order matters) and combinations C(n,k)=n!/(k!(n−k)!) (order doesn\'t). Plus the pigeonhole principle.', de: 'Zaehlen ohne Auflisten. Zwei Regeln - <strong>Summe</strong> (disjunkte Wahlen addieren) und <strong>Produkt</strong> (unabhaengige Schritte multiplizieren) - ergeben Permutationen P(n,k)=n!/(n−k)! und Kombinationen C(n,k)=n!/(k!(n−k)!). Plus Schubfachprinzip.' },
+    tldr: { en: 'Counting without listing. Built on two rules - <strong>sum</strong> (disjoint choices add) and <strong>product</strong> (independent steps multiply) - giving permutations P(n,k)=n!/(n-k)! (order matters) and combinations C(n,k)=n!/(k!(n-k)!) (order doesn\'t). Plus the pigeonhole principle.', de: 'Zaehlen ohne Auflisten. Zwei Regeln - <strong>Summe</strong> (disjunkte Wahlen addieren) und <strong>Produkt</strong> (unabhaengige Schritte multiplizieren) - ergeben Permutationen P(n,k)=n!/(n-k)! und Kombinationen C(n,k)=n!/(k!(n-k)!). Plus Schubfachprinzip.' },
     intro: [
-      { en: '<strong>Sum rule</strong>: if sets A₁…Aₖ are pairwise disjoint, |A₁ ∪ … ∪ Aₖ| = |A₁| + … + |Aₖ|. <strong>Product rule</strong>: for a sequence of independent choices, the totals multiply.', de: '<strong>Summenregel</strong>: sind A₁…Aₖ paarweise disjunkt, dann |A₁ ∪ … ∪ Aₖ| = |A₁| + … + |Aₖ|. <strong>Produktregel</strong>: bei unabhaengigen Wahlen multiplizieren sich die Anzahlen.' },
-      { en: '<strong>Ordered without repetition</strong> (permutations): P(n,k) = n!/(n−k)!; with k=n this is n!. <strong>Unordered without repetition</strong> (combinations): C(n,k) = n!/(k!(n−k)!). <strong>With repetition</strong>: ordered is nᵏ, unordered is C(n+k−1, k).', de: '<strong>Geordnet ohne Wiederholung</strong> (Permutationen): P(n,k) = n!/(n−k)!; mit k=n ist es n!. <strong>Ungeordnet ohne Wiederholung</strong> (Kombinationen): C(n,k) = n!/(k!(n−k)!). <strong>Mit Wiederholung</strong>: geordnet nᵏ, ungeordnet C(n+k−1, k).' },
-      { en: '<strong>Inclusion-exclusion</strong>: |A ∪ B| = |A| + |B| − |A ∩ B|, generalizing to alternating sums over all intersections. <strong>Binomial theorem</strong>: (a+b)ⁿ = Σ C(n,k) aⁿ⁻ᵏ bᵏ.', de: '<strong>Inklusion-Exklusion</strong>: |A ∪ B| = |A| + |B| − |A ∩ B|, verallgemeinert zu alternierenden Summen. <strong>Binomischer Satz</strong>: (a+b)ⁿ = Σ C(n,k) aⁿ⁻ᵏ bᵏ.' },
+      { en: '<strong>Sum rule</strong>: if sets A₁...Aₖ are pairwise disjoint, |A₁ ∪ ... ∪ Aₖ| = |A₁| + ... + |Aₖ|. <strong>Product rule</strong>: for a sequence of independent choices, the totals multiply.', de: '<strong>Summenregel</strong>: sind A₁...Aₖ paarweise disjunkt, dann |A₁ ∪ ... ∪ Aₖ| = |A₁| + ... + |Aₖ|. <strong>Produktregel</strong>: bei unabhaengigen Wahlen multiplizieren sich die Anzahlen.' },
+      { en: '<strong>Ordered without repetition</strong> (permutations): P(n,k) = n!/(n-k)!; with k=n this is n!. <strong>Unordered without repetition</strong> (combinations): C(n,k) = n!/(k!(n-k)!). <strong>With repetition</strong>: ordered is nᵏ, unordered is C(n+k-1, k).', de: '<strong>Geordnet ohne Wiederholung</strong> (Permutationen): P(n,k) = n!/(n-k)!; mit k=n ist es n!. <strong>Ungeordnet ohne Wiederholung</strong> (Kombinationen): C(n,k) = n!/(k!(n-k)!). <strong>Mit Wiederholung</strong>: geordnet nᵏ, ungeordnet C(n+k-1, k).' },
+      { en: '<strong>Inclusion-exclusion</strong>: |A ∪ B| = |A| + |B| - |A ∩ B|, generalizing to alternating sums over all intersections. <strong>Binomial theorem</strong>: (a+b)ⁿ = Σ C(n,k) aⁿ⁻ᵏ bᵏ.', de: '<strong>Inklusion-Exklusion</strong>: |A ∪ B| = |A| + |B| - |A ∩ B|, verallgemeinert zu alternierenden Summen. <strong>Binomischer Satz</strong>: (a+b)ⁿ = Σ C(n,k) aⁿ⁻ᵏ bᵏ.' },
     ],
     how: [
       { en: 'Pigeonhole (Dirichlet): if a function f: A→B has |A| = n > m = |B|, then two distinct elements share an image - f(x) = f(x\').', de: 'Schubfach (Dirichlet): hat f: A→B mit |A| = n > m = |B|, dann teilen zwei verschiedene Elemente ein Bild - f(x) = f(x\').' },
       { en: 'Generalized pigeonhole: with n items in m boxes, some box holds at least ⌈n/m⌉ items.', de: 'Verallgemeinert: bei n Objekten in m Faechern enthaelt ein Fach mindestens ⌈n/m⌉ Objekte.' },
     ],
     complexity: [
-      { case: { en: 'Permutation P(n,k)', de: 'Permutation P(n,k)' }, time: 'n!/(n−k)!', space: '—', cls: 'avg' },
-      { case: { en: 'Combination C(n,k)', de: 'Kombination C(n,k)' }, time: 'n!/(k!(n−k)!)', space: '—', cls: 'best', note: { en: 'The decision tree: order matters? → permutation. Repetition allowed? → switch formula. Get those two questions right and the rest follows.', de: 'Der Entscheidungsbaum: Reihenfolge wichtig? → Permutation. Wiederholung erlaubt? → andere Formel.' } },
+      { case: { en: 'Permutation P(n,k)', de: 'Permutation P(n,k)' }, time: 'n!/(n-k)!', space: '-', cls: 'avg' },
+      { case: { en: 'Combination C(n,k)', de: 'Kombination C(n,k)' }, time: 'n!/(k!(n-k)!)', space: '-', cls: 'best', note: { en: 'The decision tree: order matters? → permutation. Repetition allowed? → switch formula. Get those two questions right and the rest follows.', de: 'Der Entscheidungsbaum: Reihenfolge wichtig? → Permutation. Wiederholung erlaubt? → andere Formel.' } },
     ],
     pitfalls: [
       { en: 'Permutation vs combination: "a 3-person podium from 8" (order matters) is P(8,3); "a 3-person committee from 8" (order doesn\'t) is C(8,3). Same numbers, different answer.', de: 'Permutation vs Kombination: „3er-Podium aus 8" (Reihenfolge zaehlt) ist P(8,3); „3er-Komitee aus 8" ist C(8,3).' },
@@ -113,7 +113,7 @@ export const mathCoreContent = {
       { en: 'Inductive step: using that assumption, prove it for n = k+1.', de: 'Induktionsschritt: mit dieser Annahme fuer n = k+1 beweisen.' },
     ],
     complexity: [
-      { case: { en: 'Proof technique', de: 'Beweistechnik' }, time: '—', space: '—', cls: 'best', note: { en: 'Strong induction assumes the statement for all values ≤ k, not just k - useful for recurrences.', de: 'Starke Induktion nimmt die Aussage fuer alle Werte ≤ k an, nicht nur k - nuetzlich fuer Rekurrenzen.' } },
+      { case: { en: 'Proof technique', de: 'Beweistechnik' }, time: '-', space: '-', cls: 'best', note: { en: 'Strong induction assumes the statement for all values ≤ k, not just k - useful for recurrences.', de: 'Starke Induktion nimmt die Aussage fuer alle Werte ≤ k an, nicht nur k - nuetzlich fuer Rekurrenzen.' } },
     ],
     pitfalls: [
       { en: 'A missing or wrong base case invalidates the whole proof - the most common error.', de: 'Ein fehlender oder falscher Basisfall macht den ganzen Beweis ungueltig - der haeufigste Fehler.' },
@@ -131,7 +131,7 @@ export const mathCoreContent = {
       { en: 'To prove an argument valid, show the implication (premises ⇒ conclusion) is a tautology.', de: 'Ein Argument als gueltig beweisen: zeige, dass (Praemissen ⇒ Schluss) eine Tautologie ist.' },
     ],
     complexity: [
-      { case: { en: 'Truth table', de: 'Wahrheitstabelle' }, time: '2^n rows', space: '—', cls: 'avg', note: { en: 'Key equivalences to memorize: A⇒B ≡ ¬A∨B, De Morgan ¬(A∧B) ≡ ¬A∨¬B, contrapositive A⇒B ≡ ¬B⇒¬A.', de: 'Wichtige Aequivalenzen: A⇒B ≡ ¬A∨B, De Morgan ¬(A∧B) ≡ ¬A∨¬B, Kontraposition A⇒B ≡ ¬B⇒¬A.' } },
+      { case: { en: 'Truth table', de: 'Wahrheitstabelle' }, time: '2^n rows', space: '-', cls: 'avg', note: { en: 'Key equivalences to memorize: A⇒B ≡ ¬A∨B, De Morgan ¬(A∧B) ≡ ¬A∨¬B, contrapositive A⇒B ≡ ¬B⇒¬A.', de: 'Wichtige Aequivalenzen: A⇒B ≡ ¬A∨B, De Morgan ¬(A∧B) ≡ ¬A∨¬B, Kontraposition A⇒B ≡ ¬B⇒¬A.' } },
     ],
     pitfalls: [
       { en: 'Implication with a false premise is TRUE ("if 2+2=5 then I am king" is a true statement). A⇒B fails only when A is true and B false.', de: 'Implikation mit falscher Praemisse ist WAHR. A⇒B scheitert nur bei A wahr, B falsch.' },
@@ -142,7 +142,7 @@ export const mathCoreContent = {
     tldr: { en: 'A relation R on a set A is any set of ordered pairs from A×A. Its <strong>properties</strong> classify it: reflexive, symmetric, transitive (and more). The three together define an <strong>equivalence relation</strong>, which partitions A into disjoint classes.', de: 'Eine Relation R auf einer Menge A ist eine Menge geordneter Paare aus A×A. Ihre <strong>Eigenschaften</strong> klassifizieren sie: reflexiv, symmetrisch, transitiv. Alle drei zusammen definieren eine <strong>Aequivalenzrelation</strong>, die A in disjunkte Klassen teilt.' },
     intro: [
       { en: 'A <strong>relation</strong> R ⊆ A×A relates element a to b when (a,b) ∈ R, written aRb. The exam tests whether a given relation has each property - here are the exact definitions:', de: 'Eine <strong>Relation</strong> R ⊆ A×A verbindet a mit b, wenn (a,b) ∈ R, geschrieben aRb. Die Pruefung testet, ob eine Relation jede Eigenschaft hat - hier die exakten Definitionen:' },
-      { en: '<strong>Reflexive</strong>: aRa for every a ∈ A. &nbsp; <strong>Irreflexive</strong>: never aRa. &nbsp; <strong>Symmetric</strong>: aRb ⟹ bRa. &nbsp; <strong>Asymmetric</strong>: aRb ⟹ ¬bRa. &nbsp; <strong>Antisymmetric</strong>: (aRb ∧ bRa) ⟹ a = b. &nbsp; <strong>Transitive</strong>: (aRb ∧ bRc) ⟹ aRc.', de: '<strong>Reflexiv</strong>: aRa fuer jedes a ∈ A. &nbsp; <strong>Irreflexiv</strong>: nie aRa. &nbsp; <strong>Symmetrisch</strong>: aRb ⟹ bRa. &nbsp; <strong>Asymmetrisch</strong>: aRb ⟹ ¬bRa. &nbsp; <strong>Antisymmetrisch</strong>: (aRb ∧ bRa) ⟹ a = b. &nbsp; <strong>Transitiv</strong>: (aRb ∧ bRc) ⟹ aRc.' },
+      { en: '<strong>Reflexive</strong>: aRa for every a ∈ A.   <strong>Irreflexive</strong>: never aRa.   <strong>Symmetric</strong>: aRb ⟹ bRa.   <strong>Asymmetric</strong>: aRb ⟹ ¬bRa.   <strong>Antisymmetric</strong>: (aRb ∧ bRa) ⟹ a = b.   <strong>Transitive</strong>: (aRb ∧ bRc) ⟹ aRc.', de: '<strong>Reflexiv</strong>: aRa fuer jedes a ∈ A.   <strong>Irreflexiv</strong>: nie aRa.   <strong>Symmetrisch</strong>: aRb ⟹ bRa.   <strong>Asymmetrisch</strong>: aRb ⟹ ¬bRa.   <strong>Antisymmetrisch</strong>: (aRb ∧ bRa) ⟹ a = b.   <strong>Transitiv</strong>: (aRb ∧ bRc) ⟹ aRc.' },
       { en: 'An <strong>equivalence relation</strong> is reflexive, symmetric AND transitive. It splits A into <strong>equivalence classes</strong> - disjoint subsets where everything is related (e.g. "has the same remainder mod 3" splits the integers into 3 classes). A <strong>partial order</strong> is reflexive, antisymmetric and transitive (e.g. ≤, or subset ⊆).', de: 'Eine <strong>Aequivalenzrelation</strong> ist reflexiv, symmetrisch UND transitiv. Sie teilt A in <strong>Aequivalenzklassen</strong>. Eine <strong>Halbordnung</strong> ist reflexiv, antisymmetrisch und transitiv (z.B. ≤ oder ⊆).' },
     ],
     paper: [
@@ -150,7 +150,7 @@ export const mathCoreContent = {
       { en: 'Symmetric: for every (a,b) in R, is (b,a) also in R? Transitive: for every chain a→b→c, is a→c present? Find one counterexample to disprove; otherwise it holds.', de: 'Symmetrisch: ist zu jedem (a,b) auch (b,a) da? Transitiv: ist zu jeder Kette a→b→c auch a→c da? Ein Gegenbeispiel widerlegt; sonst gilt es.' },
     ],
     complexity: [
-      { case: { en: 'Equivalence relation', de: 'Aequivalenzrelation' }, time: 'reflexive + symmetric + transitive', space: '—', cls: 'best', note: { en: 'A relation can be reflexive AND irreflexive only if A is empty. Symmetric + antisymmetric together force a subset of the diagonal.', de: 'Eine Relation ist reflexiv UND irreflexiv nur bei leerer Menge A. Symmetrisch + antisymmetrisch erzwingt eine Teilmenge der Diagonale.' } },
+      { case: { en: 'Equivalence relation', de: 'Aequivalenzrelation' }, time: 'reflexive + symmetric + transitive', space: '-', cls: 'best', note: { en: 'A relation can be reflexive AND irreflexive only if A is empty. Symmetric + antisymmetric together force a subset of the diagonal.', de: 'Eine Relation ist reflexiv UND irreflexiv nur bei leerer Menge A. Symmetrisch + antisymmetrisch erzwingt eine Teilmenge der Diagonale.' } },
     ],
     pitfalls: [
       { en: 'Antisymmetric is NOT "not symmetric". Antisymmetric means aRb ∧ bRa forces a = b - a relation can be both symmetric and antisymmetric (only the diagonal).', de: 'Antisymmetrisch ist NICHT „nicht symmetrisch". Es bedeutet aRb ∧ bRa erzwingt a = b - eine Relation kann beides sein (nur die Diagonale).' },
@@ -160,7 +160,7 @@ export const mathCoreContent = {
   // ---- CALCULUS (intuition-focused, formal notation in the viz) ----
   'epsilon-delta': {
     defs: [
-      { name: { en: 'Limit (ε–δ definition)', de: 'Grenzwert (ε–δ-Definition)' },
+      { name: { en: 'Limit (ε-δ definition)', de: 'Grenzwert (ε-δ-Definition)' },
         body: { en: 'L is the limit of f at c if f(x) can be made arbitrarily close to L by taking x close enough to c (but not equal to c).', de: 'L ist der Grenzwert von f bei c, wenn f(x) beliebig nahe an L gebracht werden kann, indem man x nahe genug an c waehlt (aber ungleich c).' },
         formal: { tex: '\\forall \\varepsilon>0\\;\\exists \\delta>0:\\; 0<|x-c|<\\delta \\implies |f(x)-L|<\\varepsilon' } },
       { name: { en: 'Continuity at a point', de: 'Stetigkeit in einem Punkt' },
@@ -173,11 +173,11 @@ export const mathCoreContent = {
     when: { en: 'The rigorous definition of a limit - the foundation of continuity, derivatives and integrals. You rarely compute with it, but understanding it is what separates "I can plug in numbers" from "I understand calculus".', de: 'Die strenge Definition eines Grenzwerts - die Grundlage von Stetigkeit, Ableitung und Integral.' },
     how: [
       { en: 'Claim: lim(x→c) f(x) = L means f(x) can be forced arbitrarily close to L.', de: 'Behauptung: lim(x→c) f(x) = L heisst, f(x) laesst sich beliebig nah an L zwingen.' },
-      { en: 'Formally: for every tolerance ε > 0 there exists a δ > 0 such that 0 < |x − c| < δ guarantees |f(x) − L| < ε.', de: 'Formal: zu jeder Toleranz ε > 0 existiert ein δ > 0, sodass 0 < |x − c| < δ garantiert |f(x) − L| < ε.' },
+      { en: 'Formally: for every tolerance ε > 0 there exists a δ > 0 such that 0 < |x - c| < δ guarantees |f(x) - L| < ε.', de: 'Formal: zu jeder Toleranz ε > 0 existiert ein δ > 0, sodass 0 < |x - c| < δ garantiert |f(x) - L| < ε.' },
       { en: 'You pick the ε (how close to L); the challenge is producing a δ (how close to c) that works.', de: 'Du waehlst ε (Naehe zu L); die Aufgabe ist ein passendes δ (Naehe zu c).' },
     ],
     complexity: [
-      { case: { en: 'Definition', de: 'Definition' }, time: '—', space: '—', cls: 'best', note: { en: 'The order matters: ε is given FIRST, then you find δ. Swapping them is the classic misunderstanding.', de: 'Die Reihenfolge zaehlt: ε kommt ZUERST, dann findest du δ.' } },
+      { case: { en: 'Definition', de: 'Definition' }, time: '-', space: '-', cls: 'best', note: { en: 'The order matters: ε is given FIRST, then you find δ. Swapping them is the classic misunderstanding.', de: 'Die Reihenfolge zaehlt: ε kommt ZUERST, dann findest du δ.' } },
     ],
     pitfalls: [
       { en: 'ε comes first, δ depends on it - not the other way around. This is THE thing to internalize.', de: 'ε zuerst, δ haengt davon ab - nicht umgekehrt. DAS muss sitzen.' },
@@ -186,22 +186,22 @@ export const mathCoreContent = {
   'derivative': {
     defs: [
       { name: { en: 'Derivative (definition)', de: 'Ableitung (Definition)' },
-        body: { en: 'The derivative of f at x is the limit of the difference quotient — the slope of the tangent line, if the limit exists.', de: 'Die Ableitung von f bei x ist der Grenzwert des Differenzenquotienten — die Tangentensteigung, falls der Grenzwert existiert.' },
+        body: { en: 'The derivative of f at x is the limit of the difference quotient - the slope of the tangent line, if the limit exists.', de: 'Die Ableitung von f bei x ist der Grenzwert des Differenzenquotienten - die Tangentensteigung, falls der Grenzwert existiert.' },
         formal: { tex: 'f^{\\prime}(x) = \\lim_{h \\to 0} \\dfrac{f(x+h) - f(x)}{h}' } },
       { name: { en: 'Differentiable ⟹ continuous', de: 'Differenzierbar ⟹ stetig' },
         body: { en: 'If f is differentiable at c then it is continuous at c. The converse is false: |x| is continuous at 0 but not differentiable there.', de: 'Ist f bei c differenzierbar, dann ist es dort stetig. Die Umkehrung gilt nicht: |x| ist bei 0 stetig, aber nicht differenzierbar.' } },
       { name: { en: "Fermat's theorem (interior extremum)", de: 'Satz von Fermat (inneres Extremum)' },
-        body: { en: 'If f has a local maximum or minimum at an interior point c and f is differentiable there, then the derivative is zero. This is THE "f\'(x)=0 at an extremum" rule — it gives the candidate points for optimization.', de: 'Hat f an einem inneren Punkt c ein lokales Maximum oder Minimum und ist dort differenzierbar, dann ist die Ableitung null. Das ist die „f\'(x)=0 im Extremum"-Regel — sie liefert die Kandidatenpunkte.' },
+        body: { en: 'If f has a local maximum or minimum at an interior point c and f is differentiable there, then the derivative is zero. This is THE "f\'(x)=0 at an extremum" rule - it gives the candidate points for optimization.', de: 'Hat f an einem inneren Punkt c ein lokales Maximum oder Minimum und ist dort differenzierbar, dann ist die Ableitung null. Das ist die „f\'(x)=0 im Extremum"-Regel - sie liefert die Kandidatenpunkte.' },
         formal: { tex: 'f^{\\prime}(c) = 0 \\;\\text{ at an interior extremum } c' } },
     ],
     when: { en: 'Rates of change: velocity, growth, slopes, optimization (max/min where f\'=0). The single most-used tool in applied math, physics and ML.', de: 'Aenderungsraten: Geschwindigkeit, Wachstum, Steigungen, Optimierung (Max/Min bei f\'=0).' },
     how: [
-      { en: 'The secant line through (x, f(x)) and (x+h, f(x+h)) has slope [f(x+h)−f(x)]/h.', de: 'Die Sekante durch (x, f(x)) und (x+h, f(x+h)) hat die Steigung [f(x+h)−f(x)]/h.' },
+      { en: 'The secant line through (x, f(x)) and (x+h, f(x+h)) has slope [f(x+h)-f(x)]/h.', de: 'Die Sekante durch (x, f(x)) und (x+h, f(x+h)) hat die Steigung [f(x+h)-f(x)]/h.' },
       { en: 'As h → 0 the secant becomes the tangent; its slope is the derivative f\'(x).', de: 'Fuer h → 0 wird die Sekante zur Tangente; ihre Steigung ist die Ableitung f\'(x).' },
       { en: 'The derivative is itself a function: the slope of f at every point.', de: 'Die Ableitung ist selbst eine Funktion: die Steigung von f an jedem Punkt.' },
     ],
     complexity: [
-      { case: { en: 'Definition', de: 'Definition' }, time: '—', space: '—', cls: 'best', note: { en: 'f\'(x) = lim(h→0) [f(x+h)−f(x)]/h. A function is differentiable only where this limit exists (smooth, no corners).', de: 'f\'(x) = lim(h→0) [f(x+h)−f(x)]/h. Differenzierbar nur, wo dieser Grenzwert existiert.' } },
+      { case: { en: 'Definition', de: 'Definition' }, time: '-', space: '-', cls: 'best', note: { en: 'f\'(x) = lim(h→0) [f(x+h)-f(x)]/h. A function is differentiable only where this limit exists (smooth, no corners).', de: 'f\'(x) = lim(h→0) [f(x+h)-f(x)]/h. Differenzierbar nur, wo dieser Grenzwert existiert.' } },
     ],
     pitfalls: [
       { en: 'Differentiable ⟹ continuous, but not the reverse (|x| is continuous at 0 but has no derivative there).', de: 'Differenzierbar ⟹ stetig, aber nicht umgekehrt (|x| ist bei 0 stetig, aber nicht differenzierbar).' },
@@ -210,20 +210,20 @@ export const mathCoreContent = {
   'riemann': {
     defs: [
       { name: { en: 'Definite integral (Riemann)', de: 'Bestimmtes Integral (Riemann)' },
-        body: { en: 'The definite integral is the limit of Riemann sums as the partition width goes to zero — the signed area between f and the x-axis.', de: 'Das bestimmte Integral ist der Grenzwert der Riemann-Summen, wenn die Streifenbreite gegen null geht — die vorzeichenbehaftete Flaeche.' },
+        body: { en: 'The definite integral is the limit of Riemann sums as the partition width goes to zero - the signed area between f and the x-axis.', de: 'Das bestimmte Integral ist der Grenzwert der Riemann-Summen, wenn die Streifenbreite gegen null geht - die vorzeichenbehaftete Flaeche.' },
         formal: { tex: '\\int_a^b f(x)\\,dx = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} f(x_i^*)\\,\\Delta x' } },
       { name: { en: 'Fundamental Theorem of Calculus', de: 'Hauptsatz der Differential- und Integralrechnung' },
-        body: { en: 'Differentiation and integration are inverse operations: if F is an antiderivative of f, the definite integral is just F(b) − F(a).', de: 'Ableiten und Integrieren sind Umkehroperationen: ist F eine Stammfunktion von f, ist das bestimmte Integral F(b) − F(a).' },
+        body: { en: 'Differentiation and integration are inverse operations: if F is an antiderivative of f, the definite integral is just F(b) - F(a).', de: 'Ableiten und Integrieren sind Umkehroperationen: ist F eine Stammfunktion von f, ist das bestimmte Integral F(b) - F(a).' },
         formal: { tex: '\\int_a^b f(x)\\,dx = F(b) - F(a), \\quad F^{\\prime} = f' } },
     ],
     when: { en: 'The definite integral = area under a curve = accumulated total (distance from speed, charge from current). The other half of calculus, inverse to the derivative.', de: 'Das bestimmte Integral = Flaeche unter der Kurve = akkumulierte Summe. Die andere Haelfte der Analysis, invers zur Ableitung.' },
     how: [
       { en: 'Slice [a,b] into n strips of width Δx.', de: '[a,b] in n Streifen der Breite Δx schneiden.' },
-      { en: 'Approximate the area as a sum of rectangle areas Σ f(xᵢ)·Δx.', de: 'Die Flaeche als Summe der Rechteckflaechen Σ f(xᵢ)·Δx naehern.' },
+      { en: 'Approximate the area as a sum of rectangle areas Σ f(xᵢ)∗Δx.', de: 'Die Flaeche als Summe der Rechteckflaechen Σ f(xᵢ)∗Δx naehern.' },
       { en: 'As n → ∞ (thinner strips) the sum converges to the exact area - the definite integral.', de: 'Fuer n → ∞ konvergiert die Summe zur exakten Flaeche - das bestimmte Integral.' },
     ],
     complexity: [
-      { case: { en: 'Definition', de: 'Definition' }, time: '—', space: '—', cls: 'best', note: { en: 'The Fundamental Theorem links it to derivatives: ∫f = F where F\'=f. That is why integration "undoes" differentiation.', de: 'Der Hauptsatz verbindet es mit Ableitungen: ∫f = F mit F\'=f.' } },
+      { case: { en: 'Definition', de: 'Definition' }, time: '-', space: '-', cls: 'best', note: { en: 'The Fundamental Theorem links it to derivatives: ∫f = F where F\'=f. That is why integration "undoes" differentiation.', de: 'Der Hauptsatz verbindet es mit Ableitungen: ∫f = F mit F\'=f.' } },
     ],
     pitfalls: [
       { en: 'Area below the x-axis counts as negative in a definite integral.', de: 'Flaeche unter der x-Achse zaehlt im bestimmten Integral negativ.' },
@@ -242,7 +242,7 @@ export const mathCoreContent = {
       { en: 'Near the expansion point even a few terms are extremely accurate.', de: 'Nahe dem Entwicklungspunkt sind schon wenige Terme sehr genau.' },
     ],
     complexity: [
-      { case: { en: 'Concept', de: 'Konzept' }, time: '—', space: '—', cls: 'best', note: { en: 'A Maclaurin series is just a Taylor series centered at 0. More terms = wider accurate range.', de: 'Eine Maclaurin-Reihe ist eine Taylor-Reihe um 0. Mehr Terme = groesserer genauer Bereich.' } },
+      { case: { en: 'Concept', de: 'Konzept' }, time: '-', space: '-', cls: 'best', note: { en: 'A Maclaurin series is just a Taylor series centered at 0. More terms = wider accurate range.', de: 'Eine Maclaurin-Reihe ist eine Taylor-Reihe um 0. Mehr Terme = groesserer genauer Bereich.' } },
     ],
     pitfalls: [
       { en: 'Accuracy is local: far from the center, you need many more terms (or it may diverge).', de: 'Genauigkeit ist lokal: weit vom Zentrum braucht man viel mehr Terme (oder es divergiert).' },
@@ -258,7 +258,7 @@ export const mathCoreContent = {
     when: { en: 'Solving equations with no closed form, optimization (finding where the derivative is 0), square roots, and numerical libraries everywhere.', de: 'Gleichungen ohne geschlossene Form loesen, Optimierung, Quadratwurzeln und ueberall in numerischen Bibliotheken.' },
     how: [
       { en: 'Start from a guess x₀.', de: 'Mit einer Schaetzung x₀ beginnen.' },
-      { en: 'Follow the tangent at xₙ to where it crosses the x-axis: xₙ₊₁ = xₙ − f(xₙ)/f\'(xₙ).', de: 'Der Tangente bei xₙ bis zur x-Achse folgen: xₙ₊₁ = xₙ − f(xₙ)/f\'(xₙ).' },
+      { en: 'Follow the tangent at xₙ to where it crosses the x-axis: xₙ₊₁ = xₙ - f(xₙ)/f\'(xₙ).', de: 'Der Tangente bei xₙ bis zur x-Achse folgen: xₙ₊₁ = xₙ - f(xₙ)/f\'(xₙ).' },
       { en: 'Repeat until f(xₙ) is close enough to 0.', de: 'Wiederholen, bis f(xₙ) nahe genug an 0 ist.' },
     ],
     complexity: [
@@ -280,15 +280,15 @@ export const mathCoreContent = {
         body: { en: 'If the terms do not approach 0, the series diverges. WARNING: terms → 0 does NOT prove convergence (the harmonic series Σ1/n diverges).', de: 'Streben die Glieder nicht gegen 0, divergiert die Reihe. ACHTUNG: Glieder → 0 beweist KEINE Konvergenz (Σ1/n divergiert).' },
         formal: { tex: 'a_n \\not\\to 0 \\implies \\sum a_n \\text{ diverges}' } },
     ],
-    tldr: { en: 'A sequence is an ordered list (a₁, a₂, …); a series is their sum. The central question is <strong>convergence</strong>: does it approach a finite limit, or grow without bound?', de: 'Eine Folge ist eine geordnete Liste; eine Reihe ihre Summe. Die zentrale Frage ist <strong>Konvergenz</strong>: naehert sie sich einem endlichen Grenzwert?' },
+    tldr: { en: 'A sequence is an ordered list (a₁, a₂, ...); a series is their sum. The central question is <strong>convergence</strong>: does it approach a finite limit, or grow without bound?', de: 'Eine Folge ist eine geordnete Liste; eine Reihe ihre Summe. Die zentrale Frage ist <strong>Konvergenz</strong>: naehert sie sich einem endlichen Grenzwert?' },
     when: { en: 'Underlies limits, Taylor series, algorithm analysis (recurrence solutions), and any infinite-process reasoning.', de: 'Grundlage von Grenzwerten, Taylor-Reihen, Algorithmenanalyse und jedem unendlichen Prozess.' },
     how: [
       { en: 'A sequence converges if its terms get arbitrarily close to a single value L.', de: 'Eine Folge konvergiert, wenn ihre Glieder beliebig nah an einen Wert L kommen.' },
-      { en: 'A geometric series Σ rⁿ converges exactly when |r| < 1, to 1/(1−r).', de: 'Eine geometrische Reihe Σ rⁿ konvergiert genau bei |r| < 1, zu 1/(1−r).' },
+      { en: 'A geometric series Σ rⁿ converges exactly when |r| < 1, to 1/(1-r).', de: 'Eine geometrische Reihe Σ rⁿ konvergiert genau bei |r| < 1, zu 1/(1-r).' },
       { en: 'Tests (ratio, comparison, integral) decide convergence when it is not obvious.', de: 'Tests (Quotienten-, Vergleichs-, Integraltest) entscheiden Konvergenz.' },
     ],
     complexity: [
-      { case: { en: 'Geometric series', de: 'Geometrische Reihe' }, time: 'Σrⁿ = 1/(1−r)', space: '—', cls: 'best', note: { en: 'Converges iff |r|<1. The harmonic series Σ1/n diverges even though its terms → 0 - a famous trap.', de: 'Konvergiert gdw |r|<1. Die harmonische Reihe Σ1/n divergiert, obwohl die Glieder → 0 - eine beruehmte Falle.' } },
+      { case: { en: 'Geometric series', de: 'Geometrische Reihe' }, time: 'Σrⁿ = 1/(1-r)', space: '-', cls: 'best', note: { en: 'Converges iff |r|<1. The harmonic series Σ1/n diverges even though its terms → 0 - a famous trap.', de: 'Konvergiert gdw |r|<1. Die harmonische Reihe Σ1/n divergiert, obwohl die Glieder → 0 - eine beruehmte Falle.' } },
     ],
     pitfalls: [
       { en: 'Terms going to 0 does NOT guarantee the series converges (Σ1/n diverges). Necessary, not sufficient.', de: 'Glieder gegen 0 garantieren KEINE Konvergenz (Σ1/n divergiert). Notwendig, nicht hinreichend.' },
@@ -310,7 +310,7 @@ export const mathCoreContent = {
       { en: 'Rolle: when the endpoints have equal height, that parallel tangent is horizontal, so f′(c)=0.', de: 'Rolle: bei gleich hohen Endpunkten ist diese Tangente waagerecht, also f′(c)=0.' },
     ],
     complexity: [
-      { case: { en: 'Theorem', de: 'Satz' }, time: 'existence result', space: '—', cls: 'best', note: { en: 'Both REQUIRE differentiability on the open interval. f(x)=|x| on [−1,1] has no such c — it is not differentiable at 0, so the hypotheses fail.', de: 'Beide ERFORDERN Differenzierbarkeit auf dem offenen Intervall. f(x)=|x| auf [−1,1] hat kein solches c.' } },
+      { case: { en: 'Theorem', de: 'Satz' }, time: 'existence result', space: '-', cls: 'best', note: { en: 'Both REQUIRE differentiability on the open interval. f(x)=|x| on [-1,1] has no such c - it is not differentiable at 0, so the hypotheses fail.', de: 'Beide ERFORDERN Differenzierbarkeit auf dem offenen Intervall. f(x)=|x| auf [-1,1] hat kein solches c.' } },
     ],
     pitfalls: [
       { en: 'The hypotheses are not optional: drop differentiability at even one interior point and the conclusion can fail (e.g. |x|).', de: 'Die Voraussetzungen sind nicht optional: faellt die Differenzierbarkeit an nur einem inneren Punkt weg, kann der Schluss scheitern (z.B. |x|).' },
@@ -343,14 +343,14 @@ export const mathCoreContent = {
       { en: 'Branch-and-bound prunes the search using an optimistic upper bound.', de: 'Branch-and-Bound beschneidet die Suche mit einer optimistischen Schranke.' },
     ],
     complexity: [
-      { case: { en: '0/1 (DP)', de: '0/1 (DP)' }, time: 'O(n·W)', space: 'O(n·W)', cls: 'avg', note: { en: 'O(nW) is "pseudo-polynomial" - it depends on the numeric capacity W, not just n. 0/1 knapsack is NP-hard.', de: 'O(nW) ist „pseudopolynomiell" - haengt von der Kapazitaet W ab, nicht nur n. 0/1-Rucksack ist NP-schwer.' } },
+      { case: { en: '0/1 (DP)', de: '0/1 (DP)' }, time: 'O(n∗W)', space: 'O(n∗W)', cls: 'avg', note: { en: 'O(nW) is "pseudo-polynomial" - it depends on the numeric capacity W, not just n. 0/1 knapsack is NP-hard.', de: 'O(nW) ist „pseudopolynomiell" - haengt von der Kapazitaet W ab, nicht nur n. 0/1-Rucksack ist NP-schwer.' } },
     ],
     pitfalls: [
       { en: 'Greedy (best value/weight first) is OPTIMAL for fractional knapsack but WRONG for 0/1 - the key distinction.', de: 'Greedy ist OPTIMAL fuer den fraktionalen, aber FALSCH fuer den 0/1-Rucksack - die zentrale Unterscheidung.' },
     ],
   },
   'tsp': {
-    tldr: { en: 'Find the shortest route visiting every city exactly once and returning home. <strong>NP-hard</strong>: brute force is O(n!), the Held-Karp DP is O(n²·2ⁿ). For large n you use heuristics, not exact answers.', de: 'Die kuerzeste Rundreise ueber alle Staedte finden. <strong>NP-schwer</strong>: Brute Force O(n!), Held-Karp-DP O(n²·2ⁿ).' },
+    tldr: { en: 'Find the shortest route visiting every city exactly once and returning home. <strong>NP-hard</strong>: brute force is O(n!), the Held-Karp DP is O(n²∗2ⁿ). For large n you use heuristics, not exact answers.', de: 'Die kuerzeste Rundreise ueber alle Staedte finden. <strong>NP-schwer</strong>: Brute Force O(n!), Held-Karp-DP O(n²∗2ⁿ).' },
     when: { en: 'Logistics, routing, circuit-board drilling, DNA assembly. The canonical hard optimization problem; in practice solved approximately.', de: 'Logistik, Routenplanung, Platinenbohren, DNA-Assemblierung. Das kanonische schwere Optimierungsproblem.' },
     how: [
       { en: 'Exact (Held-Karp): DP over subsets of visited cities + current city.', de: 'Exakt (Held-Karp): DP ueber Teilmengen besuchter Staedte + aktuelle Stadt.' },
@@ -359,7 +359,7 @@ export const mathCoreContent = {
     ],
     complexity: [
       { case: { en: 'Brute force', de: 'Brute Force' }, time: 'O(n!)', space: 'O(n)', cls: 'worst' },
-      { case: { en: 'Held-Karp DP', de: 'Held-Karp-DP' }, time: 'O(n²·2ⁿ)', space: 'O(n·2ⁿ)', cls: 'avg', note: { en: 'Both are exponential. No known polynomial exact algorithm exists (it is NP-hard).', de: 'Beide exponentiell. Kein bekannter polynomieller exakter Algorithmus (NP-schwer).' } },
+      { case: { en: 'Held-Karp DP', de: 'Held-Karp-DP' }, time: 'O(n²∗2ⁿ)', space: 'O(n∗2ⁿ)', cls: 'avg', note: { en: 'Both are exponential. No known polynomial exact algorithm exists (it is NP-hard).', de: 'Beide exponentiell. Kein bekannter polynomieller exakter Algorithmus (NP-schwer).' } },
     ],
     pitfalls: [
       { en: 'There is no known efficient exact solution - if you find one, you have solved P vs NP.', de: 'Es gibt keine bekannte effiziente exakte Loesung - faendest du eine, haettest du P vs NP geloest.' },
@@ -381,16 +381,16 @@ export const mathCoreContent = {
     ],
   },
   'master-theorem': {
-    tldr: { en: 'A formula that instantly gives the Big-O of most divide-and-conquer recurrences T(n)=a·T(n/b)+f(n), by comparing f(n) against n^(log_b a). Skips solving the recurrence by hand.', de: 'Eine Formel, die sofort die Big-O der meisten Teile-und-herrsche-Rekurrenzen T(n)=a·T(n/b)+f(n) liefert.' },
+    tldr: { en: 'A formula that instantly gives the Big-O of most divide-and-conquer recurrences T(n)=a∗T(n/b)+f(n), by comparing f(n) against n^(log_b a). Skips solving the recurrence by hand.', de: 'Eine Formel, die sofort die Big-O der meisten Teile-und-herrsche-Rekurrenzen T(n)=a∗T(n/b)+f(n) liefert.' },
     when: { en: 'Analyzing any recursive divide-and-conquer algorithm: merge sort, binary search, Strassen, Karatsuba. The fastest way to a complexity answer on an exam.', de: 'Analyse jedes rekursiven Teile-und-herrsche-Algorithmus: Merge Sort, binaere Suche, Strassen, Karatsuba.' },
     how: [
-      { en: 'Write the recurrence as T(n) = a·T(n/b) + f(n): a subproblems of size n/b, plus f(n) work to combine.', de: 'Rekurrenz als T(n) = a·T(n/b) + f(n) schreiben.' },
+      { en: 'Write the recurrence as T(n) = a∗T(n/b) + f(n): a subproblems of size n/b, plus f(n) work to combine.', de: 'Rekurrenz als T(n) = a∗T(n/b) + f(n) schreiben.' },
       { en: 'Compare f(n) with n^(log_b a).', de: 'f(n) mit n^(log_b a) vergleichen.' },
-      { en: 'Case 1: f smaller → T = Θ(n^(log_b a)). Case 2: equal → Θ(n^(log_b a)·log n). Case 3: f larger → Θ(f(n)).', de: 'Fall 1: f kleiner → Θ(n^(log_b a)). Fall 2: gleich → Θ(n^(log_b a)·log n). Fall 3: f groesser → Θ(f(n)).' },
+      { en: 'Case 1: f smaller → T = Θ(n^(log_b a)). Case 2: equal → Θ(n^(log_b a)∗log n). Case 3: f larger → Θ(f(n)).', de: 'Fall 1: f kleiner → Θ(n^(log_b a)). Fall 2: gleich → Θ(n^(log_b a)∗log n). Fall 3: f groesser → Θ(f(n)).' },
     ],
     complexity: [
-      { case: { en: 'Merge sort: a=2,b=2,f=n', de: 'Merge Sort: a=2,b=2,f=n' }, time: 'Θ(n log n)', space: '—', cls: 'best' },
-      { case: { en: 'Binary search: a=1,b=2', de: 'Binaere Suche: a=1,b=2' }, time: 'Θ(log n)', space: '—', cls: 'best', note: { en: 'Compare f(n) to n^(log_b a) - that comparison is the whole theorem.', de: 'f(n) mit n^(log_b a) vergleichen - dieser Vergleich ist das ganze Theorem.' } },
+      { case: { en: 'Merge sort: a=2,b=2,f=n', de: 'Merge Sort: a=2,b=2,f=n' }, time: 'Θ(n log n)', space: '-', cls: 'best' },
+      { case: { en: 'Binary search: a=1,b=2', de: 'Binaere Suche: a=1,b=2' }, time: 'Θ(log n)', space: '-', cls: 'best', note: { en: 'Compare f(n) to n^(log_b a) - that comparison is the whole theorem.', de: 'f(n) mit n^(log_b a) vergleichen - dieser Vergleich ist das ganze Theorem.' } },
     ],
     pitfalls: [
       { en: 'It does not cover every recurrence (e.g. uneven splits like T(n)=T(n/3)+T(2n/3)). Know its limits.', de: 'Es deckt nicht jede Rekurrenz ab (z.B. ungleiche Teilungen). Kenne die Grenzen.' },

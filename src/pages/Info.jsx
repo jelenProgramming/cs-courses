@@ -29,7 +29,7 @@ const COURSES = [
   ]},
   { name: { en: 'Discrete Structures', de: 'Diskrete Strukturen' }, refs: [
     'Peterin, I. (2020). Diskretne strukture. Univerzitetna založba UM; FERI.',
-    'Discrete mathematics lecture notes, FRI UL — matematika.fri.uni-lj.si/ds/ds.pdf',
+    'Discrete mathematics lecture notes, FRI UL - matematika.fri.uni-lj.si/ds/ds.pdf',
   ]},
   { name: { en: 'Mathematical Analysis', de: 'Mathematische Analysis' }, refs: [
     'Course lecture notes: limits & continuity, derivatives, integrals, sequences & series.',
@@ -47,7 +47,7 @@ const COURSES = [
   { name: { en: 'Foundations of the World Wide Web', de: 'Grundlagen des World Wide Web' }, refs: [
     'Meloni, J. C. (2015). Sams Teach Yourself HTML, CSS, and JavaScript All in One, 2nd ed.',
     'Ullman, L. E. (2016). PHP for the Web, 5th ed. Peachpit Press.',
-    'MDN Web Docs — developer.mozilla.org (HTTP, DNS, cookies, AJAX).',
+    'MDN Web Docs - developer.mozilla.org (HTTP, DNS, cookies, AJAX).',
   ]},
 ]
 
@@ -62,8 +62,8 @@ export default function Info() {
       <div className="page-head">
         <h1 className="page-title">{t({ en: 'Info & Sources', de: 'Info & Quellen' })}</h1>
         <p className="page-desc">{t({
-          en: 'An interactive, bilingual study companion for the first-year Computer Science (RIT) curriculum at FERI, University of Maribor — plus the universal CS core. Built to make the concepts click before exams.',
-          de: 'Ein interaktiver, zweisprachiger Lernbegleiter für das Informatik-Erstsemester (RIT) an der FERI, Universität Maribor — plus den universellen Informatik-Kern.',
+          en: 'An interactive, bilingual study companion for the first-year Computer Science (RIT) curriculum at FERI, University of Maribor - plus the universal CS core. Built to make the concepts click before exams.',
+          de: 'Ein interaktiver, zweisprachiger Lernbegleiter für das Informatik-Erstsemester (RIT) an der FERI, Universität Maribor - plus den universellen Informatik-Kern.',
         })}</p>
       </div>
 

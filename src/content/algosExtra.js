@@ -19,7 +19,7 @@ export const algosExtraContent = {
       { case: { en: 'Worst case', de: 'Schlechtester Fall' }, time: 'O(N!)', space: 'O(N)', cls: 'worst', note: { en: 'Pruning (checking safety before recursing) cuts the real search far below N! but the worst case is still factorial.', de: 'Pruning (Sicherheitspruefung vor der Rekursion) drueckt die reale Suche weit unter N!, der schlechteste Fall bleibt aber faktoriell.' } },
     ],
     pitfalls: [
-      { en: 'The diagonal check is where bugs hide: two squares share a diagonal when |row1−row2| = |col1−col2|.', de: 'Die Diagonalpruefung versteckt Fehler: zwei Felder teilen eine Diagonale, wenn |Zeile1−Zeile2| = |Spalte1−Spalte2|.' },
+      { en: 'The diagonal check is where bugs hide: two squares share a diagonal when |row1-row2| = |col1-col2|.', de: 'Die Diagonalpruefung versteckt Fehler: zwei Felder teilen eine Diagonale, wenn |Zeile1-Zeile2| = |Spalte1-Spalte2|.' },
     ],
   },
   'graph-coloring': {
@@ -63,7 +63,7 @@ export const algosExtraContent = {
     ],
     complexity: [
       { case: { en: 'Best', de: 'Bester' }, time: 'O(n)', space: 'O(1)', cls: 'best' },
-      { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n·m)', space: 'O(1)', cls: 'worst', note: { en: 'Worst case like text "AAAA…A", pattern "AAAB": almost a full pattern scan at every position.', de: 'Schlechtester Fall wie Text "AAAA…A", Muster "AAAB": fast ein voller Musterscan an jeder Position.' } },
+      { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n∗m)', space: 'O(1)', cls: 'worst', note: { en: 'Worst case like text "AAAA...A", pattern "AAAB": almost a full pattern scan at every position.', de: 'Schlechtester Fall wie Text "AAAA...A", Muster "AAAB": fast ein voller Musterscan an jeder Position.' } },
     ],
     pitfalls: [
       { en: 'The waste is re-comparing characters after a mismatch. KMP removes exactly that waste.', de: 'Die Verschwendung ist das erneute Vergleichen nach einem Fehler. KMP beseitigt genau das.' },
@@ -75,7 +75,7 @@ export const algosExtraContent = {
     how: [
       { en: 'Precompute failure[j] = length of the longest proper prefix of pattern[0..j] that is also a suffix.', de: 'failure[j] vorberechnen = Laenge des laengsten echten Praefixes von pattern[0..j], das auch Suffix ist.' },
       { en: 'Scan the text once. On a match, advance both.', de: 'Den Text einmal scannen. Bei Treffer beide weiter.' },
-      { en: 'On a mismatch at pattern position j, jump to failure[j−1] instead of restarting - the text pointer never moves backward.', de: 'Bei Fehler an Musterposition j zu failure[j−1] springen statt neu zu starten - der Textzeiger geht nie zurueck.' },
+      { en: 'On a mismatch at pattern position j, jump to failure[j-1] instead of restarting - the text pointer never moves backward.', de: 'Bei Fehler an Musterposition j zu failure[j-1] springen statt neu zu starten - der Textzeiger geht nie zurueck.' },
     ],
     complexity: [
       { case: { en: 'Build table', de: 'Tabelle bauen' }, time: 'O(m)', space: 'O(m)', cls: 'best' },
@@ -96,7 +96,7 @@ export const algosExtraContent = {
     complexity: [
       { case: { en: 'Best', de: 'Bester' }, time: 'O(n/m)', space: 'O(k)', cls: 'best' },
       { case: { en: 'Average', de: 'Durchschnitt' }, time: 'O(n)', space: 'O(k)', cls: 'avg' },
-      { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n·m)', space: 'O(k)', cls: 'worst', note: { en: 'k = alphabet size. Best case skips m at a time. Full Boyer-Moore adds a good-suffix rule to bound the worst case to O(n).', de: 'k = Alphabetgroesse. Bester Fall springt je m. Voll-Boyer-Moore ergaenzt eine Good-Suffix-Regel und begrenzt den schlechtesten Fall auf O(n).' } },
+      { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n∗m)', space: 'O(k)', cls: 'worst', note: { en: 'k = alphabet size. Best case skips m at a time. Full Boyer-Moore adds a good-suffix rule to bound the worst case to O(n).', de: 'k = Alphabetgroesse. Bester Fall springt je m. Voll-Boyer-Moore ergaenzt eine Good-Suffix-Regel und begrenzt den schlechtesten Fall auf O(n).' } },
     ],
     pitfalls: [
       { en: 'Right-to-left comparison is the key idea and what makes the big jumps possible.', de: 'Der Rechts-nach-links-Vergleich ist die Kernidee und ermoeglicht die grossen Spruenge.' },
@@ -112,7 +112,7 @@ export const algosExtraContent = {
     ],
     complexity: [
       { case: { en: 'Average', de: 'Durchschnitt' }, time: 'O(n+m)', space: 'O(1)', cls: 'best' },
-      { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n·m)', space: 'O(1)', cls: 'worst', note: { en: 'Worst case is many hash collisions (bad modulus). A good prime modulus keeps it near linear.', de: 'Schlechtester Fall sind viele Hash-Kollisionen (schlechter Modul). Ein guter Primmodul haelt es nahe linear.' } },
+      { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n∗m)', space: 'O(1)', cls: 'worst', note: { en: 'Worst case is many hash collisions (bad modulus). A good prime modulus keeps it near linear.', de: 'Schlechtester Fall sind viele Hash-Kollisionen (schlechter Modul). Ein guter Primmodul haelt es nahe linear.' } },
     ],
     pitfalls: [
       { en: 'A hash match does not guarantee a real match - you must verify characters, or collisions give false positives.', de: 'Ein Hash-Treffer garantiert keinen echten Treffer - Zeichen pruefen, sonst falsche Positive durch Kollisionen.' },
@@ -128,7 +128,7 @@ export const algosExtraContent = {
     ],
     complexity: [
       { case: { en: 'Average', de: 'Durchschnitt' }, time: 'O(n)', space: 'O(k)', cls: 'avg' },
-      { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n·m)', space: 'O(k)', cls: 'worst', note: { en: 'Shift is always decided by the window-end character. k = alphabet size.', de: 'Der Sprung entscheidet sich stets am Fensterend-Zeichen. k = Alphabetgroesse.' } },
+      { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n∗m)', space: 'O(k)', cls: 'worst', note: { en: 'Shift is always decided by the window-end character. k = alphabet size.', de: 'Der Sprung entscheidet sich stets am Fensterend-Zeichen. k = Alphabetgroesse.' } },
     ],
     pitfalls: [
       { en: 'It looks at the window-end char; Sunday looks one past the window. Confusing the two is the classic error.', de: 'Es schaut auf das Fensterend-Zeichen; Sunday eins dahinter. Verwechslung ist der klassische Fehler.' },
@@ -144,7 +144,7 @@ export const algosExtraContent = {
     ],
     complexity: [
       { case: { en: 'Average', de: 'Durchschnitt' }, time: 'O(n)', space: 'O(k)', cls: 'avg' },
-      { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n·m)', space: 'O(k)', cls: 'worst', note: { en: 'The shift character is one past the window (index i+m) - this is the defining detail.', de: 'Das Sprungzeichen liegt eins hinter dem Fenster (Index i+m) - das ist das definierende Detail.' } },
+      { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n∗m)', space: 'O(k)', cls: 'worst', note: { en: 'The shift character is one past the window (index i+m) - this is the defining detail.', de: 'Das Sprungzeichen liegt eins hinter dem Fenster (Index i+m) - das ist das definierende Detail.' } },
     ],
     pitfalls: [
       { en: 'Look at the char AFTER the window, not the last char IN it - that is what separates Sunday from Horspool.', de: 'Das Zeichen NACH dem Fenster ansehen, nicht das letzte DARIN - das trennt Sunday von Horspool.' },
@@ -164,7 +164,7 @@ export const algosExtraContent = {
       { case: { en: 'Average / Worst', de: 'Durchschnitt / Schlecht.' }, time: 'O(log n)', space: 'O(1)', cls: 'avg', note: { en: 'The array MUST be sorted first; sorting is O(n log n), so binary search pays off when you search many times.', de: 'Das Array MUSS zuerst sortiert sein; Sortieren ist O(n log n), daher lohnt binaere Suche bei vielen Suchen.' } },
     ],
     pitfalls: [
-      { en: 'mid = lo + (hi−lo)/2, not (lo+hi)/2, to avoid integer overflow - a famous real-world bug.', de: 'mid = lo + (hi−lo)/2, nicht (lo+hi)/2, um Ueberlauf zu vermeiden - ein beruehmter realer Fehler.' },
+      { en: 'mid = lo + (hi-lo)/2, not (lo+hi)/2, to avoid integer overflow - a famous real-world bug.', de: 'mid = lo + (hi-lo)/2, nicht (lo+hi)/2, um Ueberlauf zu vermeiden - ein beruehmter realer Fehler.' },
       { en: 'Off-by-one in the loop bounds (lo ≤ hi vs lo < hi) is the #1 implementation mistake.', de: 'Off-by-one in den Schleifengrenzen (lo ≤ hi vs lo < hi) ist der haeufigste Fehler.' },
     ],
   },
@@ -174,15 +174,15 @@ export const algosExtraContent = {
     how: [
       { en: 'Build a table D where D[i][j] = edit distance between the first i chars of A and first j of B.', de: 'Tabelle D bauen, D[i][j] = Editierdistanz der ersten i Zeichen von A und ersten j von B.' },
       { en: 'Row 0 and column 0 are 0,1,2,... (cost of pure insertions/deletions).', de: 'Zeile 0 und Spalte 0 sind 0,1,2,... (Kosten reiner Einfuegungen/Loeschungen).' },
-      { en: 'Each cell = min(delete D[i−1][j]+1, insert D[i][j−1]+1, substitute D[i−1][j−1]+cost). cost is 0 if the chars match.', de: 'Jede Zelle = min(Loeschen D[i−1][j]+1, Einfuegen D[i][j−1]+1, Ersetzen D[i−1][j−1]+Kosten). Kosten 0 bei Zeichengleichheit.' },
+      { en: 'Each cell = min(delete D[i-1][j]+1, insert D[i][j-1]+1, substitute D[i-1][j-1]+cost). cost is 0 if the chars match.', de: 'Jede Zelle = min(Loeschen D[i-1][j]+1, Einfuegen D[i][j-1]+1, Ersetzen D[i-1][j-1]+Kosten). Kosten 0 bei Zeichengleichheit.' },
     ],
     paper: [
-      { en: 'Draw the grid with A down the side and B across the top. Fill row 0 and column 0 with 0,1,2,…', de: 'Gitter mit A an der Seite, B oben zeichnen. Zeile 0 und Spalte 0 mit 0,1,2,… fuellen.' },
+      { en: 'Draw the grid with A down the side and B across the top. Fill row 0 and column 0 with 0,1,2,...', de: 'Gitter mit A an der Seite, B oben zeichnen. Zeile 0 und Spalte 0 mit 0,1,2,... fuellen.' },
       { en: 'Fill left-to-right, top-to-bottom. For each cell look at three neighbors (up, left, up-left) and take the minimum per the rule.', de: 'Links-nach-rechts, oben-nach-unten fuellen. Pro Zelle drei Nachbarn (oben, links, oben-links) ansehen und das Minimum nehmen.' },
       { en: 'The answer is the bottom-right cell.', de: 'Die Antwort ist die Zelle unten rechts.' },
     ],
     complexity: [
-      { case: { en: 'All cases', de: 'Alle Faelle' }, time: 'O(n·m)', space: 'O(n·m)', cls: 'avg', note: { en: 'Space can be reduced to O(min(n,m)) by keeping only two rows - a common optimization question.', de: 'Speicher auf O(min(n,m)) reduzierbar, indem nur zwei Zeilen gehalten werden - haeufige Optimierungsfrage.' } },
+      { case: { en: 'All cases', de: 'Alle Faelle' }, time: 'O(n∗m)', space: 'O(n∗m)', cls: 'avg', note: { en: 'Space can be reduced to O(min(n,m)) by keeping only two rows - a common optimization question.', de: 'Speicher auf O(min(n,m)) reduzierbar, indem nur zwei Zeilen gehalten werden - haeufige Optimierungsfrage.' } },
     ],
     pitfalls: [
       { en: 'Substitution cost is 0 when characters are equal (copy the diagonal), 1 otherwise. Forgetting that breaks everything.', de: 'Ersetzungskosten sind 0 bei Zeichengleichheit (Diagonale kopieren), sonst 1. Das zu vergessen bricht alles.' },

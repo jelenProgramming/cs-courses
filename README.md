@@ -2,7 +2,7 @@
 
 An interactive, bilingual (English / German) learning resource that animates the
 algorithms, data structures and core computer-science concepts taught in the
-**first year of Computer Science (RIT) at FERI, University of Maribor** — plus the
+**first year of Computer Science (RIT) at FERI, University of Maribor** - plus the
 universal CS foundation shared across programs like MIT, Cambridge, TU Graz and
 TU München.
 
@@ -11,7 +11,7 @@ with a plain-language **TL;DR** of what the thing actually does and when to reac
 for it, then lets you **watch it run step by step** with a narrated explanation of
 every move.
 
-> **94 topics across 15 categories — 51 fully interactive visualizers, every page with a complexity table and exam-trap notes.**
+> **94 topics across 15 categories - 51 fully interactive visualizers, every page with a complexity table and exam-trap notes.**
 
 ## Quick start
 
@@ -40,8 +40,8 @@ This is a static site (hash routing, relative asset paths) - it works on any hos
 - **Step-by-step animation** with play / pause / step / speed / scrub controls, and a plain-language description of *what the algorithm just decided* on every step.
 - **English ⇄ German** toggle across the entire UI, every explanation, and every animation caption. Code stays in English (the lingua franca).
 - **Light / dark theme**, remembered between visits.
-- **Best / average / worst complexity** (time and space) on every algorithm and data structure — with notes on *why* the worst case happens.
-- **"Trace it on paper" panels** on data structures and key algorithms — how to walk through pointers, linked lists, recursion, DP tables, and union-find by hand for an exam.
+- **Best / average / worst complexity** (time and space) on every algorithm and data structure - with notes on *why* the worst case happens.
+- **"Trace it on paper" panels** on data structures and key algorithms - how to walk through pointers, linked lists, recursion, DP tables, and union-find by hand for an exam.
 - **Exam-relevant detail** baked in: which character drives the shift in Boyer-Moore vs Sunday vs Horspool; the four union-find cases when joining a graph (including "neither endpoint is in a group yet"); the two-matrix (D and P) Floyd-Warshall trace; the ∀ε ∃δ definition shown visually.
 
 ## Categories
@@ -49,24 +49,24 @@ This is a static site (hash routing, relative asset paths) - it works on any hos
 | Category | Examples |
 |---|---|
 | **Sorting** | bubble, selection, insertion, merge, quick, heap, counting, radix |
-| **Graphs & Pathfinding** | BFS, DFS, Dijkstra (dist/pred arrays), Floyd–Warshall (D & P matrices), Prim, Kruskal, A* |
+| **Graphs & Pathfinding** | BFS, DFS, Dijkstra (dist/pred arrays), Floyd-Warshall (D & P matrices), Prim, Kruskal, A* |
 | **Trees & Structures** | BST, binary heap, trie, linked lists, stack/queue, hash table |
 | **Backtracking** | N-Queens, graph coloring, Sudoku |
-| **String Algorithms** | naive, KMP, Boyer–Moore, Rabin–Karp, Horspool, Sunday |
+| **String Algorithms** | naive, KMP, Boyer-Moore, Rabin-Karp, Horspool, Sunday |
 | **Dynamic Programming** | edit distance, optimal BST, 0/1 knapsack, TSP |
-| **Compression & Coding** | RLE, Huffman, LZW, arithmetic, Shannon–Fano, LZ77/78, Golomb, BWT, suffix structures |
+| **Compression & Coding** | RLE, Huffman, LZW, arithmetic, Shannon-Fano, LZ77/78, Golomb, BWT, suffix structures |
 | **Cryptography** | Caesar, Vigenère, Playfair, ADFGX |
 | **Divide & Conquer** | binary search, Strassen, the Master Theorem |
 | **Discrete Math** | Warshall closure, Euclid & extended Euclid, modular exponentiation, CRT, combinatorics, induction, logic, relations |
-| **Calculus Essentials** | ε–δ limits, derivatives, Riemann sums, Taylor series, Newton's method, sequences & series |
+| **Calculus Essentials** | ε-δ limits, derivatives, Riemann sums, Taylor series, Newton's method, sequences & series |
 | **Programming Concepts** | Big-O, types, control flow, functions, recursion, pointers & memory, OOP, templates |
-| **Databases** | relational model, SQL joins, SQL basics, keys & ER model, normalization (1NF–BCNF), B-tree indexes, transactions & ACID |
+| **Databases** | relational model, SQL joins, SQL basics, keys & ER model, normalization (1NF-BCNF), B-tree indexes, transactions & ACID |
 | **Computer Systems** | number systems, binary arithmetic, logic gates, von Neumann architecture, memory hierarchy, Turing machine, processes & threads |
 | **Web Foundations** | how the web works, HTTP, DNS, TCP/IP handshake, cookies & sessions, JSON & XML |
 
 ## Tech
 
-- **React 18** + **Vite** — no backend, fully static.
+- **React 18** + **Vite** - no backend, fully static.
 - **React Router** (hash routing, so it deploys to any static host without server config).
 - A small shared animation **engine** (`usePlayer`): every algorithm is written as a pure function that produces an array of step snapshots; the player walks through them. Zero animation code lives in the algorithms themselves, which keeps each one small and testable.
 - A central **registry** + per-category **content** modules: adding a topic is one registry entry plus a content entry (and, for an interactive one, a small component).
@@ -127,7 +127,7 @@ To add an algorithm: add one line to `src/registry.js`, an entry to a file in
 
 The pure algorithm functions are covered by a logic test suite (sorting output
 verified against a reference sort on multiple inputs including edge cases;
-Dijkstra and Floyd–Warshall cross-checked for agreement; MST edge counts; string
+Dijkstra and Floyd-Warshall cross-checked for agreement; MST edge counts; string
 matchers verified to find the pattern at the correct index and to report absence
 correctly). Every interactive component is also smoke-tested to render without
 runtime errors.
@@ -138,15 +138,15 @@ The standard algorithms are described in many textbooks; these are the works the
 corresponding FERI courses reference, listed for further reading (the
 explanations and code here are original):
 
-- Cormen, Leiserson, Rivest, Stein — *Introduction to Algorithms* (MIT Press)
-- Stroustrup — *A Tour of C++* (Addison-Wesley)
-- Salomon & Motta — *Handbook of Data Compression* (Springer)
-- Connolly & Begg — *Database Systems* (Pearson); Elmasri & Navathe — *Fundamentals of Database Systems*
-- Brookshear — *Computer Science: An Overview* (Addison-Wesley)
+- Cormen, Leiserson, Rivest, Stein - *Introduction to Algorithms* (MIT Press)
+- Stroustrup - *A Tour of C++* (Addison-Wesley)
+- Salomon & Motta - *Handbook of Data Compression* (Springer)
+- Connolly & Begg - *Database Systems* (Pearson); Elmasri & Navathe - *Fundamentals of Database Systems*
+- Brookshear - *Computer Science: An Overview* (Addison-Wesley)
 
 Algorithms themselves are not copyrightable; all explanatory text, code and
 visualizations in this project are original.
 
 ## License
 
-MIT — see `LICENSE`.
+MIT - see `LICENSE`.

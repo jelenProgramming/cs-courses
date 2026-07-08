@@ -10,7 +10,7 @@ import 'katex/dist/katex.min.css'
  *   renderTex(str, {display})         -> HTML string, for dangerouslySetInnerHTML
  *
  * throwOnError:false means a bad formula renders as red source text instead of
- * blanking the page — safe to ship.
+ * blanking the page - safe to ship.
  */
 const OPTS = { throwOnError: false, strict: false, output: 'htmlAndMathml' }
 

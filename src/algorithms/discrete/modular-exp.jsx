@@ -15,7 +15,7 @@ function modexpSteps(base, exp, mod) {
   let bitIdx = 0
   while (e > 0) {
     const bit = e & 1
-    if (bit) { result = (result * b) % mod; rows.push({ bit, b, result, used: true }); push({ en: `Bit = 1: result = result·base = ${result}. base now ${b}.`, de: `Bit = 1: Ergebnis = Ergebnis·Basis = ${result}. Basis nun ${b}.` }) }
+    if (bit) { result = (result * b) % mod; rows.push({ bit, b, result, used: true }); push({ en: `Bit = 1: result = result∗base = ${result}. base now ${b}.`, de: `Bit = 1: Ergebnis = Ergebnis∗Basis = ${result}. Basis nun ${b}.` }) }
     else { rows.push({ bit, b, result, used: false }); push({ en: `Bit = 0: skip multiply, result stays ${result}.`, de: `Bit = 0: keine Multiplikation, Ergebnis bleibt ${result}.` }) }
     e = e >> 1
     if (e > 0) b = (b * b) % mod

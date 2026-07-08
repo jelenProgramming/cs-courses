@@ -3,11 +3,11 @@ import { createContext, useContext, useState, useEffect, useCallback } from 'rea
 /**
  * Tiny i18n layer. Two ways to translate:
  *
- *  1. t(obj)  — obj is a { en, de } pair (used for dynamic content like step
+ *  1. t(obj)  - obj is a { en, de } pair (used for dynamic content like step
  *     messages and taglines that carry interpolated values). Returns the string
  *     for the active language. Plain strings pass through unchanged (English).
  *
- *  2. tk(key) — looks up a key in the UI dictionary below.
+ *  2. tk(key) - looks up a key in the UI dictionary below.
  *
  * Language is persisted to localStorage. Code is always English and never goes
  * through this layer.
@@ -15,7 +15,7 @@ import { createContext, useContext, useState, useEffect, useCallback } from 'rea
 
 const LangContext = createContext({ lang: 'en', setLang: () => {}, t: (x) => x, tk: (k) => k })
 
-// UI dictionary — everything chrome-level (buttons, labels, headings).
+// UI dictionary - everything chrome-level (buttons, labels, headings).
 const DICT = {
   // transport / controls
   play: { en: 'Play', de: 'Abspielen' },
@@ -86,9 +86,9 @@ const DICT = {
   matchFound: { en: 'Match found at index', de: 'Treffer gefunden an Index' },
 
   // misc
-  notImplemented: { en: 'This module hasn’t been implemented yet.', de: 'Dieses Modul ist noch nicht umgesetzt.' },
-  loading: { en: 'Loading…', de: 'Lädt…' },
-  searchAlgos: { en: 'Search algorithms…', de: 'Algorithmen suchen…' },
+  notImplemented: { en: 'This module has not been implemented yet.', de: 'Dieses Modul ist noch nicht umgesetzt.' },
+  loading: { en: 'Loading...', de: 'Lädt...' },
+  searchAlgos: { en: 'Search algorithms...', de: 'Algorithmen suchen...' },
   interactive: { en: 'interactive', de: 'interaktiv' },
   algorithms: { en: 'algorithms', de: 'Algorithmen' },
   categories: { en: 'categories', de: 'Kategorien' },

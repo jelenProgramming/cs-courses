@@ -19,7 +19,7 @@ export default function Page({ content }) {
     <div>
       <div className="panel">
         <div style={{ textAlign: 'center', marginBottom: 10, fontFamily: 'var(--mono)', fontSize: 13, color: 'var(--text)' }}>
-          sin(x) ≈ x − x³/3! + x⁵/5! − x⁷/7! + …
+          sin(x) ≈ x - x³/3! + x⁵/5! - x⁷/7! + ...
         </div>
         <div className="viz-stage" style={{ alignItems: 'center', minHeight: H + 10 }}>
           <svg viewBox={`0 0 ${W} ${H}`} style={{ maxWidth: W, width: '100%' }}>

@@ -4,7 +4,7 @@
  * Each function takes an array and returns a list of steps. A step is:
  *   { array, compare:[i,j], swap:[i,j], sorted:[...indices], pivot, range, count, message }
  * `message` is an { en, de } pair so the narration is bilingual. No animation
- * logic lives here — just the algorithm, emitting a snapshot when something
+ * logic lives here - just the algorithm, emitting a snapshot when something
  * interesting happens.
  */
 
@@ -19,14 +19,14 @@ export function bubbleSort(input) {
       steps.push(snap(a, { compare: [j, j + 1], sorted: [...sorted] }, { en: `Compare a[${j}]=${a[j]} and a[${j + 1}]=${a[j + 1]}.`, de: `Vergleiche a[${j}]=${a[j]} und a[${j + 1}]=${a[j + 1]}.` }))
       if (a[j] > a[j + 1]) {
         ;[a[j], a[j + 1]] = [a[j + 1], a[j]]
-        steps.push(snap(a, { swap: [j, j + 1], sorted: [...sorted] }, { en: `a[${j}] &gt; a[${j + 1}] — swap them.`, de: `a[${j}] &gt; a[${j + 1}] — tauschen.` }))
+        steps.push(snap(a, { swap: [j, j + 1], sorted: [...sorted] }, { en: `a[${j}] &gt; a[${j + 1}] - swap them.`, de: `a[${j}] &gt; a[${j + 1}] - tauschen.` }))
       }
     }
     sorted.unshift(n - 1 - i)
     steps.push(snap(a, { sorted: [...sorted] }, { en: `Largest unsorted value bubbled to position ${n - 1 - i}; it's now fixed.`, de: `Größter unsortierter Wert ist an Position ${n - 1 - i} aufgestiegen; jetzt fest.` }))
   }
   sorted.unshift(0)
-  steps.push(snap(a, { sorted: [...sorted] }, { en: 'Done — the array is sorted.', de: 'Fertig — das Array ist sortiert.' }))
+  steps.push(snap(a, { sorted: [...sorted] }, { en: 'Done - the array is sorted.', de: 'Fertig - das Array ist sortiert.' }))
   return steps
 }
 
@@ -38,13 +38,13 @@ export function selectionSort(input) {
     steps.push(snap(a, { pivot: i, sorted: [...sorted], compare: [min] }, { en: `Assume a[${i}]=${a[i]} is the minimum of the rest.`, de: `Annahme: a[${i}]=${a[i]} ist das Minimum des Rests.` }))
     for (let j = i + 1; j < n; j++) {
       steps.push(snap(a, { pivot: min, compare: [j], sorted: [...sorted] }, { en: `Is a[${j}]=${a[j]} &lt; current min a[${min}]=${a[min]}?`, de: `Ist a[${j}]=${a[j]} &lt; aktuelles Min a[${min}]=${a[min]}?` }))
-      if (a[j] < a[min]) { min = j; steps.push(snap(a, { pivot: min, sorted: [...sorted] }, { en: `Yes — new minimum is a[${j}]=${a[j]}.`, de: `Ja — neues Minimum ist a[${j}]=${a[j]}.` })) }
+      if (a[j] < a[min]) { min = j; steps.push(snap(a, { pivot: min, sorted: [...sorted] }, { en: `Yes - new minimum is a[${j}]=${a[j]}.`, de: `Ja - neues Minimum ist a[${j}]=${a[j]}.` })) }
     }
     if (min !== i) { ;[a[i], a[min]] = [a[min], a[i]]; steps.push(snap(a, { swap: [i, min], sorted: [...sorted] }, { en: `Swap the minimum into position ${i}.`, de: `Minimum auf Position ${i} tauschen.` })) }
     sorted.push(i)
   }
   sorted.push(n - 1)
-  steps.push(snap(a, { sorted: [...sorted] }, { en: 'Done — the array is sorted.', de: 'Fertig — das Array ist sortiert.' }))
+  steps.push(snap(a, { sorted: [...sorted] }, { en: 'Done - the array is sorted.', de: 'Fertig - das Array ist sortiert.' }))
   return steps
 }
 
@@ -55,13 +55,13 @@ export function insertionSort(input) {
     const key = a[i]; let j = i - 1
     steps.push(snap(a, { pivot: i, sorted: seq(i) }, { en: `Take key = a[${i}] = ${key}. Shift larger values right.`, de: `Schlüssel = a[${i}] = ${key}. Größere Werte nach rechts schieben.` }))
     while (j >= 0 && a[j] > key) {
-      steps.push(snap(a, { compare: [j], pivot: j + 1, sorted: seq(i) }, { en: `a[${j}]=${a[j]} &gt; ${key} — shift it right.`, de: `a[${j}]=${a[j]} &gt; ${key} — nach rechts schieben.` }))
+      steps.push(snap(a, { compare: [j], pivot: j + 1, sorted: seq(i) }, { en: `a[${j}]=${a[j]} &gt; ${key} - shift it right.`, de: `a[${j}]=${a[j]} &gt; ${key} - nach rechts schieben.` }))
       a[j + 1] = a[j]; j--
     }
     a[j + 1] = key
     steps.push(snap(a, { swap: [j + 1], sorted: seq(i + 1) }, { en: `Insert key ${key} at position ${j + 1}.`, de: `Schlüssel ${key} an Position ${j + 1} einfügen.` }))
   }
-  steps.push(snap(a, { sorted: seq(n) }, { en: 'Done — the array is sorted.', de: 'Fertig — das Array ist sortiert.' }))
+  steps.push(snap(a, { sorted: seq(n) }, { en: 'Done - the array is sorted.', de: 'Fertig - das Array ist sortiert.' }))
   return steps
 }
 
@@ -71,9 +71,9 @@ export function mergeSort(input) {
   function merge(lo, mid, hi) {
     const left = a.slice(lo, mid + 1); const right = a.slice(mid + 1, hi + 1)
     let i = 0, j = 0, k = lo
-    steps.push(snap(a, { range: [lo, hi] }, { en: `Merge sorted halves [${lo}…${mid}] and [${mid + 1}…${hi}].`, de: `Sortierte Hälften [${lo}…${mid}] und [${mid + 1}…${hi}] mischen.` }))
+    steps.push(snap(a, { range: [lo, hi] }, { en: `Merge sorted halves [${lo}...${mid}] and [${mid + 1}...${hi}].`, de: `Sortierte Hälften [${lo}...${mid}] und [${mid + 1}...${hi}] mischen.` }))
     while (i < left.length && j < right.length) {
-      steps.push(snap(a, { range: [lo, hi], compare: [lo + i, mid + 1 + j] }, { en: `Compare ${left[i]} and ${right[j]} — take the smaller.`, de: `${left[i]} und ${right[j]} vergleichen — den kleineren nehmen.` }))
+      steps.push(snap(a, { range: [lo, hi], compare: [lo + i, mid + 1 + j] }, { en: `Compare ${left[i]} and ${right[j]} - take the smaller.`, de: `${left[i]} und ${right[j]} vergleichen - den kleineren nehmen.` }))
       if (left[i] <= right[j]) { a[k] = left[i]; i++ } else { a[k] = right[j]; j++ }
       steps.push(snap(a, { range: [lo, hi], swap: [k] }, { en: `Place ${a[k]} at position ${k}.`, de: `${a[k]} an Position ${k} setzen.` })); k++
     }
@@ -83,11 +83,11 @@ export function mergeSort(input) {
   function sort(lo, hi) {
     if (lo >= hi) return
     const mid = Math.floor((lo + hi) / 2)
-    steps.push(snap(a, { range: [lo, hi] }, { en: `Split [${lo}…${hi}] at ${mid}.`, de: `[${lo}…${hi}] bei ${mid} teilen.` }))
+    steps.push(snap(a, { range: [lo, hi] }, { en: `Split [${lo}...${hi}] at ${mid}.`, de: `[${lo}...${hi}] bei ${mid} teilen.` }))
     sort(lo, mid); sort(mid + 1, hi); merge(lo, mid, hi)
   }
   sort(0, n - 1)
-  steps.push(snap(a, { sorted: seq(n) }, { en: 'Done — the array is sorted.', de: 'Fertig — das Array ist sortiert.' }))
+  steps.push(snap(a, { sorted: seq(n) }, { en: 'Done - the array is sorted.', de: 'Fertig - das Array ist sortiert.' }))
   return steps
 }
 
@@ -102,7 +102,7 @@ export function quickSort(input) {
       steps.push(snap(a, { pivot: hi, compare: [j], range: [lo, hi] }, { en: `Is a[${j}]=${a[j]} ≤ pivot ${pivot}?`, de: `Ist a[${j}]=${a[j]} ≤ Pivot ${pivot}?` }))
       if (a[j] <= pivot) {
         i++
-        if (i !== j) { ;[a[i], a[j]] = [a[j], a[i]]; steps.push(snap(a, { pivot: hi, swap: [i, j], range: [lo, hi] }, { en: `Yes — swap a[${i}] and a[${j}].`, de: `Ja — a[${i}] und a[${j}] tauschen.` })) }
+        if (i !== j) { ;[a[i], a[j]] = [a[j], a[i]]; steps.push(snap(a, { pivot: hi, swap: [i, j], range: [lo, hi] }, { en: `Yes - swap a[${i}] and a[${j}].`, de: `Ja - a[${i}] und a[${j}] tauschen.` })) }
       }
     }
     ;[a[i + 1], a[hi]] = [a[hi], a[i + 1]]
@@ -115,7 +115,7 @@ export function quickSort(input) {
     const p = partition(lo, hi); sort(lo, p - 1); sort(p + 1, hi)
   }
   sort(0, n - 1)
-  steps.push(snap(a, { sorted: seq(n) }, { en: 'Done — the array is sorted.', de: 'Fertig — das Array ist sortiert.' }))
+  steps.push(snap(a, { sorted: seq(n) }, { en: 'Done - the array is sorted.', de: 'Fertig - das Array ist sortiert.' }))
   return steps
 }
 
@@ -137,17 +137,17 @@ export function heapSort(input) {
     heapify(i, 0)
   }
   sorted.unshift(0)
-  steps.push(snap(a, { sorted: [...sorted] }, { en: 'Done — the array is sorted.', de: 'Fertig — das Array ist sortiert.' }))
+  steps.push(snap(a, { sorted: [...sorted] }, { en: 'Done - the array is sorted.', de: 'Fertig - das Array ist sortiert.' }))
   return steps
 }
 
 export function countingSort(input) {
   const a = [...input]; const steps = []; const n = a.length; const max = Math.max(...a)
   const count = new Array(max + 1).fill(0)
-  steps.push(snap(a, { count: [...count] }, { en: `Start. Counting sort tallies how many times each value 0…${max} appears — no comparisons.`, de: `Start. Counting Sort zählt, wie oft jeder Wert 0…${max} vorkommt — ohne Vergleiche.` }))
+  steps.push(snap(a, { count: [...count] }, { en: `Start. Counting sort tallies how many times each value 0...${max} appears - no comparisons.`, de: `Start. Counting Sort zählt, wie oft jeder Wert 0...${max} vorkommt - ohne Vergleiche.` }))
   for (let i = 0; i < n; i++) {
     count[a[i]]++
-    steps.push(snap(a, { compare: [i], count: [...count], countHL: a[i] }, { en: `See a[${i}]=${a[i]} — increment count[${a[i]}] to ${count[a[i]]}.`, de: `a[${i}]=${a[i]} gesehen — count[${a[i]}] auf ${count[a[i]]} erhöhen.` }))
+    steps.push(snap(a, { compare: [i], count: [...count], countHL: a[i] }, { en: `See a[${i}]=${a[i]} - increment count[${a[i]}] to ${count[a[i]]}.`, de: `a[${i}]=${a[i]} gesehen - count[${a[i]}] auf ${count[a[i]]} erhöhen.` }))
   }
   steps.push(snap(a, { count: [...count] }, { en: 'All counts tallied. Now write the values back in order.', de: 'Alle Zählungen fertig. Jetzt die Werte der Reihe nach zurückschreiben.' }))
   let k = 0
@@ -158,7 +158,7 @@ export function countingSort(input) {
       count[val]--; k++
     }
   }
-  steps.push(snap(a, { sorted: seq(n), count: [...count] }, { en: 'Done — sorted in O(n + k) without a single comparison.', de: 'Fertig — in O(n + k) sortiert, ohne einen einzigen Vergleich.' }))
+  steps.push(snap(a, { sorted: seq(n), count: [...count] }, { en: 'Done - sorted in O(n + k) without a single comparison.', de: 'Fertig - in O(n + k) sortiert, ohne einen einzigen Vergleich.' }))
   return steps
 }
 
@@ -179,7 +179,7 @@ export function radixSort(input) {
     for (let i = 0; i < n; i++) a[i] = output[i]
     steps.push(snap(a, {}, { en: `Array after sorting by the ${dn.en} digit.`, de: `Array nach Sortierung der ${dn.de}-Ziffer.` })); exp *= 10
   }
-  steps.push(snap(a, { sorted: seq(n) }, { en: 'Done — the array is sorted.', de: 'Fertig — das Array ist sortiert.' }))
+  steps.push(snap(a, { sorted: seq(n) }, { en: 'Done - the array is sorted.', de: 'Fertig - das Array ist sortiert.' }))
   return steps
 }
 

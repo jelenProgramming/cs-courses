@@ -130,7 +130,7 @@ export const vizExtraContent = {
       { en: 'LZ77: draw a vertical bar splitting "already seen" (search buffer) from "to come" (lookahead). For each step, find the longest lookahead prefix that appears in the search buffer; write (how far back, how long, next char); slide the bar right by length+1.', de: 'LZ77: einen Strich zwischen „gesehen" und „kommt" zeichnen. Den laengsten Lookahead-Praefix im Suchpuffer finden; (Abstand, Laenge, naechstes Zeichen) notieren; den Strich um Laenge+1 verschieben.' },
     ],
     complexity: [
-      { case: { en: 'Encode (naive)', de: 'Kodieren (naiv)' }, time: 'O(n·w)', space: 'O(w)', cls: 'avg', note: { en: 'w = window size; hashing speeds match-finding. Decoding is O(n) and trivially fast.', de: 'w = Fenstergroesse; Hashing beschleunigt die Suche. Dekodieren ist O(n).' } },
+      { case: { en: 'Encode (naive)', de: 'Kodieren (naiv)' }, time: 'O(n∗w)', space: 'O(w)', cls: 'avg', note: { en: 'w = window size; hashing speeds match-finding. Decoding is O(n) and trivially fast.', de: 'w = Fenstergroesse; Hashing beschleunigt die Suche. Dekodieren ist O(n).' } },
     ],
     pitfalls: [
       { en: 'A bigger window finds more matches (better ratio) but slows encoding - the core LZ77 trade-off.', de: 'Ein groesseres Fenster findet mehr Treffer, verlangsamt aber - der LZ77-Kompromiss.' },
@@ -202,7 +202,7 @@ export const vizExtraContent = {
     when: { en: 'Historical interest and teaching polyalphabetic ciphers. The idea (a repeating key stream) lives on; the cipher itself is broken.', de: 'Historisches Interesse und Lehre polyalphabetischer Chiffren. Die Idee lebt weiter; die Chiffre ist gebrochen.' },
     how: [
       { en: 'Repeat the keyword across the message.', de: 'Das Schluesselwort ueber die Nachricht wiederholen.' },
-      { en: 'Each letter is Caesar-shifted by its keyword letter (A=0, B=1, …).', de: 'Jeder Buchstabe wird um seinen Schluesselbuchstaben verschoben.' },
+      { en: 'Each letter is Caesar-shifted by its keyword letter (A=0, B=1, ...).', de: 'Jeder Buchstabe wird um seinen Schluesselbuchstaben verschoben.' },
       { en: 'The same plaintext letter encrypts differently at different positions - hiding simple frequencies.', de: 'Derselbe Klarbuchstabe wird je Position anders verschluesselt.' },
     ],
     complexity: [
@@ -256,7 +256,7 @@ export const vizExtraContent = {
   'number-systems': {
     when: { en: 'Reading memory dumps, colors (#FF8800), permissions, bit masks, and understanding how all data is ultimately binary. Foundational for systems work.', de: 'Speicherabbilder lesen, Farben (#FF8800), Bitmasken, und verstehen, dass alle Daten binaer sind.' },
     how: [
-      { en: 'Binary: base 2, each digit a power of two (…8,4,2,1).', de: 'Binaer: Basis 2, jede Stelle eine Zweierpotenz.' },
+      { en: 'Binary: base 2, each digit a power of two (...8,4,2,1).', de: 'Binaer: Basis 2, jede Stelle eine Zweierpotenz.' },
       { en: 'Hex: base 16 (0-9, A-F); one hex digit = exactly 4 bits, so two hex digits = one byte.', de: 'Hex: Basis 16; eine Hex-Ziffer = 4 Bits, zwei = ein Byte.' },
       { en: 'To convert decimal→binary, repeatedly divide by 2 and read remainders bottom-up.', de: 'Dezimal→binaer: wiederholt durch 2 teilen, Reste von unten lesen.' },
     ],
@@ -275,7 +275,7 @@ export const vizExtraContent = {
       { en: 'A truth table lists the output for all 2ⁿ input combinations.', de: 'Eine Wahrheitstabelle listet die Ausgabe aller 2ⁿ Kombinationen.' },
     ],
     complexity: [
-      { case: { en: 'Truth table', de: 'Wahrheitstabelle' }, time: '2^n rows', space: '—', cls: 'avg', note: { en: 'NAND and NOR are "universal" - any boolean function can be built from just one of them.', de: 'NAND und NOR sind „universell" - jede boolesche Funktion baubar aus nur einem.' } },
+      { case: { en: 'Truth table', de: 'Wahrheitstabelle' }, time: '2^n rows', space: '-', cls: 'avg', note: { en: 'NAND and NOR are "universal" - any boolean function can be built from just one of them.', de: 'NAND und NOR sind „universell" - jede boolesche Funktion baubar aus nur einem.' } },
     ],
     pitfalls: [
       { en: 'XOR (differ) vs OR (at least one) is the pair people confuse - XOR is exclusive.', de: 'XOR (verschieden) vs OR (mindestens eines) wird verwechselt - XOR ist exklusiv.' },
@@ -289,7 +289,7 @@ export const vizExtraContent = {
       { en: 'It halts in an accept/reject state, or runs forever - which is itself undecidable (the halting problem).', de: 'Sie haelt im Akzeptier-/Ablehnzustand oder laeuft ewig - selbst unentscheidbar (Halteproblem).' },
     ],
     complexity: [
-      { case: { en: 'Model', de: 'Modell' }, time: '—', space: '—', cls: 'best', note: { en: 'Equivalent in power to any modern computer. The halting problem proves some questions are uncomputable.', de: 'Gleich maechtig wie jeder moderne Computer. Das Halteproblem beweist Unberechenbarkeit.' } },
+      { case: { en: 'Model', de: 'Modell' }, time: '-', space: '-', cls: 'best', note: { en: 'Equivalent in power to any modern computer. The halting problem proves some questions are uncomputable.', de: 'Gleich maechtig wie jeder moderne Computer. Das Halteproblem beweist Unberechenbarkeit.' } },
     ],
     pitfalls: [
       { en: 'It is a thought experiment, not a practical machine - its value is defining the limits of computation.', de: 'Es ist ein Gedankenexperiment, keine praktische Maschine - sein Wert ist die Grenze der Berechenbarkeit.' },
@@ -298,7 +298,7 @@ export const vizExtraContent = {
   'http': {
     when: { en: 'Every web request and REST API. Knowing methods and status codes is daily bread for any web developer.', de: 'Jede Web-Anfrage und REST-API. Methoden und Statuscodes sind taeglich Brot.' },
     how: [
-      { en: 'A request has a method (GET/POST/…), a path, headers, and an optional body.', de: 'Eine Anfrage hat Methode, Pfad, Header und optional einen Body.' },
+      { en: 'A request has a method (GET/POST/...), a path, headers, and an optional body.', de: 'Eine Anfrage hat Methode, Pfad, Header und optional einen Body.' },
       { en: 'A response has a status code, headers, and a body.', de: 'Eine Antwort hat Statuscode, Header und Body.' },
       { en: 'Status families: 2xx success, 3xx redirect, 4xx client error, 5xx server error.', de: 'Statusfamilien: 2xx Erfolg, 3xx Umleitung, 4xx Client-Fehler, 5xx Server-Fehler.' },
     ],
@@ -314,7 +314,7 @@ export const vizExtraContent = {
       { en: 'ACK: client acknowledges; the connection is established and data flows reliably (with retransmission of lost packets).', de: 'ACK: Client bestaetigt; die Verbindung steht und Daten fliessen zuverlaessig.' },
     ],
     complexity: [
-      { case: { en: 'Handshake', de: 'Handshake' }, time: '1 round trip', space: '—', cls: 'avg', note: { en: 'This setup cost is why TCP has latency; UDP skips it (no handshake, no reliability) for speed.', de: 'Diese Aufbaukosten verursachen Latenz; UDP ueberspringt sie fuer Tempo.' } },
+      { case: { en: 'Handshake', de: 'Handshake' }, time: '1 round trip', space: '-', cls: 'avg', note: { en: 'This setup cost is why TCP has latency; UDP skips it (no handshake, no reliability) for speed.', de: 'Diese Aufbaukosten verursachen Latenz; UDP ueberspringt sie fuer Tempo.' } },
     ],
     pitfalls: [
       { en: 'TCP guarantees order and delivery; UDP does not. Choosing TCP for real-time video adds harmful latency - match the protocol to the need.', de: 'TCP garantiert Reihenfolge und Zustellung; UDP nicht. TCP fuer Echtzeitvideo schadet.' },

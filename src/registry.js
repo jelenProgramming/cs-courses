@@ -147,7 +147,7 @@ const modules = import.meta.glob('./algorithms/**/*.jsx')
 
 // Cache the lazy() wrapper per slug. Without this, loadComponent() built a fresh
 // lazy component on every AlgoPage render, so React Suspense re-triggered the
-// "Loading…" fallback on *every* navigation even when the chunk was already in
+// "Loading..." fallback on *every* navigation even when the chunk was already in
 // memory. Memoizing means a revisited (or prefetched) page resolves instantly.
 const lazyCache = new Map()
 const importerFor = (slug) => {

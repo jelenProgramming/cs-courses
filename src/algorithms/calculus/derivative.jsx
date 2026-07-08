@@ -23,7 +23,7 @@ export default function Page({ content }) {
     <div>
       <div className="panel">
         <div style={{ textAlign: 'center', marginBottom: 10, fontFamily: 'var(--mono)', fontSize: 14, color: 'var(--text)' }}>
-          f'(x₀) = lim<sub>h→0</sub> [f(x₀+h) − f(x₀)] / h
+          f'(x₀) = lim<sub>h→0</sub> [f(x₀+h) - f(x₀)] / h
         </div>
         <div className="viz-stage" style={{ alignItems: 'center', minHeight: H + 10 }}>
           <svg viewBox={`0 0 ${W} ${H}`} style={{ maxWidth: W, width: '100%' }}>

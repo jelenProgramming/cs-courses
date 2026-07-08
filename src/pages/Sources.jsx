@@ -83,8 +83,8 @@ export default function Sources() {
       <div className="page-head">
         <h1 className="page-title">{t({ en: 'Sources & References', de: 'Quellen & Referenzen' })}</h1>
         <p className="page-desc">{t({
-          en: 'The reference literature published for each first-year course of the Computer Science (RIT) program at FERI, University of Maribor. Listed for attribution and further reading. All explanations, code and visualizations in this project are original — algorithms and mathematical facts themselves are not copyrightable.',
-          de: 'Die für jeden Erstsemesterkurs des Informatikstudiums (RIT) an der FERI, Universität Maribor, veröffentlichte Referenzliteratur. Aufgeführt zur Quellenangabe und Vertiefung. Alle Erklärungen, der Code und die Visualisierungen sind eigenständig — Algorithmen und mathematische Fakten selbst sind nicht urheberrechtlich geschützt.',
+          en: 'The reference literature published for each first-year course of the Computer Science (RIT) program at FERI, University of Maribor. Listed for attribution and further reading. All explanations, code and visualizations in this project are original - algorithms and mathematical facts themselves are not copyrightable.',
+          de: 'Die für jeden Erstsemesterkurs des Informatikstudiums (RIT) an der FERI, Universität Maribor, veröffentlichte Referenzliteratur. Aufgeführt zur Quellenangabe und Vertiefung. Alle Erklärungen, der Code und die Visualisierungen sind eigenständig - Algorithmen und mathematische Fakten selbst sind nicht urheberrechtlich geschützt.',
         })}</p>
       </div>
 
@@ -99,8 +99,8 @@ export default function Sources() {
 
       <div className="note" style={{ marginTop: 20 }}>
         {t({
-          en: 'Named theorems are stated on the relevant topic pages — e.g. the Dirichlet / pigeonhole principle, inclusion-exclusion, the binomial theorem, and the inference rules (Modus ponens, Modus tollens, disjunctive & hypothetical syllogism) — with the curriculum\'s Slovenian terminology preserved where it aids exam recognition.',
-          de: 'Benannte Sätze stehen auf den jeweiligen Themenseiten — z.B. das Dirichlet- / Schubfachprinzip, Inklusion-Exklusion, der binomische Satz und die Schlussregeln (Modus ponens, Modus tollens, disjunktiver & hypothetischer Syllogismus).',
+          en: 'Named theorems are stated on the relevant topic pages - e.g. the Dirichlet / pigeonhole principle, inclusion-exclusion, the binomial theorem, and the inference rules (Modus ponens, Modus tollens, disjunctive & hypothetical syllogism) - with the curriculum\'s Slovenian terminology preserved where it aids exam recognition.',
+          de: 'Benannte Sätze stehen auf den jeweiligen Themenseiten - z.B. das Dirichlet- / Schubfachprinzip, Inklusion-Exklusion, der binomische Satz und die Schlussregeln (Modus ponens, Modus tollens, disjunktiver & hypothetischer Syllogismus).',
         })}
       </div>
     </div>

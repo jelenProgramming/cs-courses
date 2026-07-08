@@ -3,7 +3,7 @@
 const cx = (c) => c
 export const treesContent = {
   'bst': {
-    tldr: { en: 'A tree where every left child &lt; parent &lt; every right child. Search, insert and delete are all <strong>O(h)</strong> where h is the height — <strong>O(log n) if balanced, O(n) if it degenerates into a list</strong>. That gap is the whole story.', de: 'Ein Baum, in dem jedes linke Kind &lt; Elter &lt; jedes rechte Kind. Suchen, Einfuegen und Loeschen sind alle <strong>O(h)</strong>, wobei h die Hoehe ist — <strong>O(log n) wenn balanciert, O(n) wenn er zu einer Liste entartet</strong>. Diese Luecke ist der Kern.' },
+    tldr: { en: 'A tree where every left child &lt; parent &lt; every right child. Search, insert and delete are all <strong>O(h)</strong> where h is the height - <strong>O(log n) if balanced, O(n) if it degenerates into a list</strong>. That gap is the whole story.', de: 'Ein Baum, in dem jedes linke Kind &lt; Elter &lt; jedes rechte Kind. Suchen, Einfuegen und Loeschen sind alle <strong>O(h)</strong>, wobei h die Hoehe ist - <strong>O(log n) wenn balanciert, O(n) wenn er zu einer Liste entartet</strong>. Diese Luecke ist der Kern.' },
     when: { en: 'When you need a sorted, dynamic collection with fast lookup, insertion and ordered traversal. In practice use a self-balancing variant (AVL, red-black) so height stays O(log n). A plain BST is the teaching version.', de: 'Wenn du eine sortierte, dynamische Sammlung mit schnellem Nachschlagen, Einfuegen und geordnetem Durchlauf brauchst. In der Praxis eine selbstbalancierende Variante (AVL, Rot-Schwarz), damit die Hoehe O(log n) bleibt.' },
     how: [
       { en: 'Search: start at the root, go left if the target is smaller, right if larger, until found or you hit null.', de: 'Suche: an der Wurzel starten, bei kleinerem Ziel nach links, bei groesserem nach rechts, bis gefunden oder null.' },
@@ -31,35 +31,35 @@ Node* search(Node* root, int k) {
       { case: { en: 'Search/Insert/Delete - worst', de: 'Suchen/Einf./Loeschen - schlecht.' }, time: 'O(n)', space: 'O(n)', cls: 'worst', note: { en: 'Worst case is a degenerate tree (insert sorted data into a plain BST → a linked list). Self-balancing trees guarantee O(log n).', de: 'Schlechtester Fall ist ein entarteter Baum (sortierte Daten in einen einfachen BST → eine verkettete Liste). Selbstbalancierende Baeume garantieren O(log n).' } },
     ],
     pitfalls: [
-      { en: '<strong>Inserting already-sorted data builds a linked list</strong> (height = n) — the classic worst-case question.', de: '<strong>Sortierte Daten einzufuegen baut eine verkettete Liste</strong> (Hoehe = n) — die klassische Worst-Case-Frage.' },
-      { en: 'Delete with two children: replace with in-order successor (smallest in right subtree) or predecessor — know the procedure.', de: 'Loeschen mit zwei Kindern: durch In-Order-Nachfolger (kleinster im rechten Teilbaum) oder Vorgaenger ersetzen.' },
+      { en: '<strong>Inserting already-sorted data builds a linked list</strong> (height = n) - the classic worst-case question.', de: '<strong>Sortierte Daten einzufuegen baut eine verkettete Liste</strong> (Hoehe = n) - die klassische Worst-Case-Frage.' },
+      { en: 'Delete with two children: replace with in-order successor (smallest in right subtree) or predecessor - know the procedure.', de: 'Loeschen mit zwei Kindern: durch In-Order-Nachfolger (kleinster im rechten Teilbaum) oder Vorgaenger ersetzen.' },
     ],
   },
   'binary-heap': {
     tldr: { en: 'A complete binary tree kept in an array where every parent is ≤ (min-heap) or ≥ (max-heap) its children. Gives <strong>O(1) peek</strong> at the min/max and <strong>O(log n) insert and extract</strong>. The engine behind priority queues and heapsort.', de: 'Ein vollstaendiger Binaerbaum in einem Array, in dem jeder Elter ≤ (Min-Heap) oder ≥ (Max-Heap) seiner Kinder ist. Bietet <strong>O(1)-Zugriff</strong> auf Min/Max und <strong>O(log n) Einfuegen und Entnehmen</strong>. Die Basis von Prioritaetswarteschlangen und Heapsort.' },
     when: { en: 'Priority queues, scheduling, Dijkstra/Prim, finding the k largest items, and heapsort. Use when you repeatedly need the smallest (or largest) element of a changing set.', de: 'Prioritaetswarteschlangen, Scheduling, Dijkstra/Prim, die k groessten Elemente und Heapsort. Gut, wenn du wiederholt das kleinste (oder groesste) Element brauchst.' },
     how: [
-      { en: 'Store as an array: node i has children 2i+1 and 2i+2, parent (i−1)/2. No pointers needed.', de: 'Als Array speichern: Knoten i hat Kinder 2i+1 und 2i+2, Elter (i−1)/2. Keine Zeiger noetig.' },
+      { en: 'Store as an array: node i has children 2i+1 and 2i+2, parent (i-1)/2. No pointers needed.', de: 'Als Array speichern: Knoten i hat Kinder 2i+1 und 2i+2, Elter (i-1)/2. Keine Zeiger noetig.' },
       { en: 'Insert: put the new value at the end, then "sift up" while it is smaller than its parent.', de: 'Einfuegen: neuen Wert ans Ende, dann „nach oben sieben", solange er kleiner als sein Elter ist.' },
       { en: 'Extract-min: take the root, move the last element to the root, then "sift down".', de: 'Min entnehmen: Wurzel nehmen, letztes Element zur Wurzel, dann „nach unten sieben".' },
     ],
     paper: [
-      { en: 'Write the heap as an array. To find children of index i, compute 2i+1 and 2i+2; for the parent, (i−1)/2 rounded down.', de: 'Den Heap als Array schreiben. Kinder von Index i: 2i+1 und 2i+2; Elter: (i−1)/2 abgerundet.' },
+      { en: 'Write the heap as an array. To find children of index i, compute 2i+1 and 2i+2; for the parent, (i-1)/2 rounded down.', de: 'Den Heap als Array schreiben. Kinder von Index i: 2i+1 und 2i+2; Elter: (i-1)/2 abgerundet.' },
       { en: 'Insert: append at the end, then compare with the parent and swap upward until the parent is larger (max-heap).', de: 'Einfuegen: hinten anhaengen, dann mit dem Elter vergleichen und nach oben tauschen, bis der Elter groesser ist (Max-Heap).' },
       { en: 'Extract-max: write down the root, replace it with the last element, then sift down (swap with the larger child) until settled.', de: 'Max entnehmen: Wurzel notieren, durch das letzte Element ersetzen, dann nach unten sieben (mit dem groesseren Kind tauschen).' },
     ],
     complexity: [
       { case: { en: 'Peek (find min/max)', de: 'Zugriff (Min/Max)' }, time: 'O(1)', space: 'O(n)', cls: 'best' },
       { case: { en: 'Insert / Extract', de: 'Einfuegen / Entnehmen' }, time: 'O(log n)', space: 'O(n)', cls: 'avg' },
-      { case: { en: 'Build heap from array', de: 'Heap aus Array bauen' }, time: 'O(n)', space: 'O(1)', cls: 'best', note: { en: 'Building a heap is O(n), not O(n log n) — a favourite exam subtlety. Search for an arbitrary value is still O(n).', de: 'Einen Heap zu bauen ist O(n), nicht O(n log n) — eine beliebte Pruefungsfeinheit. Suche nach beliebigem Wert ist weiterhin O(n).' } },
+      { case: { en: 'Build heap from array', de: 'Heap aus Array bauen' }, time: 'O(n)', space: 'O(1)', cls: 'best', note: { en: 'Building a heap is O(n), not O(n log n) - a favourite exam subtlety. Search for an arbitrary value is still O(n).', de: 'Einen Heap zu bauen ist O(n), nicht O(n log n) - eine beliebte Pruefungsfeinheit. Suche nach beliebigem Wert ist weiterhin O(n).' } },
     ],
     pitfalls: [
-      { en: 'A heap is <strong>not</strong> sorted and <strong>not</strong> a BST — only the parent/child order holds. Searching it is O(n).', de: 'Ein Heap ist <strong>nicht</strong> sortiert und <strong>kein</strong> BST — nur die Elter/Kind-Ordnung gilt. Suche ist O(n).' },
-      { en: 'Index math: children 2i+1, 2i+2; parent (i−1)/2 (0-based). Off-by-one here is a classic bug.', de: 'Index-Mathematik: Kinder 2i+1, 2i+2; Elter (i−1)/2 (0-basiert). Off-by-one ist ein klassischer Fehler.' },
+      { en: 'A heap is <strong>not</strong> sorted and <strong>not</strong> a BST - only the parent/child order holds. Searching it is O(n).', de: 'Ein Heap ist <strong>nicht</strong> sortiert und <strong>kein</strong> BST - nur die Elter/Kind-Ordnung gilt. Suche ist O(n).' },
+      { en: 'Index math: children 2i+1, 2i+2; parent (i-1)/2 (0-based). Off-by-one here is a classic bug.', de: 'Index-Mathematik: Kinder 2i+1, 2i+2; Elter (i-1)/2 (0-basiert). Off-by-one ist ein klassischer Fehler.' },
     ],
   },
   'trie': {
-    tldr: { en: 'A tree where each edge is a character, so a word is a path from the root. Lookup and insert are <strong>O(m)</strong> in the word length m — <strong>independent of how many words are stored</strong>. Trades memory for blazing prefix queries.', de: 'Ein Baum, in dem jede Kante ein Zeichen ist, sodass ein Wort ein Pfad von der Wurzel ist. Nachschlagen und Einfuegen sind <strong>O(m)</strong> in der Wortlaenge m — <strong>unabhaengig von der Anzahl gespeicherter Woerter</strong>. Tauscht Speicher gegen blitzschnelle Praefixabfragen.' },
+    tldr: { en: 'A tree where each edge is a character, so a word is a path from the root. Lookup and insert are <strong>O(m)</strong> in the word length m - <strong>independent of how many words are stored</strong>. Trades memory for blazing prefix queries.', de: 'Ein Baum, in dem jede Kante ein Zeichen ist, sodass ein Wort ein Pfad von der Wurzel ist. Nachschlagen und Einfuegen sind <strong>O(m)</strong> in der Wortlaenge m - <strong>unabhaengig von der Anzahl gespeicherter Woerter</strong>. Tauscht Speicher gegen blitzschnelle Praefixabfragen.' },
     when: { en: 'Autocomplete, spell-checkers, IP routing tables, and any "find all words with this prefix" task. Use when you have many strings sharing prefixes.', de: 'Autovervollstaendigung, Rechtschreibpruefung, IP-Routing-Tabellen und jede „finde alle Woerter mit diesem Praefix"-Aufgabe.' },
     how: [
       { en: 'Each node has up to k children, one per possible character.', de: 'Jeder Knoten hat bis zu k Kinder, eines pro moeglichem Zeichen.' },
@@ -67,15 +67,15 @@ Node* search(Node* root, int k) {
       { en: 'Lookup/prefix: walk the characters; if any edge is missing, it is not present.', de: 'Nachschlagen/Praefix: die Zeichen ablaufen; fehlt eine Kante, ist es nicht vorhanden.' },
     ],
     complexity: [
-      { case: { en: 'Insert / Search / Prefix', de: 'Einfuegen / Suchen / Praefix' }, time: 'O(m)', space: 'O(ALPHABET·N)', cls: 'best', note: { en: 'm = length of the key. Independent of N, the number of stored words. The cost is memory: up to k pointers per node.', de: 'm = Laenge des Schluessels. Unabhaengig von N, der Anzahl Woerter. Der Preis ist Speicher: bis zu k Zeiger pro Knoten.' } },
+      { case: { en: 'Insert / Search / Prefix', de: 'Einfuegen / Suchen / Praefix' }, time: 'O(m)', space: 'O(ALPHABET∗N)', cls: 'best', note: { en: 'm = length of the key. Independent of N, the number of stored words. The cost is memory: up to k pointers per node.', de: 'm = Laenge des Schluessels. Unabhaengig von N, der Anzahl Woerter. Der Preis ist Speicher: bis zu k Zeiger pro Knoten.' } },
     ],
     pitfalls: [
-      { en: 'Time is O(m), the key length — <strong>not</strong> O(log n). This independence from N is the whole point.', de: 'Zeit ist O(m), die Schluessellaenge — <strong>nicht</strong> O(log n). Diese Unabhaengigkeit von N ist der Kern.' },
+      { en: 'Time is O(m), the key length - <strong>not</strong> O(log n). This independence from N is the whole point.', de: 'Zeit ist O(m), die Schluessellaenge - <strong>nicht</strong> O(log n). Diese Unabhaengigkeit von N ist der Kern.' },
     ],
   },
   'linked-list': {
-    tldr: { en: 'A chain of nodes where each holds a value and a pointer to the next (and, if doubly linked, the previous). <strong>O(1) insert/delete at a known position</strong>, but <strong>O(n) to find anything</strong> — the opposite trade-off to an array.', de: 'Eine Kette von Knoten, die je einen Wert und einen Zeiger auf den naechsten (und, wenn doppelt verkettet, den vorigen) halten. <strong>O(1) Einfuegen/Loeschen an bekannter Position</strong>, aber <strong>O(n), um etwas zu finden</strong> — der umgekehrte Kompromiss zum Array.' },
-    when: { en: 'When you insert/delete a lot at the ends or at a held position and rarely need random access — queues, stacks, adjacency lists, the free list in an allocator.', de: 'Wenn du viel an den Enden oder an gehaltener Position einfuegst/loeschst und selten wahlfreien Zugriff brauchst — Warteschlangen, Stapel, Adjazenzlisten.' },
+    tldr: { en: 'A chain of nodes where each holds a value and a pointer to the next (and, if doubly linked, the previous). <strong>O(1) insert/delete at a known position</strong>, but <strong>O(n) to find anything</strong> - the opposite trade-off to an array.', de: 'Eine Kette von Knoten, die je einen Wert und einen Zeiger auf den naechsten (und, wenn doppelt verkettet, den vorigen) halten. <strong>O(1) Einfuegen/Loeschen an bekannter Position</strong>, aber <strong>O(n), um etwas zu finden</strong> - der umgekehrte Kompromiss zum Array.' },
+    when: { en: 'When you insert/delete a lot at the ends or at a held position and rarely need random access - queues, stacks, adjacency lists, the free list in an allocator.', de: 'Wenn du viel an den Enden oder an gehaltener Position einfuegst/loeschst und selten wahlfreien Zugriff brauchst - Warteschlangen, Stapel, Adjazenzlisten.' },
     how: [
       { en: 'Singly linked: each node points to next; you can only walk forward.', de: 'Einfach verkettet: jeder Knoten zeigt auf next; nur vorwaerts laufbar.' },
       { en: 'Doubly linked: each node points to next and prev; you can walk both ways and delete in O(1) given the node.', de: 'Doppelt verkettet: jeder Knoten zeigt auf next und prev; in beide Richtungen laufbar, Loeschen in O(1) bei gegebenem Knoten.' },
@@ -104,7 +104,7 @@ void insertAtHead(Element*& head, Element*& tail, int value) {
     ],
   },
   'stack-queue': {
-    tldr: { en: 'Two restricted lists. A <strong>stack</strong> is LIFO (last in, first out) — push/pop at one end. A <strong>queue</strong> is FIFO (first in, first out) — add at the back, remove at the front. Both are <strong>O(1)</strong> for their operations.', de: 'Zwei eingeschraenkte Listen. Ein <strong>Stapel</strong> ist LIFO (zuletzt rein, zuerst raus) — push/pop an einem Ende. Eine <strong>Warteschlange</strong> ist FIFO (zuerst rein, zuerst raus). Beide sind <strong>O(1)</strong>.' },
+    tldr: { en: 'Two restricted lists. A <strong>stack</strong> is LIFO (last in, first out) - push/pop at one end. A <strong>queue</strong> is FIFO (first in, first out) - add at the back, remove at the front. Both are <strong>O(1)</strong> for their operations.', de: 'Zwei eingeschraenkte Listen. Ein <strong>Stapel</strong> ist LIFO (zuletzt rein, zuerst raus) - push/pop an einem Ende. Eine <strong>Warteschlange</strong> ist FIFO (zuerst rein, zuerst raus). Beide sind <strong>O(1)</strong>.' },
     when: { en: 'Stack: function calls, undo, expression parsing, DFS. Queue: scheduling, buffering, BFS. A circular queue reuses a fixed array so the front/back wrap around.', de: 'Stapel: Funktionsaufrufe, Rueckgaengig, Ausdrucksparsing, DFS. Warteschlange: Scheduling, Pufferung, BFS. Ein Ringpuffer nutzt ein festes Array wieder.' },
     how: [
       { en: 'Stack: push adds to the top, pop removes from the top. Only the top is ever visible.', de: 'Stapel: push legt oben ab, pop nimmt oben weg. Nur die Spitze ist sichtbar.' },
@@ -139,7 +139,7 @@ void insertAtHead(Element*& head, Element*& tail, int value) {
       { case: { en: 'Insert / Search / Delete - worst', de: 'Einf./Suchen/Loeschen - schlecht.' }, time: 'O(n)', space: 'O(n)', cls: 'worst', note: { en: 'Worst case = all keys collide into one bucket (bad hash function). A good hash function keeps it O(1) amortized.', de: 'Schlechtester Fall = alle Schluessel kollidieren in einem Behaelter (schlechte Hashfunktion). Eine gute Hashfunktion haelt es bei O(1) amortisiert.' } },
     ],
     pitfalls: [
-      { en: 'Hash tables have <strong>no order</strong> — you cannot iterate keys sorted. Need order? Use a balanced BST.', de: 'Hashtabellen haben <strong>keine Ordnung</strong> — Schluessel nicht sortiert durchlaufbar. Brauchst du Ordnung? Balancierter BST.' },
+      { en: 'Hash tables have <strong>no order</strong> - you cannot iterate keys sorted. Need order? Use a balanced BST.', de: 'Hashtabellen haben <strong>keine Ordnung</strong> - Schluessel nicht sortiert durchlaufbar. Brauchst du Ordnung? Balancierter BST.' },
       { en: 'Worst case is O(n); the O(1) is average and depends on a good hash + low load factor.', de: 'Schlechtester Fall ist O(n); das O(1) ist Durchschnitt und haengt von gutem Hash + niedrigem Fuellgrad ab.' },
     ],
   },

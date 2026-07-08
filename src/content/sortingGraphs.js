@@ -4,8 +4,8 @@ export const sortingGraphsContent = {
   // ============================== SORTING ==============================
   'bubble-sort': {
     tldr: {
-      en: 'Sorts by repeatedly swapping adjacent elements that are in the wrong order. <strong>Dead simple, but O(n²)</strong> — only ever used to teach the idea, never in real code. Stable.',
-      de: 'Sortiert durch wiederholtes Tauschen benachbarter Elemente in falscher Reihenfolge. <strong>Kinderleicht, aber O(n²)</strong> — nur zur Veranschaulichung, nie in echtem Code. Stabil.',
+      en: 'Sorts by repeatedly swapping adjacent elements that are in the wrong order. <strong>Dead simple, but O(n²)</strong> - only ever used to teach the idea, never in real code. Stable.',
+      de: 'Sortiert durch wiederholtes Tauschen benachbarter Elemente in falscher Reihenfolge. <strong>Kinderleicht, aber O(n²)</strong> - nur zur Veranschaulichung, nie in echtem Code. Stabil.',
     },
     when: {
       en: 'Effectively never in practice. Know it because it is the canonical first sort and a common exam warm-up. Its one redeeming property: it can detect an already-sorted array in O(n) with an early-exit flag.',
@@ -23,19 +23,19 @@ export const sortingGraphsContent = {
       { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n²)', space: 'O(1)', cls: 'worst' },
     ],
     pitfalls: [
-      { en: 'Without the early-exit flag, best case is still O(n²) — a common exam gotcha.', de: 'Ohne Früh-Abbruch-Flag ist der beste Fall weiterhin O(n²) — eine häufige Prüfungsfalle.' },
+      { en: 'Without the early-exit flag, best case is still O(n²) - a common exam gotcha.', de: 'Ohne Früh-Abbruch-Flag ist der beste Fall weiterhin O(n²) - eine häufige Prüfungsfalle.' },
       { en: 'It is <strong>stable</strong> (equal elements keep their order). Selection sort is not.', de: 'Es ist <strong>stabil</strong> (gleiche Elemente behalten ihre Reihenfolge). Selection Sort nicht.' },
     ],
   },
 
   'selection-sort': {
     tldr: {
-      en: 'Repeatedly finds the smallest remaining element and swaps it into place. <strong>Always O(n²)</strong>, even on sorted input, but does the <strong>fewest swaps</strong> of any sort (n−1). Not stable.',
-      de: 'Sucht wiederholt das kleinste verbleibende Element und tauscht es an seinen Platz. <strong>Immer O(n²)</strong>, auch bei sortierter Eingabe, aber mit den <strong>wenigsten Tauschvorgängen</strong> (n−1). Nicht stabil.',
+      en: 'Repeatedly finds the smallest remaining element and swaps it into place. <strong>Always O(n²)</strong>, even on sorted input, but does the <strong>fewest swaps</strong> of any sort (n-1). Not stable.',
+      de: 'Sucht wiederholt das kleinste verbleibende Element und tauscht es an seinen Platz. <strong>Immer O(n²)</strong>, auch bei sortierter Eingabe, aber mit den <strong>wenigsten Tauschvorgängen</strong> (n-1). Nicht stabil.',
     },
     when: {
-      en: 'When swaps are expensive (e.g. writing to flash memory) and the data set is small, because it does at most n−1 swaps total. Otherwise it is a teaching algorithm.',
-      de: 'Wenn Tauschvorgänge teuer sind (z. B. Schreiben in Flash-Speicher) und die Datenmenge klein ist, da es höchstens n−1 Tauschvorgänge macht. Sonst ein Lehralgorithmus.',
+      en: 'When swaps are expensive (e.g. writing to flash memory) and the data set is small, because it does at most n-1 swaps total. Otherwise it is a teaching algorithm.',
+      de: 'Wenn Tauschvorgänge teuer sind (z. B. Schreiben in Flash-Speicher) und die Datenmenge klein ist, da es höchstens n-1 Tauschvorgänge macht. Sonst ein Lehralgorithmus.',
     },
     how: [
       { en: 'Find the smallest element in the unsorted part.', de: 'Finde das kleinste Element im unsortierten Teil.' },
@@ -43,7 +43,7 @@ export const sortingGraphsContent = {
       { en: 'That position is now sorted; move the boundary one step right and repeat.', de: 'Diese Position ist nun sortiert; verschiebe die Grenze und wiederhole.' },
     ],
     complexity: [
-      { case: { en: 'Best', de: 'Bester' }, time: 'O(n²)', space: 'O(1)', cls: 'avg', note: { en: 'Comparisons are always n(n−1)/2 regardless of input — there is no best case.', de: 'Vergleiche sind immer n(n−1)/2, unabhängig von der Eingabe — es gibt keinen besten Fall.' } },
+      { case: { en: 'Best', de: 'Bester' }, time: 'O(n²)', space: 'O(1)', cls: 'avg', note: { en: 'Comparisons are always n(n-1)/2 regardless of input - there is no best case.', de: 'Vergleiche sind immer n(n-1)/2, unabhängig von der Eingabe - es gibt keinen besten Fall.' } },
       { case: { en: 'Average', de: 'Durchschnitt' }, time: 'O(n²)', space: 'O(1)', cls: 'avg' },
       { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n²)', space: 'O(1)', cls: 'worst' },
     ],
@@ -55,8 +55,8 @@ export const sortingGraphsContent = {
 
   'insertion-sort': {
     tldr: {
-      en: 'Builds the sorted array one element at a time, inserting each new value into its correct spot among those already sorted. <strong>O(n²) worst case but O(n) on nearly-sorted data</strong> — genuinely the best choice for small or almost-sorted arrays. Stable.',
-      de: 'Baut das sortierte Array Element für Element auf und fügt jeden neuen Wert an die richtige Stelle ein. <strong>O(n²) im schlechtesten Fall, aber O(n) bei fast sortierten Daten</strong> — die beste Wahl für kleine oder fast sortierte Arrays. Stabil.',
+      en: 'Builds the sorted array one element at a time, inserting each new value into its correct spot among those already sorted. <strong>O(n²) worst case but O(n) on nearly-sorted data</strong> - genuinely the best choice for small or almost-sorted arrays. Stable.',
+      de: 'Baut das sortierte Array Element für Element auf und fügt jeden neuen Wert an die richtige Stelle ein. <strong>O(n²) im schlechtesten Fall, aber O(n) bei fast sortierten Daten</strong> - die beste Wahl für kleine oder fast sortierte Arrays. Stabil.',
     },
     when: {
       en: 'Small arrays (most libraries switch to it below ~16 elements), data that arrives in a stream, or input that is already nearly sorted. This is the "reduce and conquer" example from the course.',
@@ -69,26 +69,26 @@ export const sortingGraphsContent = {
       { en: 'Drop the key into the gap. Repeat for all elements.', de: 'Setze den Schlüssel in die Lücke. Wiederhole für alle Elemente.' },
     ],
     complexity: [
-      { case: { en: 'Best (sorted)', de: 'Bester (sortiert)' }, time: 'O(n)', space: 'O(1)', cls: 'best', note: { en: 'On nearly-sorted input it is close to linear — its key strength.', de: 'Bei fast sortierter Eingabe nahezu linear — seine zentrale Stärke.' } },
+      { case: { en: 'Best (sorted)', de: 'Bester (sortiert)' }, time: 'O(n)', space: 'O(1)', cls: 'best', note: { en: 'On nearly-sorted input it is close to linear - its key strength.', de: 'Bei fast sortierter Eingabe nahezu linear - seine zentrale Stärke.' } },
       { case: { en: 'Average', de: 'Durchschnitt' }, time: 'O(n²)', space: 'O(1)', cls: 'avg' },
       { case: { en: 'Worst (reversed)', de: 'Schlechtester (umgekehrt)' }, time: 'O(n²)', space: 'O(1)', cls: 'worst' },
     ],
     pitfalls: [
-      { en: 'Stable and in-place — a frequent comparison point against selection sort.', de: 'Stabil und in-place — häufiger Vergleichspunkt mit Selection Sort.' },
+      { en: 'Stable and in-place - a frequent comparison point against selection sort.', de: 'Stabil und in-place - häufiger Vergleichspunkt mit Selection Sort.' },
     ],
   },
 
   'merge-sort': {
     tldr: {
-      en: 'Splits the array in half, sorts each half recursively, then merges the two sorted halves. <strong>Guaranteed O(n log n) always, and stable</strong> — but needs O(n) extra memory, unlike quicksort. The textbook divide-and-conquer sort.',
-      de: 'Teilt das Array, sortiert beide Hälften rekursiv und mischt sie zusammen. <strong>Garantiert immer O(n log n) und stabil</strong> — braucht aber O(n) zusätzlichen Speicher, anders als Quicksort. Der Lehrbuch-Sortieralgorithmus für Teile-und-herrsche.',
+      en: 'Splits the array in half, sorts each half recursively, then merges the two sorted halves. <strong>Guaranteed O(n log n) always, and stable</strong> - but needs O(n) extra memory, unlike quicksort. The textbook divide-and-conquer sort.',
+      de: 'Teilt das Array, sortiert beide Hälften rekursiv und mischt sie zusammen. <strong>Garantiert immer O(n log n) und stabil</strong> - braucht aber O(n) zusätzlichen Speicher, anders als Quicksort. Der Lehrbuch-Sortieralgorithmus für Teile-und-herrsche.',
     },
     when: {
       en: 'When you need a guaranteed worst case (quicksort can degrade to O(n²)), when stability matters, or when sorting linked lists (merge sort needs no random access). Also the basis of external sorting for data too big for RAM.',
       de: 'Wenn ein garantierter schlechtester Fall nötig ist (Quicksort kann zu O(n²) entarten), wenn Stabilität zählt oder beim Sortieren verketteter Listen (kein wahlfreier Zugriff nötig). Auch Grundlage des externen Sortierens.',
     },
     how: [
-      { en: 'If the range has 0 or 1 elements, it is already sorted — return.', de: 'Hat der Bereich 0 oder 1 Element, ist er sortiert — zurück.' },
+      { en: 'If the range has 0 or 1 elements, it is already sorted - return.', de: 'Hat der Bereich 0 oder 1 Element, ist er sortiert - zurück.' },
       { en: 'Split the range at the middle into left and right halves.', de: 'Teile den Bereich in der Mitte in linke und rechte Hälfte.' },
       { en: 'Recursively sort each half.', de: 'Sortiere jede Hälfte rekursiv.' },
       { en: 'Merge: repeatedly take the smaller front element of the two halves into the output.', de: 'Mischen: nimm wiederholt das kleinere vordere Element beider Hälften in die Ausgabe.' },
@@ -96,7 +96,7 @@ export const sortingGraphsContent = {
     complexity: [
       { case: { en: 'Best', de: 'Bester' }, time: 'O(n log n)', space: 'O(n)', cls: 'best' },
       { case: { en: 'Average', de: 'Durchschnitt' }, time: 'O(n log n)', space: 'O(n)', cls: 'best' },
-      { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n log n)', space: 'O(n)', cls: 'avg', note: { en: 'Same in all cases — the recursion depth is always log n. The cost is the O(n) auxiliary array.', de: 'In allen Fällen gleich — die Rekursionstiefe ist stets log n. Der Preis ist das O(n)-Hilfsarray.' } },
+      { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n log n)', space: 'O(n)', cls: 'avg', note: { en: 'Same in all cases - the recursion depth is always log n. The cost is the O(n) auxiliary array.', de: 'In allen Fällen gleich - die Rekursionstiefe ist stets log n. Der Preis ist das O(n)-Hilfsarray.' } },
     ],
     pitfalls: [
       { en: 'The extra O(n) memory is the standard exam answer for "why not always use merge sort?"', de: 'Der zusätzliche O(n)-Speicher ist die Standardantwort auf „Warum nicht immer Merge Sort?"' },
@@ -116,7 +116,7 @@ export const sortingGraphsContent = {
     how: [
       { en: 'Choose a pivot (here, the last element).', de: 'Wähle ein Pivot (hier das letzte Element).' },
       { en: 'Partition: scan the range, moving every element ≤ pivot to the left side.', de: 'Partitioniere: durchlaufe den Bereich und schiebe jedes Element ≤ Pivot nach links.' },
-      { en: 'Swap the pivot into the boundary — it is now in its final sorted position.', de: 'Tausche das Pivot an die Grenze — es steht nun an seiner endgültigen Position.' },
+      { en: 'Swap the pivot into the boundary - it is now in its final sorted position.', de: 'Tausche das Pivot an die Grenze - es steht nun an seiner endgültigen Position.' },
       { en: 'Recurse on the left and right partitions.', de: 'Rekursiere auf der linken und rechten Partition.' },
     ],
     cpp: {
@@ -148,15 +148,15 @@ void quickSort(int* a, int lo, int hi) {
       { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n²)', space: 'O(log n)', cls: 'worst', note: { en: 'Worst case hits when the pivot is always the smallest/largest (e.g. already-sorted input with last-element pivot). Random or median-of-three pivots avoid it.', de: 'Der schlechteste Fall tritt ein, wenn das Pivot stets das kleinste/größte ist (z. B. sortierte Eingabe mit Letztes-Element-Pivot). Zufalls- oder Median-of-Three-Pivots vermeiden ihn.' } },
     ],
     pitfalls: [
-      { en: '<strong>Already-sorted input is the worst case</strong> with a naive last-element pivot — counterintuitive and a classic exam question.', de: '<strong>Sortierte Eingabe ist der schlechteste Fall</strong> bei naivem Letztes-Element-Pivot — unerwartet und eine klassische Prüfungsfrage.' },
+      { en: '<strong>Already-sorted input is the worst case</strong> with a naive last-element pivot - counterintuitive and a classic exam question.', de: '<strong>Sortierte Eingabe ist der schlechteste Fall</strong> bei naivem Letztes-Element-Pivot - unerwartet und eine klassische Prüfungsfrage.' },
       { en: 'Not stable. In-place (only O(log n) stack for recursion).', de: 'Nicht stabil. In-place (nur O(log n) Stack für die Rekursion).' },
     ],
   },
 
   'heap-sort': {
     tldr: {
-      en: 'Builds a max-heap from the array, then repeatedly swaps the root (the max) to the end and re-heapifies. <strong>Guaranteed O(n log n) and in-place</strong> — merge sort\'s time bound without its memory cost — but not stable and slower in practice than quicksort.',
-      de: 'Baut einen Max-Heap, tauscht wiederholt die Wurzel (das Maximum) ans Ende und stellt die Heap-Eigenschaft wieder her. <strong>Garantiert O(n log n) und in-place</strong> — Merge Sorts Zeitschranke ohne Speicherkosten — aber nicht stabil und praktisch langsamer als Quicksort.',
+      en: 'Builds a max-heap from the array, then repeatedly swaps the root (the max) to the end and re-heapifies. <strong>Guaranteed O(n log n) and in-place</strong> - merge sort\'s time bound without its memory cost - but not stable and slower in practice than quicksort.',
+      de: 'Baut einen Max-Heap, tauscht wiederholt die Wurzel (das Maximum) ans Ende und stellt die Heap-Eigenschaft wieder her. <strong>Garantiert O(n log n) und in-place</strong> - Merge Sorts Zeitschranke ohne Speicherkosten - aber nicht stabil und praktisch langsamer als Quicksort.',
     },
     when: {
       en: 'When you need an in-place sort with a guaranteed O(n log n) worst case and cannot spare merge sort\'s memory. Also the fallback inside introsort. The same heap structure powers priority queues.',
@@ -174,19 +174,19 @@ void quickSort(int* a, int lo, int hi) {
       { case: { en: 'Worst', de: 'Schlechtester' }, time: 'O(n log n)', space: 'O(1)', cls: 'best', note: { en: 'Building the heap is O(n), then n extractions of O(log n) each. In-place.', de: 'Heap-Aufbau ist O(n), dann n Entnahmen zu je O(log n). In-place.' } },
     ],
     pitfalls: [
-      { en: 'Building the heap is O(n), not O(n log n) — a popular exam subtlety.', de: 'Der Heap-Aufbau ist O(n), nicht O(n log n) — eine beliebte Prüfungsfeinheit.' },
-      { en: 'Not stable. Parent of index i is (i−1)/2; children are 2i+1 and 2i+2.', de: 'Nicht stabil. Elter von Index i ist (i−1)/2; Kinder sind 2i+1 und 2i+2.' },
+      { en: 'Building the heap is O(n), not O(n log n) - a popular exam subtlety.', de: 'Der Heap-Aufbau ist O(n), nicht O(n log n) - eine beliebte Prüfungsfeinheit.' },
+      { en: 'Not stable. Parent of index i is (i-1)/2; children are 2i+1 and 2i+2.', de: 'Nicht stabil. Elter von Index i ist (i-1)/2; Kinder sind 2i+1 und 2i+2.' },
     ],
   },
 
   'counting-sort': {
     tldr: {
-      en: 'Sorts <strong>without any comparisons</strong> by counting how many times each value occurs, then writing values back in order. <strong>O(n + k) for k = value range</strong> — beats the O(n log n) comparison-sort limit, but only works for small integer keys. Stable.',
-      de: 'Sortiert <strong>ohne jeden Vergleich</strong>, indem es zählt, wie oft jeder Wert vorkommt, und die Werte dann der Reihe nach zurückschreibt. <strong>O(n + k) bei Wertebereich k</strong> — schlägt die O(n log n)-Grenze, funktioniert aber nur für kleine ganzzahlige Schlüssel. Stabil.',
+      en: 'Sorts <strong>without any comparisons</strong> by counting how many times each value occurs, then writing values back in order. <strong>O(n + k) for k = value range</strong> - beats the O(n log n) comparison-sort limit, but only works for small integer keys. Stable.',
+      de: 'Sortiert <strong>ohne jeden Vergleich</strong>, indem es zählt, wie oft jeder Wert vorkommt, und die Werte dann der Reihe nach zurückschreibt. <strong>O(n + k) bei Wertebereich k</strong> - schlägt die O(n log n)-Grenze, funktioniert aber nur für kleine ganzzahlige Schlüssel. Stabil.',
     },
     when: {
-      en: 'When keys are integers in a small known range (e.g. ages 0–120, bytes 0–255). It is also the stable subroutine inside radix sort. Useless if the range k is much larger than n.',
-      de: 'Wenn Schlüssel ganze Zahlen in kleinem, bekanntem Bereich sind (z. B. Alter 0–120, Bytes 0–255). Auch die stabile Teilroutine in Radix Sort. Nutzlos, wenn der Bereich k viel größer als n ist.',
+      en: 'When keys are integers in a small known range (e.g. ages 0-120, bytes 0-255). It is also the stable subroutine inside radix sort. Useless if the range k is much larger than n.',
+      de: 'Wenn Schlüssel ganze Zahlen in kleinem, bekanntem Bereich sind (z. B. Alter 0-120, Bytes 0-255). Auch die stabile Teilroutine in Radix Sort. Nutzlos, wenn der Bereich k viel größer als n ist.',
     },
     how: [
       { en: 'Find the max value to size a count array of length k+1.', de: 'Finde den Maximalwert, um ein Zähl-Array der Länge k+1 anzulegen.' },
@@ -244,7 +244,7 @@ void quickSort(int* a, int lo, int hi) {
   'dfs': {
     tldr: {
       en: 'Explores a graph by going <strong>as deep as possible</strong> before backtracking, using a stack (or recursion). Does <strong>not</strong> find shortest paths, but is the backbone of cycle detection, topological sort, and connected components.',
-      de: 'Erkundet einen Graphen, indem es <strong>so tief wie möglich</strong> geht, bevor es zurückgeht — mit einem Stapel (oder Rekursion). Findet <strong>keine</strong> kürzesten Wege, ist aber die Basis von Zyklenerkennung, topologischer Sortierung und Zusammenhangskomponenten.',
+      de: 'Erkundet einen Graphen, indem es <strong>so tief wie möglich</strong> geht, bevor es zurückgeht - mit einem Stapel (oder Rekursion). Findet <strong>keine</strong> kürzesten Wege, ist aber die Basis von Zyklenerkennung, topologischer Sortierung und Zusammenhangskomponenten.',
     },
     when: {
       en: 'Cycle detection, topological sorting, finding connected components, maze generation, and any problem that needs to fully explore one branch before another. Use a stack (LIFO) or recursion.',
@@ -257,18 +257,18 @@ void quickSort(int* a, int lo, int hi) {
       { en: 'Continue until all reachable nodes are visited.', de: 'Weiter, bis alle erreichbaren Knoten besucht sind.' },
     ],
     complexity: [
-      { case: { en: 'All cases', de: 'Alle Fälle' }, time: 'O(V + E)', space: 'O(V)', cls: 'best', note: { en: 'Recursion depth can reach O(V) — watch the stack on large graphs.', de: 'Die Rekursionstiefe kann O(V) erreichen — Vorsicht mit dem Stack bei großen Graphen.' } },
+      { case: { en: 'All cases', de: 'Alle Fälle' }, time: 'O(V + E)', space: 'O(V)', cls: 'best', note: { en: 'Recursion depth can reach O(V) - watch the stack on large graphs.', de: 'Die Rekursionstiefe kann O(V) erreichen - Vorsicht mit dem Stack bei großen Graphen.' } },
     ],
     pitfalls: [
-      { en: 'DFS does <strong>not</strong> give shortest paths, even when unweighted — a frequent confusion with BFS.', de: 'DFS liefert <strong>keine</strong> kürzesten Wege, auch ungewichtet nicht — häufige Verwechslung mit BFS.' },
+      { en: 'DFS does <strong>not</strong> give shortest paths, even when unweighted - a frequent confusion with BFS.', de: 'DFS liefert <strong>keine</strong> kürzesten Wege, auch ungewichtet nicht - häufige Verwechslung mit BFS.' },
       { en: 'Recursive DFS = an explicit stack. Both are valid; know the conversion.', de: 'Rekursives DFS = expliziter Stapel. Beides gültig; kenne die Umwandlung.' },
     ],
   },
 
   'dijkstra': {
     tldr: {
-      en: 'Finds the <strong>shortest path from one source</strong> to all nodes in a graph with <strong>non-negative</strong> edge weights. It greedily finalizes the closest unvisited node each round. <strong>Negative weights break it</strong> — use Bellman-Ford for those.',
-      de: 'Findet den <strong>kürzesten Weg von einer Quelle</strong> zu allen Knoten in einem Graphen mit <strong>nicht-negativen</strong> Kantengewichten. Es finalisiert gierig pro Runde den nächstgelegenen unbesuchten Knoten. <strong>Negative Gewichte zerstören es</strong> — dafür Bellman-Ford.',
+      en: 'Finds the <strong>shortest path from one source</strong> to all nodes in a graph with <strong>non-negative</strong> edge weights. It greedily finalizes the closest unvisited node each round. <strong>Negative weights break it</strong> - use Bellman-Ford for those.',
+      de: 'Findet den <strong>kürzesten Weg von einer Quelle</strong> zu allen Knoten in einem Graphen mit <strong>nicht-negativen</strong> Kantengewichten. Es finalisiert gierig pro Runde den nächstgelegenen unbesuchten Knoten. <strong>Negative Gewichte zerstören es</strong> - dafür Bellman-Ford.',
     },
     when: {
       en: 'Single-source shortest paths with non-negative weights: routing, maps, network latency. With a binary heap it runs in O((V+E) log V). If you need all pairs, use Floyd-Warshall; if weights can be negative, use Bellman-Ford.',
@@ -308,8 +308,8 @@ for (int iter = 0; iter < n; iter++) {
       { case: { en: 'Fibonacci heap', de: 'Fibonacci-Heap' }, time: 'O(E + V log V)', space: 'O(V)', cls: 'best', note: { en: 'The V² array version is fine for dense graphs; the heap version wins on sparse ones.', de: 'Die V²-Array-Version ist für dichte Graphen gut; die Heap-Version gewinnt bei dünnen.' } },
     ],
     pitfalls: [
-      { en: '<strong>Negative edge weights break Dijkstra</strong> — once a node is finalized it is never reconsidered. This is the #1 exam question. Use Bellman-Ford for negative edges.', de: '<strong>Negative Kantengewichte zerstören Dijkstra</strong> — ein finalisierter Knoten wird nie neu betrachtet. Die Prüfungsfrage Nr. 1. Bei negativen Kanten Bellman-Ford.' },
-      { en: '<strong>Bellman-Ford</strong> uses the same relaxation but applies it to all edges n times, in any order. That different order is what lets it tolerate negative weights and detect negative cycles, at O(V·E). Dijkstra is faster but cannot handle negatives.', de: '<strong>Bellman-Ford</strong> nutzt dieselbe Relaxation, wendet sie aber n-mal auf alle Kanten an, in beliebiger Reihenfolge. Diese andere Reihenfolge erlaubt negative Gewichte und erkennt negative Zyklen, in O(V·E). Dijkstra ist schneller, vertraegt aber keine negativen Werte.' },
+      { en: '<strong>Negative edge weights break Dijkstra</strong> - once a node is finalized it is never reconsidered. This is the #1 exam question. Use Bellman-Ford for negative edges.', de: '<strong>Negative Kantengewichte zerstören Dijkstra</strong> - ein finalisierter Knoten wird nie neu betrachtet. Die Prüfungsfrage Nr. 1. Bei negativen Kanten Bellman-Ford.' },
+      { en: '<strong>Bellman-Ford</strong> uses the same relaxation but applies it to all edges n times, in any order. That different order is what lets it tolerate negative weights and detect negative cycles, at O(V∗E). Dijkstra is faster but cannot handle negatives.', de: '<strong>Bellman-Ford</strong> nutzt dieselbe Relaxation, wendet sie aber n-mal auf alle Kanten an, in beliebiger Reihenfolge. Diese andere Reihenfolge erlaubt negative Gewichte und erkennt negative Zyklen, in O(V∗E). Dijkstra ist schneller, vertraegt aber keine negativen Werte.' },
     ],
   },
 
@@ -324,7 +324,7 @@ for (int iter = 0; iter < n; iter++) {
     },
     how: [
       { en: 'Initialize D = weight matrix (∞ where no edge, 0 on the diagonal).', de: 'Initialisiere D = Gewichtsmatrix (∞ ohne Kante, 0 auf der Diagonale).' },
-      { en: 'For each intermediate node k from 0 to n−1:', de: 'Für jeden Zwischenknoten k von 0 bis n−1:' },
+      { en: 'For each intermediate node k from 0 to n-1:', de: 'Für jeden Zwischenknoten k von 0 bis n-1:' },
       { en: 'For every pair (i, j): if going i → k → j is shorter than D[i][j], update D[i][j] and set P[i][j] = P[k][j].', de: 'Für jedes Paar (i, j): wenn i → k → j kürzer ist als D[i][j], aktualisiere D[i][j] und setze P[i][j] = P[k][j].' },
       { en: 'After the last k, D holds all shortest distances.', de: 'Nach dem letzten k enthält D alle kürzesten Distanzen.' },
     ],
@@ -344,9 +344,9 @@ for (int iter = 0; iter < n; iter++) {
       { case: { en: 'All cases', de: 'Alle Fälle' }, time: 'O(V³)', space: 'O(V²)', cls: 'avg', note: { en: 'Three nested loops over all nodes. Simple to code and to trace by hand.', de: 'Drei verschachtelte Schleifen über alle Knoten. Einfach zu programmieren und von Hand nachzuvollziehen.' } },
     ],
     pitfalls: [
-      { en: 'The loop order is <strong>k, then i, then j</strong> — k must be the outer loop. Swapping them is the most common mistake.', de: 'Die Schleifenreihenfolge ist <strong>k, dann i, dann j</strong> — k muss die äußere Schleife sein. Vertauschen ist der häufigste Fehler.' },
+      { en: 'The loop order is <strong>k, then i, then j</strong> - k must be the outer loop. Swapping them is the most common mistake.', de: 'Die Schleifenreihenfolge ist <strong>k, dann i, dann j</strong> - k muss die äußere Schleife sein. Vertauschen ist der häufigste Fehler.' },
       { en: 'Handles negative edges but <strong>not negative cycles</strong> (a negative value on the diagonal signals one).', de: 'Verträgt negative Kanten, aber <strong>keine negativen Zyklen</strong> (ein negativer Wert auf der Diagonale zeigt einen an).' },
-      { en: 'Do not confuse it with <strong>Warshall</strong>\'s transitive closure (booleans, reachability) — same triple loop, different update.', de: 'Nicht mit <strong>Warshalls</strong> transitiver Hülle verwechseln (Boolesche Werte, Erreichbarkeit) — gleiche Dreifachschleife, andere Aktualisierung.' },
+      { en: 'Do not confuse it with <strong>Warshall</strong>\'s transitive closure (booleans, reachability) - same triple loop, different update.', de: 'Nicht mit <strong>Warshalls</strong> transitiver Hülle verwechseln (Boolesche Werte, Erreichbarkeit) - gleiche Dreifachschleife, andere Aktualisierung.' },
     ],
   },
 
@@ -387,7 +387,7 @@ for (int iter = 0; iter < n; iter++) {
       { en: 'Sort every edge by weight, ascending.', de: 'Sortiere jede Kante aufsteigend nach Gewicht.' },
       { en: 'Take the next cheapest edge.', de: 'Nimm die nächstbilligste Kante.' },
       { en: 'If its two endpoints are in different components, add it (union them).', de: 'Wenn die Endpunkte in verschiedenen Komponenten sind, füge sie hinzu (vereinige sie).' },
-      { en: 'If they are already connected, skip it (it would make a cycle). Stop at V−1 edges.', de: 'Sind sie schon verbunden, überspringe sie (Zyklus). Stoppe bei V−1 Kanten.' },
+      { en: 'If they are already connected, skip it (it would make a cycle). Stop at V-1 edges.', de: 'Sind sie schon verbunden, überspringe sie (Zyklus). Stoppe bei V-1 Kanten.' },
     ],
     cpp: {
       caption: { en: 'Standard implementation:', de: 'Standard-Implementierung:' },
@@ -412,15 +412,15 @@ for (int i = 0; i < edgeCount; i++) {
       { case: { en: 'All cases', de: 'Alle Fälle' }, time: 'O(E log E)', space: 'O(V)', cls: 'best', note: { en: 'Dominated by sorting the edges. Union-find adds only near-constant overhead.', de: 'Dominiert vom Sortieren der Kanten. Union-Find verursacht nur nahezu konstanten Mehraufwand.' } },
     ],
     pitfalls: [
-      { en: 'You <strong>must</strong> use union-find (or equivalent) to detect cycles — a plain "is v visited" check is wrong here.', de: 'Du <strong>musst</strong> Union-Find (oder Äquivalent) zur Zyklenerkennung nutzen — eine einfache „ist v besucht"-Prüfung ist hier falsch.' },
+      { en: 'You <strong>must</strong> use union-find (or equivalent) to detect cycles - a plain "is v visited" check is wrong here.', de: 'Du <strong>musst</strong> Union-Find (oder Äquivalent) zur Zyklenerkennung nutzen - eine einfache „ist v besucht"-Prüfung ist hier falsch.' },
       { en: 'Add path compression to find() to keep it near O(1).', de: 'Füge Pfadkompression zu find() hinzu, um es nahe O(1) zu halten.' },
     ],
   },
 
   'radix-sort': {
     tldr: {
-      en: 'Sorts integers <strong>digit by digit</strong>, from least-significant to most, using a stable counting sort on each digit. <strong>O(d·(n+b))</strong> for d digits and base b — linear when the numbers are bounded. The trick: it only works because the per-digit sort is stable.',
-      de: 'Sortiert ganze Zahlen <strong>Ziffer für Ziffer</strong>, von der niederwertigsten zur höchsten, mit einem stabilen Counting Sort je Ziffer. <strong>O(d·(n+b))</strong> bei d Ziffern und Basis b — linear bei beschränkten Zahlen. Der Clou: es funktioniert nur, weil die Ziffernsortierung stabil ist.',
+      en: 'Sorts integers <strong>digit by digit</strong>, from least-significant to most, using a stable counting sort on each digit. <strong>O(d∗(n+b))</strong> for d digits and base b - linear when the numbers are bounded. The trick: it only works because the per-digit sort is stable.',
+      de: 'Sortiert ganze Zahlen <strong>Ziffer für Ziffer</strong>, von der niederwertigsten zur höchsten, mit einem stabilen Counting Sort je Ziffer. <strong>O(d∗(n+b))</strong> bei d Ziffern und Basis b - linear bei beschränkten Zahlen. Der Clou: es funktioniert nur, weil die Ziffernsortierung stabil ist.',
     },
     when: {
       en: 'Large sets of fixed-width integers or strings (e.g. 32-bit numbers, IDs). Beats comparison sorts when the key length d is small relative to log n.',
@@ -448,10 +448,10 @@ for (int i = 0; i < edgeCount; i++) {
 }`,
     },
     complexity: [
-      { case: { en: 'All cases', de: 'Alle Fälle' }, time: 'O(d·(n+b))', space: 'O(n+b)', cls: 'best', note: { en: 'd = number of digits, b = base. With fixed-width keys d and b are constants, giving O(n).', de: 'd = Ziffernzahl, b = Basis. Bei fester Breite sind d und b konstant, also O(n).' } },
+      { case: { en: 'All cases', de: 'Alle Fälle' }, time: 'O(d∗(n+b))', space: 'O(n+b)', cls: 'best', note: { en: 'd = number of digits, b = base. With fixed-width keys d and b are constants, giving O(n).', de: 'd = Ziffernzahl, b = Basis. Bei fester Breite sind d und b konstant, also O(n).' } },
     ],
     pitfalls: [
-      { en: 'The per-digit sort <strong>must be stable</strong> or the whole thing breaks — the #1 exam point.', de: 'Die Ziffernsortierung <strong>muss stabil sein</strong>, sonst bricht alles zusammen — der wichtigste Prüfungspunkt.' },
+      { en: 'The per-digit sort <strong>must be stable</strong> or the whole thing breaks - the #1 exam point.', de: 'Die Ziffernsortierung <strong>muss stabil sein</strong>, sonst bricht alles zusammen - der wichtigste Prüfungspunkt.' },
       { en: 'LSD (least-significant-digit) goes right-to-left; MSD goes left-to-right. Know which you are using.', de: 'LSD (niederwertigste Ziffer zuerst) läuft rechts-nach-links; MSD links-nach-rechts. Wisse, welche du nutzt.' },
     ],
   },

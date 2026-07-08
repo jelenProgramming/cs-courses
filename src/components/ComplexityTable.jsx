@@ -46,7 +46,7 @@ export default function ComplexityTable({ rows = [] }) {
               <tr key={i}>
                 <td>{labelText}</td>
                 <td className={g.cls}>{g.time}</td>
-                <td>{g.space || '—'}</td>
+                <td>{g.space || '-'}</td>
               </tr>
             )
           })}

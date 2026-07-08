@@ -33,7 +33,7 @@ export default function Page({ content }) {
     <div>
       <div className="panel">
         <div style={{ textAlign: 'center', marginBottom: 12, fontFamily: 'var(--mono)', fontSize: 15, color: 'var(--text)' }}>
-          lim<sub>x→{c}</sub> x² = {L} &nbsp;&nbsp;|&nbsp;&nbsp; ∀ε&gt;0 ∃δ&gt;0 : 0&lt;|x−{c}|&lt;δ ⟹ |x²−{L}|&lt;ε
+          lim<sub>x→{c}</sub> x² = {L}   |   ∀ε&gt;0 ∃δ&gt;0 : 0&lt;|x-{c}|&lt;δ ⟹ |x²-{L}|&lt;ε
         </div>
         <div className="viz-stage" style={{ minHeight: H + 20, alignItems: 'center' }}>
           <svg viewBox={`0 0 ${W} ${H}`} style={{ maxWidth: W, width: '100%' }}>
@@ -64,7 +64,7 @@ export default function Page({ content }) {
             <text x={pad - 8} y={sy(L) + 4} textAnchor="end" fontSize="12" fontFamily="var(--mono)" fill="var(--text-dim)">L={L}</text>
 
             <text x={W - pad} y={sy(L + epsilon) - 5} textAnchor="end" fontSize="11" fill="var(--compare)">L+ε</text>
-            <text x={W - pad} y={sy(L - epsilon) + 13} textAnchor="end" fontSize="11" fill="var(--compare)">L−ε</text>
+            <text x={W - pad} y={sy(L - epsilon) + 13} textAnchor="end" fontSize="11" fill="var(--compare)">L-ε</text>
           </svg>
         </div>
 
@@ -79,8 +79,8 @@ export default function Page({ content }) {
         <div className="status-bar" style={{ marginTop: 14 }}>
           <span className="step-num">δ</span>
           <span className="desc" dangerouslySetInnerHTML={{ __html: t({
-            en: `For this ε, a δ = <b>${delta.toFixed(3)}</b> works: every x within ${delta.toFixed(3)} of c=${c} maps into the ε band around L=${L}. Shrink ε and δ must shrink too — but one always exists. <strong>That</strong> is what the limit existing means.`,
-            de: `Fuer dieses ε funktioniert ein δ = <b>${delta.toFixed(3)}</b>: jedes x im Abstand ${delta.toFixed(3)} von c=${c} landet im ε-Band um L=${L}. Verkleinere ε und δ muss auch kleiner werden — aber es existiert immer eines. <strong>Das</strong> bedeutet, dass der Grenzwert existiert.`
+            en: `For this ε, a δ = <b>${delta.toFixed(3)}</b> works: every x within ${delta.toFixed(3)} of c=${c} maps into the ε band around L=${L}. Shrink ε and δ must shrink too - but one always exists. <strong>That</strong> is what the limit existing means.`,
+            de: `Fuer dieses ε funktioniert ein δ = <b>${delta.toFixed(3)}</b>: jedes x im Abstand ${delta.toFixed(3)} von c=${c} landet im ε-Band um L=${L}. Verkleinere ε und δ muss auch kleiner werden - aber es existiert immer eines. <strong>Das</strong> bedeutet, dass der Grenzwert existiert.`
           }) }} />
         </div>
         <div className="legend">

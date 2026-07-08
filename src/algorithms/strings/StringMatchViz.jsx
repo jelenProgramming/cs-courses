@@ -71,7 +71,7 @@ export default function StringMatchViz({ slug }) {
         )}
         {(s.patHash != null) && (
           <div className="note" style={{ marginTop: 12 }}>
-            pattern hash = <b>{s.patHash}</b> &nbsp;|&nbsp; window hash = <b>{s.winHash}</b>
+            pattern hash = <b>{s.patHash}</b>  |  window hash = <b>{s.winHash}</b>
           </div>
         )}
 

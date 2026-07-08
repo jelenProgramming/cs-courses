@@ -116,9 +116,9 @@ export const csCoreContent = {
       { en: 'Nested loops over n multiply (O(n²)); halving the input each step gives O(log n).', de: 'Verschachtelte Schleifen ueber n multiplizieren (O(n²)); Halbieren ergibt O(log n).' },
     ],
     complexity: [
-      { case: { en: 'Constant / Log / Linear', de: 'Konstant / Log / Linear' }, time: 'O(1), O(log n), O(n)', space: '—', cls: 'best' },
-      { case: { en: 'Linearithmic / Quadratic', de: 'Linearithmisch / Quadratisch' }, time: 'O(n log n), O(n²)', space: '—', cls: 'avg' },
-      { case: { en: 'Exponential / Factorial', de: 'Exponentiell / Faktoriell' }, time: 'O(2ⁿ), O(n!)', space: '—', cls: 'worst', note: { en: 'Anything exponential is intractable beyond small n - the line between "scales" and "doesn\'t".', de: 'Alles Exponentielle ist jenseits kleiner n unhandhabbar.' } },
+      { case: { en: 'Constant / Log / Linear', de: 'Konstant / Log / Linear' }, time: 'O(1), O(log n), O(n)', space: '-', cls: 'best' },
+      { case: { en: 'Linearithmic / Quadratic', de: 'Linearithmisch / Quadratisch' }, time: 'O(n log n), O(n²)', space: '-', cls: 'avg' },
+      { case: { en: 'Exponential / Factorial', de: 'Exponentiell / Faktoriell' }, time: 'O(2ⁿ), O(n!)', space: '-', cls: 'worst', note: { en: 'Anything exponential is intractable beyond small n - the line between "scales" and "doesn\'t".', de: 'Alles Exponentielle ist jenseits kleiner n unhandhabbar.' } },
     ],
     pitfalls: [
       { en: 'Big-O hides constants: an O(n) with a huge constant can lose to O(n²) for small inputs. It describes scaling, not raw speed.', de: 'Big-O verbirgt Konstanten: O(n) mit grosser Konstante kann bei kleinen Eingaben gegen O(n²) verlieren.' },
@@ -131,7 +131,7 @@ export const csCoreContent = {
     ],
     how: [
       { en: 'Primitive types: integers (whole numbers), floating-point (decimals), boolean (true/false), char (one character).', de: 'Primitive Typen: Ganzzahlen, Gleitkomma, Boolean, Zeichen.' },
-      { en: 'Each has a fixed size (e.g. a 32-bit int holds −2.1 billion to +2.1 billion) and overflows if exceeded.', de: 'Jeder hat feste Groesse (32-Bit-int: −2,1 bis +2,1 Mrd.) und laeuft bei Ueberschreitung ueber.' },
+      { en: 'Each has a fixed size (e.g. a 32-bit int holds -2.1 billion to +2.1 billion) and overflows if exceeded.', de: 'Jeder hat feste Groesse (32-Bit-int: -2,1 bis +2,1 Mrd.) und laeuft bei Ueberschreitung ueber.' },
     ],
     pitfalls: [
       { en: 'Integer overflow wraps around silently; floating-point cannot represent 0.1 exactly. Both cause real bugs.', de: 'Ganzzahl-Ueberlauf laeuft still um; Gleitkomma kann 0,1 nicht exakt darstellen.' },
@@ -192,7 +192,7 @@ export const csCoreContent = {
   'templates': {
     tldr: { en: 'Templates (generics) let you write code once that works for any type. <code>template &lt;typename T&gt;</code> in C++ produces a type-specialized version at compile time, with no runtime cost. The STL is built entirely on them.', de: 'Templates (Generics) lassen Code einmal fuer beliebige Typen schreiben. <code>template &lt;typename T&gt;</code> erzeugt zur Compilezeit eine typspezialisierte Version, ohne Laufzeitkosten.' },
     intro: [
-      { en: 'Without generics you would write <code>maxInt</code>, <code>maxDouble</code>, <code>maxString</code> separately. A template writes <code>max&lt;T&gt;</code> once and the compiler stamps out each needed version. The C++ <strong>STL</strong> (vector, map, sort, …) is generic so it works with any element type.', de: 'Ohne Generics schriebst du <code>maxInt</code>, <code>maxDouble</code> getrennt. Ein Template schreibt <code>max&lt;T&gt;</code> einmal; der Compiler erzeugt jede Version. Die <strong>STL</strong> ist generisch.' },
+      { en: 'Without generics you would write <code>maxInt</code>, <code>maxDouble</code>, <code>maxString</code> separately. A template writes <code>max&lt;T&gt;</code> once and the compiler stamps out each needed version. The C++ <strong>STL</strong> (vector, map, sort, ...) is generic so it works with any element type.', de: 'Ohne Generics schriebst du <code>maxInt</code>, <code>maxDouble</code> getrennt. Ein Template schreibt <code>max&lt;T&gt;</code> einmal; der Compiler erzeugt jede Version. Die <strong>STL</strong> ist generisch.' },
     ],
     how: [
       { en: 'Write the function/class with a type parameter T instead of a concrete type.', de: 'Funktion/Klasse mit Typparameter T statt konkretem Typ schreiben.' },
@@ -208,7 +208,7 @@ export const csCoreContent = {
     tldr: { en: 'Computers add and subtract in binary using <strong>two\'s complement</strong> to represent negatives: flip the bits and add 1. This makes subtraction just addition, so one circuit does both.', de: 'Computer rechnen binaer mit <strong>Zweierkomplement</strong> fuer negative Zahlen: Bits kippen und 1 addieren. So wird Subtraktion zu Addition.' },
     how: [
       { en: 'Add bit by bit right to left, carrying a 1 when the column sums to 2 or 3 - exactly like decimal.', de: 'Bit fuer Bit rechts nach links addieren, bei Spaltensumme 2 oder 3 einen Uebertrag - wie im Dezimalen.' },
-      { en: 'Two\'s complement of a number: invert all bits, add 1. Now −5 + 5 = 0 with plain addition.', de: 'Zweierkomplement: alle Bits invertieren, 1 addieren. Dann −5 + 5 = 0 mit normaler Addition.' },
+      { en: 'Two\'s complement of a number: invert all bits, add 1. Now -5 + 5 = 0 with plain addition.', de: 'Zweierkomplement: alle Bits invertieren, 1 addieren. Dann -5 + 5 = 0 mit normaler Addition.' },
       { en: 'The leftmost bit is the sign: 0 = positive, 1 = negative.', de: 'Das linkeste Bit ist das Vorzeichen: 0 = positiv, 1 = negativ.' },
     ],
     complexity: [
@@ -301,7 +301,7 @@ export const csCoreContent = {
       { en: 'Both solve the same problem: how do two programs (maybe in different languages, on different machines) exchange structured data as plain text? <strong>JSON</strong> (JavaScript Object Notation) maps directly onto the objects and arrays of almost every language, which is why APIs returning JSON are trivial to consume. <strong>XML</strong> (eXtensible Markup Language) predates it, is heavier, but supports validation against a schema (DTD/XSD), namespaces to avoid name clashes, and attributes on elements.', de: 'Beide loesen dasselbe: wie tauschen zwei Programme strukturierte Daten als Text aus? <strong>JSON</strong> bildet direkt auf Objekte und Arrays fast jeder Sprache ab. <strong>XML</strong> ist aelter, schwerer, unterstuetzt aber Schema-Validierung (DTD/XSD), Namespaces und Attribute.' },
     ],
     how: [
-      { en: 'JSON: objects { "key": value }, arrays [ … ], with strings, numbers, booleans, null. Maps directly to most languages\' data structures.', de: 'JSON: Objekte { "key": wert }, Arrays [ … ], mit Strings, Zahlen, Booleans, null.' },
+      { en: 'JSON: objects { "key": value }, arrays [ ... ], with strings, numbers, booleans, null. Maps directly to most languages\' data structures.', de: 'JSON: Objekte { "key": wert }, Arrays [ ... ], mit Strings, Zahlen, Booleans, null.' },
       { en: 'XML: nested <tags> with optional attributes and a closing tag. More structure, more ceremony.', de: 'XML: verschachtelte <Tags> mit optionalen Attributen und schliessendem Tag. Mehr Struktur, mehr Aufwand.' },
     ],
     pitfalls: [

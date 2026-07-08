@@ -31,7 +31,7 @@
 }
 
 :root[data-theme="light"] {
-  /* Pure white + marine navy — the light counterpart to the dark theme. */
+  /* Pure white + marine navy - the light counterpart to the dark theme. */
   --bg: #ffffff;          /* pure white page */
   --bg-soft: #f2f5fb;     /* faint marine tint for viz stages */
   --panel: #ffffff;
@@ -42,7 +42,7 @@
   --text-dim: #46587a;
   --text-faint: #7d8ca8;
 
-  --accent: #14306e;     /* marine dark blue — primary */
+  --accent: #14306e;     /* marine dark blue - primary */
   --accent-2: #1d4ed8;   /* blue */
   --accent-3: #14306e;   /* marine navy (top bar) */
   --accent-4: #be185d;   /* rose, for "not found"/NULL contrast */
@@ -57,7 +57,7 @@
 
   --shadow: 0 10px 40px -16px rgba(15, 30, 60, 0.22);
 }
-/* On white, badge text sits on navy fills — keep it white, not the dark-on-teal used in dark mode */
+/* On white, badge text sits on navy fills - keep it white, not the dark-on-teal used in dark mode */
 :root[data-theme="light"] .tldr .tldr-label { color: var(--accent); }
 :root[data-theme="light"] .g-node.visited text,
 :root[data-theme="light"] .g-node.current text,
@@ -157,7 +157,7 @@ a { color: inherit; text-decoration: none; }
 .lang-switch button:hover { color: var(--text); }
 .lang-switch button.active { background: var(--accent-3); color: #fff; }
 
-/* TL;DR banner — the "what it actually does" line, first thing on every page */
+/* TL;DR banner - the "what it actually does" line, first thing on every page */
 .tldr {
   display: flex; gap: 13px; align-items: flex-start;
   background: linear-gradient(100deg, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%);
@@ -783,7 +783,7 @@ h3.section { font-size: 14px; font-weight: 700; margin: 0 0 10px; color: var(--t
 }
 
 /* Quiet loading placeholder for the rare cold-load of a viz chunk. Faint pulsing
-   bars instead of jarring "Loading…" text, so a half-second fetch doesn't read
+   bars instead of jarring "Loading..." text, so a half-second fetch doesn't read
    as a broken page. */
 .page-skeleton { padding: 8px 0; }
 .page-skeleton span {
@@ -829,7 +829,7 @@ h3.section { font-size: 14px; font-weight: 700; margin: 0 0 10px; color: var(--t
 .chapter-nav-count { display: flex; align-items: center; padding: 0 6px; font-family: var(--mono); font-size: 12px; color: var(--text-faint); flex-shrink: 0; }
 @media (max-width: 600px) { .chapter-nav-label, .chapter-nav-count { display: none; } }
 
-/* Hard rule: never render italic anywhere — emphasise with weight/color. */
+/* Hard rule: never render italic anywhere - emphasise with weight/color. */
 * { font-style: normal !important; }
 .prose strong, .tldr-text strong, .def-body strong { font-weight: 700; color: var(--text); }
 
@@ -910,7 +910,7 @@ h3.section { font-size: 14px; font-weight: 700; margin: 0 0 10px; color: var(--t
 .explain-toggle.open { border-style: solid; margin-top: 10px; }
 
 /* The "rolling pin" reveal: the panel sweeps in from the bottom-right as if a
-   sheet of paper is pulled over a rolling pin — new content rolls up while the
+   sheet of paper is pulled over a rolling pin - new content rolls up while the
    button rolls away. Pure decoration; disabled in calm/reduced-motion. */
 .explain-reveal {
   transform-origin: bottom right;
@@ -931,3 +931,67 @@ h3.section { font-size: 14px; font-weight: 700; margin: 0 0 10px; color: var(--t
   font-weight: 600; font-family: var(--sans); transition: all 0.14s;
 }
 .cram-reset:hover { color: var(--text); border-color: var(--accent-3); }
+
+/* ============================================================
+   modern blue+white refresh, additive wow layer
+   viz grids/matrices keep their sharp edges, only chrome softens
+   ============================================================ */
+:root[data-theme="light"] { --accent-2: #2563eb; --shadow-blue: 0 18px 40px -18px rgba(37, 99, 235, 0.35); }
+
+/* richer navy to royal course bar on white */
+:root[data-theme="light"] .course-bar { background: linear-gradient(100deg, #0a1d3b 0%, #14306e 46%, #1d4ed8 120%); border-bottom-color: rgba(255, 255, 255, 0.08); box-shadow: 0 4px 18px -6px rgba(10, 29, 59, 0.5); }
+.course-tab-btn { border-radius: 8px 8px 0 0; }
+.course-tab:hover .course-tab-btn, .course-tab.open .course-tab-btn { background: rgba(255, 255, 255, 0.18); }
+.course-dropdown { border-radius: 12px; box-shadow: 0 24px 48px -18px rgba(10, 29, 59, 0.3); }
+.course-dropdown-item { border-radius: 8px; }
+.course-bar-right .mode-switch, .course-bar-right .lang-switch { border-radius: 9px; }
+
+/* soft, rounded, elevated cards, animated top accent (chrome only) */
+.cat-card { border-radius: 14px; box-shadow: 0 1px 2px rgba(10, 29, 59, 0.05); position: relative; overflow: hidden; }
+.cat-card::before { content: ''; position: absolute; left: 0; top: 0; height: 3px; width: 100%; background: linear-gradient(90deg, var(--accent-2), var(--accent-3)); transform: scaleX(0); transform-origin: left; transition: transform 0.25s ease; }
+.cat-card:hover::before { transform: scaleX(1); }
+:root[data-theme="light"] .cat-card:hover { border-color: var(--accent-2); box-shadow: var(--shadow-blue); }
+.cat-card .cat-icon { border-radius: 11px; }
+.note { border-radius: 12px; }
+.stat .n { background: linear-gradient(120deg, var(--accent-2), var(--accent-3)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* shimmering gradient headline */
+.home-hero h1 { background-size: 200% auto; }
+:root[data-theme="light"] .home-hero h1 { background-image: linear-gradient(120deg, #0a1d3b 8%, #1d4ed8 42%, #2563eb 66%, #0a1d3b 100%); }
+
+/* animated hero backdrop: faint blueprint grid + drifting blue orb */
+.home-hero { position: relative; overflow: hidden; }
+.home-hero > * { position: relative; z-index: 1; }
+.home-hero::before { content: ''; position: absolute; inset: -40% -10% -20%; z-index: 0; background-image: linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px); background-size: 34px 34px; -webkit-mask-image: radial-gradient(120% 92% at 14% 0%, #000 28%, transparent 76%); mask-image: radial-gradient(120% 92% at 14% 0%, #000 28%, transparent 76%); }
+.home-hero::after { content: ''; position: absolute; z-index: 0; right: -70px; top: -90px; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle at 32% 30%, rgba(37, 99, 235, 0.16), transparent 62%); filter: blur(4px); }
+:root[data-theme="dark"] .home-hero::after { background: radial-gradient(circle at 32% 30%, rgba(94, 234, 212, 0.12), transparent 62%); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-hero::before { animation: gridDrift 22s linear infinite; }
+  .home-hero::after { animation: orbFloat 13s ease-in-out infinite; }
+  .home-hero h1 { animation: heroGrad 7s ease infinite, riseIn 0.5s ease-out both; }
+  .home-hero p { animation: riseIn 0.5s ease-out 0.06s both; }
+  .stat-row { animation: riseIn 0.5s ease-out 0.12s both; }
+  .cat-card { animation: riseIn 0.45s ease-out both; }
+  .cat-grid .cat-card:nth-child(1) { animation-delay: 0.04s; }
+  .cat-grid .cat-card:nth-child(2) { animation-delay: 0.08s; }
+  .cat-grid .cat-card:nth-child(3) { animation-delay: 0.12s; }
+  .cat-grid .cat-card:nth-child(4) { animation-delay: 0.16s; }
+  .cat-grid .cat-card:nth-child(5) { animation-delay: 0.2s; }
+  .cat-grid .cat-card:nth-child(6) { animation-delay: 0.24s; }
+  .cat-grid .cat-card:nth-child(7) { animation-delay: 0.28s; }
+  .cat-grid .cat-card:nth-child(8) { animation-delay: 0.32s; }
+  .cat-grid .cat-card:nth-child(n+9) { animation-delay: 0.36s; }
+  @keyframes riseIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  @keyframes heroGrad { 0%, 100% { background-position: 0% center; } 50% { background-position: 100% center; } }
+  @keyframes gridDrift { to { background-position: 34px 34px, 34px 34px; } }
+  @keyframes orbFloat { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-26px, 22px); } }
+}
+
+/* per-topic study-pace toggle, rushing vs chilling */
+.page-head-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+.topic-mode { display: inline-flex; gap: 2px; background: var(--panel-2); border: 1px solid var(--border); border-radius: 9px; padding: 3px; flex-shrink: 0; }
+.topic-mode button { border: none; background: transparent; color: var(--text-dim); font-family: var(--sans); font-size: 12px; font-weight: 600; padding: 5px 11px; border-radius: 7px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: background 0.14s, color 0.14s, box-shadow 0.14s; }
+.topic-mode button:hover { color: var(--text); }
+.topic-mode button.active { background: var(--accent-2); color: #fff; box-shadow: 0 2px 8px -2px rgba(37, 99, 235, 0.5); }
+:root[data-theme="dark"] .topic-mode button.active { background: var(--accent); color: #04201b; box-shadow: none; }

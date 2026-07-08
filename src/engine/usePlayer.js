@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 
 /**
- * usePlayer — the shared animation engine.
+ * usePlayer - the shared animation engine.
  *
  * Every visual algorithm is written as a pure function that takes its input and
  * returns an ARRAY OF STEPS. A step is just a snapshot: { ...state, message }.

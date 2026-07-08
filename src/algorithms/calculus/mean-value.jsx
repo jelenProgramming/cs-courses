@@ -56,11 +56,11 @@ export default function Page({ content }) {
         <div className="status-bar" style={{ marginTop: 12 }}>
           <span className="step-num">c</span>
           <span className="desc" dangerouslySetInnerHTML={{ __html: t(mode === 'rolle' ? {
-            en: `Rolle: since f(a) = f(b), the secant is horizontal, so there is a point c ≈ ${c.toFixed(2)} in (a,b) where the tangent is also horizontal — <b>f′(c) = 0</b>.`,
-            de: `Rolle: da f(a) = f(b), ist die Sekante waagerecht, also gibt es ein c ≈ ${c.toFixed(2)} in (a,b), wo die Tangente ebenfalls waagerecht ist — <b>f′(c) = 0</b>.`
+            en: `Rolle: since f(a) = f(b), the secant is horizontal, so there is a point c ≈ ${c.toFixed(2)} in (a,b) where the tangent is also horizontal - <b>f′(c) = 0</b>.`,
+            de: `Rolle: da f(a) = f(b), ist die Sekante waagerecht, also gibt es ein c ≈ ${c.toFixed(2)} in (a,b), wo die Tangente ebenfalls waagerecht ist - <b>f′(c) = 0</b>.`
           } : {
-            en: `MVT: there is a point c ≈ ${c.toFixed(2)} in (a,b) where the tangent (blue) is <b>parallel</b> to the secant (yellow) — the instantaneous rate equals the average rate, <b>f′(c) = ${target.toFixed(2)}</b>.`,
-            de: `MWS: es gibt ein c ≈ ${c.toFixed(2)} in (a,b), wo die Tangente (blau) <b>parallel</b> zur Sekante (gelb) ist — die momentane Rate gleicht der mittleren, <b>f′(c) = ${target.toFixed(2)}</b>.`
+            en: `MVT: there is a point c ≈ ${c.toFixed(2)} in (a,b) where the tangent (blue) is <b>parallel</b> to the secant (yellow) - the instantaneous rate equals the average rate, <b>f′(c) = ${target.toFixed(2)}</b>.`,
+            de: `MWS: es gibt ein c ≈ ${c.toFixed(2)} in (a,b), wo die Tangente (blau) <b>parallel</b> zur Sekante (gelb) ist - die momentane Rate gleicht der mittleren, <b>f′(c) = ${target.toFixed(2)}</b>.`
           }) }} />
         </div>
         <div className="legend">

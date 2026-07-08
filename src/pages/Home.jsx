@@ -5,12 +5,12 @@ import { useLang } from '../i18n.jsx'
 const HERO = {
   title: { en: 'See the algorithm think.', de: 'Sieh den Algorithmus denken.' },
   body: {
-    en: 'Every algorithm and data structure from the first year of Computer Science at FERI Maribor — animated step by step, with a plain-language explanation of what happens on every move. Built for the moment a concept finally clicks before an exam.',
-    de: 'Jeder Algorithmus und jede Datenstruktur aus dem ersten Studienjahr Informatik an der FERI Maribor — Schritt für Schritt animiert, mit einer verständlichen Erklärung zu jedem Zug. Gebaut für den Moment, in dem es vor einer Prüfung endlich Klick macht.',
+    en: 'Every algorithm and data structure from the first year of Computer Science at FERI Maribor - animated step by step, with a plain-language explanation of what happens on every move. Built for the moment a concept finally clicks before an exam.',
+    de: 'Jeder Algorithmus und jede Datenstruktur aus dem ersten Studienjahr Informatik an der FERI Maribor - Schritt für Schritt animiert, mit einer verständlichen Erklärung zu jedem Zug. Gebaut für den Moment, in dem es vor einer Prüfung endlich Klick macht.',
   },
   tip: {
-    en: '<strong>Tip:</strong> algorithms marked ★ are the ones most likely to show up as "trace this by hand" exam questions — Dijkstra, Floyd–Warshall, Huffman, edit distance, LZW.',
-    de: '<strong>Tipp:</strong> Mit ★ markierte Algorithmen kommen am ehesten als „von Hand nachvollziehen"-Prüfungsaufgaben vor — Dijkstra, Floyd–Warshall, Huffman, Editierdistanz, LZW.',
+    en: '<strong>Tip:</strong> algorithms marked ★ are the ones most likely to show up as "trace this by hand" exam questions - Dijkstra, Floyd-Warshall, Huffman, edit distance, LZW.',
+    de: '<strong>Tipp:</strong> Mit ★ markierte Algorithmen kommen am ehesten als „von Hand nachvollziehen"-Prüfungsaufgaben vor - Dijkstra, Floyd-Warshall, Huffman, Editierdistanz, LZW.',
   },
 }
 
@@ -55,7 +55,7 @@ export default function Home() {
                 <Icon style={{ width: 20, height: 20 }} />
               </div>
               <h3>{cat.name}</h3>
-              <p>{items.map((a) => a.name).slice(0, 4).join(' | ')}{items.length > 4 ? ' …' : ''}</p>
+              <p>{items.map((a) => a.name).slice(0, 4).join(' | ')}{items.length > 4 ? ' ...' : ''}</p>
               <div className="count">{items.length} {tk('algorithms')} | {viz} {tk('interactive')}</div>
             </div>
           )

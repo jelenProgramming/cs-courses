@@ -32,7 +32,7 @@ export function bfs(C, start = 0) {
       if (!visited.has(v) && !queue.includes(v)) {
         queue.push(v); pred[v] = u
         steps.push({ visited: new Set(visited), frontier: new Set(queue), current: u, edge: [u, v], pred: arr(pred), order: arr(order),
-          message: { en: `${L[v]} is unvisited — enqueue it (predecessor = ${L[u]}).`, de: `${L[v]} ist unbesucht — einreihen (Vorgänger = ${L[u]}).` } })
+          message: { en: `${L[v]} is unvisited - enqueue it (predecessor = ${L[u]}).`, de: `${L[v]} ist unbesucht - einreihen (Vorgänger = ${L[u]}).` } })
       }
     }
   }
@@ -90,7 +90,7 @@ export function dijkstra(C, start = 0) {
     if (u === -1) break
     done.add(u)
     steps.push({ dist: arr(dist), pred: arr(pred), done: new Set(done), current: u,
-      message: { en: `Pick the unfinished node with the smallest dist: ${L[u]} (dist=${dist[u]}). Finalize it — its distance can't improve.`, de: `Wähle den unfertigen Knoten mit kleinster dist: ${L[u]} (dist=${dist[u]}). Finalisieren — seine Distanz kann sich nicht mehr verbessern.` } })
+      message: { en: `Pick the unfinished node with the smallest dist: ${L[u]} (dist=${dist[u]}). Finalize it - its distance can't improve.`, de: `Wähle den unfertigen Knoten mit kleinster dist: ${L[u]} (dist=${dist[u]}). Finalisieren - seine Distanz kann sich nicht mehr verbessern.` } })
     for (const { v, w } of neighbors(C, u)) {
       if (done.has(v)) continue
       const cand = dist[u] + w
@@ -111,7 +111,7 @@ export function dijkstra(C, start = 0) {
   return steps
 }
 
-// ------------------------- Floyd–Warshall -------------------------
+// ------------------------- Floyd-Warshall -------------------------
 // The two-matrix classic: D (distances) and P (predecessors) both evolve.
 export function floydWarshall(C) {
   const n = C.length
@@ -155,7 +155,7 @@ export function prim(C, start = 0) {
     for (const u of inTree) for (const { v, w } of neighbors(C, u)) if (!inTree.has(v)) if (!best || w < best.w) best = { u, v, w }
     if (!best) break
     steps.push({ inTree: new Set(inTree), treeEdges: treeEdges.slice(), edge: [best.u, best.v],
-      message: { en: `Cheapest edge leaving the tree: ${L[best.u]}–${L[best.v]} (w=${best.w}). Add it.`, de: `Billigste Kante aus dem Baum: ${L[best.u]}–${L[best.v]} (w=${best.w}). Hinzufügen.` } })
+      message: { en: `Cheapest edge leaving the tree: ${L[best.u]}-${L[best.v]} (w=${best.w}). Add it.`, de: `Billigste Kante aus dem Baum: ${L[best.u]}-${L[best.v]} (w=${best.w}). Hinzufügen.` } })
     inTree.add(best.v); treeEdges.push([best.u, best.v])
   }
   const total = treeEdges.reduce((s, [u, v]) => s + C[u][v], 0)
@@ -181,8 +181,8 @@ export function kruskal(C) {
     const cycle = ru === rv
     steps.push({ treeEdges: treeEdges.slice(), sortedEdges: edges.map((e) => e.slice()), considering: idx, edge: [u, v],
       message: cycle
-        ? { en: `${L[u]}–${L[v]} (w=${w}): both already connected — skip, it would make a cycle.`, de: `${L[u]}–${L[v]} (w=${w}): bereits verbunden — überspringen, würde Zyklus bilden.` }
-        : { en: `${L[u]}–${L[v]} (w=${w}): different components — add it.`, de: `${L[u]}–${L[v]} (w=${w}): verschiedene Komponenten — hinzufügen.` } })
+        ? { en: `${L[u]}-${L[v]} (w=${w}): both already connected - skip, it would make a cycle.`, de: `${L[u]}-${L[v]} (w=${w}): bereits verbunden - überspringen, würde Zyklus bilden.` }
+        : { en: `${L[u]}-${L[v]} (w=${w}): different components - add it.`, de: `${L[u]}-${L[v]} (w=${w}): verschiedene Komponenten - hinzufügen.` } })
     if (!cycle) { parent[ru] = rv; treeEdges.push([u, v]) }
   })
   const total = treeEdges.reduce((s, [u, v]) => s + C[u][v], 0)
