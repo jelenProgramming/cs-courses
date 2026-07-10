@@ -146,6 +146,11 @@ export const ALGORITHMS = [
   v('tcp-ip',         'TCP/IP Handshake',     'web', 'OSS', { tagline: { en: 'The three-way handshake, step by step', de: 'Der Drei-Wege-Handshake, Schritt fuer Schritt' } }),
   r('cookies-sessions','Cookies & Sessions',  'web', 'OSS', { tagline: { en: 'How a stateless protocol remembers you', de: 'Wie ein zustandsloses Protokoll sich dich merkt' } }),
   r('json-xml',       'JSON & XML',           'web', 'OSS', { tagline: { en: 'The data formats the web speaks', de: 'Die Datenformate, die das Web spricht' } }),
+  r('css',            'CSS',                  'web', 'OSS', { tagline: { en: 'The cascade, box model, Flexbox and Grid', de: 'Kaskade, Boxmodell, Flexbox und Grid' } }),
+  r('javascript',     'JavaScript',           'web', 'OSS', { tagline: { en: 'Objects, prototypes and classes', de: 'Objekte, Prototypen und Klassen' } }),
+  r('async-js',       'Asynchronous JavaScript','web', 'OSS', { tagline: { en: 'Callbacks, Promises, async / await', de: 'Callbacks, Promises, async / await' } }),
+  r('web-security',   'Web Security',         'web', 'OSS', { tagline: { en: 'XSS, SQL injection, CSRF and defences', de: 'XSS, SQL-Injection, CSRF und Abwehr' }, star: true }),
+  r('web-frameworks', 'Web Frameworks',       'web', 'OSS', { tagline: { en: 'MVC on the server, SPAs on the client', de: 'MVC am Server, SPAs am Client' } }),
 ]
 
 const modules = import.meta.glob('./algorithms/**/*.jsx')
