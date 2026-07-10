@@ -5,6 +5,7 @@ import { useLang } from '../i18n.jsx'
 import { useMode } from '../mode.jsx'
 import { CONTENT } from '../content.js'
 import ReadPage from '../components/ReadPage.jsx'
+import { mathify } from '../components/Math.jsx'
 
 // per-topic study pace, rushing (cram, condensed) vs chilling (full + animations)
 const PACE = {
@@ -55,7 +56,7 @@ export default function AlgoPage() {
       {tldr && (
         <div className="tldr">
           <span className="tldr-label">TL;DR</span>
-          <span className="tldr-text" dangerouslySetInnerHTML={{ __html: t(tldr) }} />
+          <span className="tldr-text" dangerouslySetInnerHTML={{ __html: mathify(t(tldr)) }} />
         </div>
       )}
 

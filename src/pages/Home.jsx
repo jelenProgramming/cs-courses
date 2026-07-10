@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { CATEGORIES, ALGORITHMS, algosByCategory } from '../registry.js'
 import { useLang } from '../i18n.jsx'
+import { mathify } from '../components/Math.jsx'
 
 const HERO = {
   title: { en: 'See the algorithm think.', de: 'Sieh den Algorithmus denken.' },
@@ -63,7 +64,7 @@ export default function Home() {
       </div>
 
       <div className="note" style={{ marginTop: 28 }}>
-        <span dangerouslySetInnerHTML={{ __html: t(HERO.tip) }} />
+        <span dangerouslySetInnerHTML={{ __html: mathify(t(HERO.tip)) }} />
       </div>
     </div>
   )

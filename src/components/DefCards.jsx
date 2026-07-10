@@ -1,5 +1,5 @@
 import { useLang } from '../i18n.jsx'
-import { renderTex } from './Math.jsx'
+import { renderTex , mathify } from './Math.jsx'
 
 /**
  * Prominent "Definitions & Theorems" panel. Each def: { name, body, formal? }
@@ -28,7 +28,7 @@ export default function DefCards({ defs }) {
         <div className="def-card" key={i}>
           <span className="def-name">{t(d.name)}</span>
           <div className="def-body">
-            <span dangerouslySetInnerHTML={{ __html: t(d.body) }} />
+            <span dangerouslySetInnerHTML={{ __html: mathify(t(d.body)) }} />
             {d.formal && <Formal formal={d.formal} />}
           </div>
         </div>

@@ -23,6 +23,15 @@ export function renderTex(tex, { display = false } = {}) {
   }
 }
 
+// replace $...$ (inline) and $$...$$ (display) delimiters inside an HTML string
+// with rendered KaTeX, so prose (tldr, definitions, notes) can carry typeset math
+export function mathify(html) {
+  if (typeof html !== 'string' || !html.includes('$')) return html
+  return html
+    .replace(/\$\$([^$]+)\$\$/g, (_, tex) => renderTex(tex, { display: true }))
+    .replace(/\$([^$]+)\$/g, (_, tex) => renderTex(tex, { display: false }))
+}
+
 export function M({ children, display = false }) {
   return <span className={display ? 'katex-block' : 'katex-inline'}
     dangerouslySetInnerHTML={{ __html: renderTex(children, { display }) }} />

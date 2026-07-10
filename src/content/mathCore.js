@@ -381,7 +381,7 @@ export const mathCoreContent = {
     ],
   },
   'master-theorem': {
-    tldr: { en: 'A formula that instantly gives the Big-O of most divide-and-conquer recurrences T(n)=a∗T(n/b)+f(n), by comparing f(n) against n^(log_b a). Skips solving the recurrence by hand.', de: 'Eine Formel, die sofort die Big-O der meisten Teile-und-herrsche-Rekurrenzen T(n)=a∗T(n/b)+f(n) liefert.' },
+    tldr: { en: 'A formula that instantly gives the Big-O of most divide-and-conquer recurrences $T(n)=a\\cdot T(n/b)+f(n)$, by comparing $f(n)$ against $n^{\\log_b a}$. Skips solving the recurrence by hand.', de: 'Eine Formel, die sofort die Big-O der meisten Teile-und-herrsche-Rekurrenzen $T(n)=a\\cdot T(n/b)+f(n)$ liefert.' },
     when: { en: 'Analyzing any recursive divide-and-conquer algorithm: merge sort, binary search, Strassen, Karatsuba. The fastest way to a complexity answer on an exam.', de: 'Analyse jedes rekursiven Teile-und-herrsche-Algorithmus: Merge Sort, binaere Suche, Strassen, Karatsuba.' },
     how: [
       { en: 'Write the recurrence as T(n) = a∗T(n/b) + f(n): a subproblems of size n/b, plus f(n) work to combine.', de: 'Rekurrenz als T(n) = a∗T(n/b) + f(n) schreiben.' },

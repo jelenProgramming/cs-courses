@@ -4,6 +4,7 @@ import { useExpanded } from '../expand.js'
 import ComplexityTable from './ComplexityTable.jsx'
 import DefCards from './DefCards.jsx'
 import Expandable from './Expandable.jsx'
+import { mathify } from './Math.jsx'
 
 /**
  * AlgoDetail - explanatory section below an interactive visualizer. In cram mode
@@ -20,14 +21,14 @@ export default function AlgoDetail({ content }) {
   const whenEl = when && (
     <div className="panel prose">
       <h2 className="section">{t({ en: 'When to use it', de: 'Wann man es einsetzt' })}</h2>
-      <p style={{ marginTop: 10 }} dangerouslySetInnerHTML={{ __html: t(when) }} />
+      <p style={{ marginTop: 10 }} dangerouslySetInnerHTML={{ __html: mathify(t(when)) }} />
     </div>
   )
   const howEl = how.length > 0 && (
     <div className="panel">
       <h2 className="section">{tk('howItWorks')}</h2>
       <ol className="prose" style={{ paddingLeft: 20, marginTop: 12, marginBottom: 0 }}>
-        {how.map((s, i) => <li key={i} dangerouslySetInnerHTML={{ __html: t(s) }} />)}
+        {how.map((s, i) => <li key={i} dangerouslySetInnerHTML={{ __html: mathify(t(s)) }} />)}
       </ol>
     </div>
   )
@@ -63,7 +64,7 @@ export default function AlgoDetail({ content }) {
             <div className="panel">
               <h3 className="section">{tk('examTraps')}</h3>
               <ul className="prose" style={{ paddingLeft: 18, margin: 0 }}>
-                {pitfalls.map((p, i) => <li key={i} dangerouslySetInnerHTML={{ __html: t(p) }} />)}
+                {pitfalls.map((p, i) => <li key={i} dangerouslySetInnerHTML={{ __html: mathify(t(p)) }} />)}
               </ul>
             </div>
           )}

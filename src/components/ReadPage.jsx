@@ -4,6 +4,7 @@ import { useExpanded } from '../expand.js'
 import ComplexityTable from './ComplexityTable.jsx'
 import DefCards from './DefCards.jsx'
 import Expandable from './Expandable.jsx'
+import { mathify } from './Math.jsx'
 
 /**
  * ReadPage - shared layout for explanation ("read") topics. All text fields
@@ -20,13 +21,13 @@ export default function ReadPage({ intro = [], defs = [], how = [], paper = [], 
   const { isOpen, toggle, resetAll, anyOpen } = useExpanded()
 
   const introEl = intro.length > 0 && (
-    <div className="panel prose">{intro.map((p, i) => <p key={i} dangerouslySetInnerHTML={{ __html: t(p) }} />)}</div>
+    <div className="panel prose">{intro.map((p, i) => <p key={i} dangerouslySetInnerHTML={{ __html: mathify(t(p)) }} />)}</div>
   )
   const howEl = how.length > 0 && (
     <div className="panel">
       <h2 className="section">{tk('howItWorks')}</h2>
       <ol className="prose" style={{ paddingLeft: 20, marginTop: 12, marginBottom: 0 }}>
-        {how.map((s, i) => <li key={i} dangerouslySetInnerHTML={{ __html: t(s) }} />)}
+        {how.map((s, i) => <li key={i} dangerouslySetInnerHTML={{ __html: mathify(t(s)) }} />)}
       </ol>
     </div>
   )
@@ -65,7 +66,7 @@ export default function ReadPage({ intro = [], defs = [], how = [], paper = [], 
           <div className="panel">
             <h3 className="section">{tk('examTraps')}</h3>
             <ul className="prose" style={{ paddingLeft: 18, margin: 0 }}>
-              {pitfalls.map((p, i) => <li key={i} dangerouslySetInnerHTML={{ __html: t(p) }} />)}
+              {pitfalls.map((p, i) => <li key={i} dangerouslySetInnerHTML={{ __html: mathify(t(p)) }} />)}
             </ul>
           </div>
         )}
