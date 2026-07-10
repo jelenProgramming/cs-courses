@@ -1024,3 +1024,14 @@ h3.section { font-size: 14px; font-weight: 700; margin: 0 0 10px; color: var(--t
   .search-input:focus { width: 160px; }
   .search-results { width: 260px; }
 }
+
+/* two-row course bar: home + search/info/toggles on top, course tabs wrap below */
+.course-bar-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 6px 12px 2px; }
+.course-bar-inner { flex-wrap: wrap; padding: 2px 8px 6px; }
+.course-tab-btn { height: 40px; }
+.course-bar-right { margin-left: 0; }
+
+/* definitions panel: keep the title off its accent line */
+.defs-panel { padding-left: 18px; }
+/* KaTeX math must blend into the def-card, not sit in a different-colored box */
+.def-card .def-body .formal-tex { background: transparent; padding: 6px 0 2px; }

@@ -37,11 +37,25 @@ export default function CourseMenu({ toggles }) {
     .map((id) => ({ id, topics: algosByCourse(id) }))
     .filter((c) => c.topics.length > 0)
 
+  // keep an open dropdown inside the viewport regardless of its tab position
+  const fitDropdown = (el) => {
+    if (!el) return
+    el.style.left = '0'; el.style.right = 'auto'
+    if (el.getBoundingClientRect().right > window.innerWidth - 8) { el.style.left = 'auto'; el.style.right = '0' }
+  }
+
   return (
     <nav className="course-bar" onMouseLeave={() => setOpen(null)}>
-      <div className="course-bar-inner">
+      <div className="course-bar-top">
         <NavLink to="/" className="course-home" title="Home">▦</NavLink>
-        {courses.map((c, idx) => (
+        <div className="course-bar-right">
+          <SearchBar />
+          <NavLink to="/info" className="course-info-tab">{tk('infoLink')}</NavLink>
+          {toggles}
+        </div>
+      </div>
+      <div className="course-bar-inner">
+        {courses.map((c) => (
           <div
             key={c.id}
             className={'course-tab' + (open === c.id ? ' open' : '')}
@@ -55,7 +69,7 @@ export default function CourseMenu({ toggles }) {
               <span className="course-tab-caret">▾</span>
             </button>
             {open === c.id && (
-              <div className={'course-dropdown' + (idx >= courses.length - 4 ? ' course-dropdown--right' : '')}>
+              <div className="course-dropdown" ref={fitDropdown}>
                 {c.topics.map((topic) => (
                   <NavLink
                     key={topic.slug}
@@ -76,11 +90,6 @@ export default function CourseMenu({ toggles }) {
             )}
           </div>
         ))}
-        <div className="course-bar-right">
-          <SearchBar />
-          <NavLink to="/info" className="course-info-tab">{tk('infoLink')}</NavLink>
-          {toggles}
-        </div>
       </div>
     </nav>
   )
