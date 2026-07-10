@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Interactive visualizer for the first-year algorithms & data structures curriculum (FERI Maribor, RIT)",
+  "description": "Interactive visualizer for core computer-science algorithms and data structures",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

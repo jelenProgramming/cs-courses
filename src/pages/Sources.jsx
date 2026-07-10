@@ -44,7 +44,7 @@ const COURSES = [
   {
     name: { en: 'Mathematical Analysis', de: 'Mathematische Analysis' },
     refs: [
-      'Course lecture notes (poglavja: Preslikave, Številske množice, Zaporedja in vrste, Elementarne funkcije, Limita in zveznost, Odvod, Nedoločen integral, Določen integral).',
+      'Stewart, J. (2015). Calculus, 8th ed. Cengage Learning.',
     ],
   },
   {

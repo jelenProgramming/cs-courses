@@ -7,7 +7,7 @@ import SearchBar from './SearchBar.jsx'
 
 /**
  * Top course navigation bar. A long blue bar of course tabs; hovering a tab
- * drops down that course's topics (poglavja); clicking the course name jumps to
+ * drops down that course's topics; clicking the course name jumps to
  * the course's first topic. Replaces the sidebar.
  *
  * The study-mode / language / theme toggles are rendered inside the bar (passed

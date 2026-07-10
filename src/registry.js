@@ -118,6 +118,11 @@ export const ALGORITHMS = [
   r('pointers',       'Pointers & Memory',    'programming', 'P1', { tagline: { en: 'Stack, heap, and what a pointer is', de: 'Stack, Heap und was ein Zeiger ist' } }),
   r('oop',            'Object-Oriented Programming','programming', 'P2', { tagline: { en: 'Classes, inheritance, polymorphism', de: 'Klassen, Vererbung, Polymorphie' } }),
   r('templates',      'Templates & Generics', 'programming', 'P2', { tagline: { en: 'template typename T and the STL', de: 'template typename T und die STL' } }),
+  r('constructors',        'Constructors & Destructors', 'programming', 'P2', { tagline: { en: 'Object lifecycle: build and clean up', de: 'Objektlebenszyklus: aufbauen und aufraeumen' } }),
+  r('composition',         'Composition & Aggregation', 'programming', 'P2', { tagline: { en: 'has-a: objects inside objects', de: 'hat-ein: Objekte in Objekten' } }),
+  r('operator-overloading','Operator Overloading', 'programming', 'P2', { tagline: { en: 'Give + == << meaning for your types', de: 'Gib + == << Bedeutung fuer deine Typen' } }),
+  r('multiple-inheritance','Multiple Inheritance', 'programming', 'P2', { tagline: { en: 'Many bases, and the diamond problem', de: 'Viele Basen und das Diamantproblem' } }),
+  r('move-semantics',      'Move Semantics (C++11)', 'programming', 'P2', { tagline: { en: 'Rvalue references, move not copy', de: 'Rvalue-Referenzen, verschieben statt kopieren' } }),
 
   r('relational-model','Relational Model',    'databases', 'PB', { tagline: { en: 'Tables, rows, relational algebra', de: 'Tabellen, Zeilen, relationale Algebra' } }),
   v('sql-joins',      'SQL Joins',            'databases', 'PB', { tagline: { en: 'INNER, LEFT, RIGHT, FULL, visualized', de: 'INNER, LEFT, RIGHT, FULL, visualisiert' }, star: true }),
@@ -188,7 +193,7 @@ export const COURSE_LABELS = {
   extra: { en: 'Added beyond the curriculum', de: 'Ueber den Lehrplan hinaus ergaenzt' },
 }
 
-// Course display order for the top navigation bar (predmetnik order).
+// Course display order for the top navigation bar.
 export const COURSE_ORDER = ['P1', 'P2', 'AIPS', 'ARA', 'DS', 'MA', 'PB', 'ORS', 'OSS', 'core', 'extra']
 
 export function algosByCourse(courseId) {

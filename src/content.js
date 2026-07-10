@@ -7,6 +7,7 @@ import { mathCoreContent } from './content/mathCore.js'
 import { csCoreContent } from './content/csCore.js'
 import { vizExtraContent } from './content/vizExtra.js'
 import { araExtraContent } from './content/araExtra.js'
+import { prog2Content } from './content/prog2.js'
 
 export const CONTENT = {
   ...sortingGraphsContent,
@@ -16,4 +17,5 @@ export const CONTENT = {
   ...csCoreContent,
   ...vizExtraContent,
   ...araExtraContent,
+  ...prog2Content,
 }
