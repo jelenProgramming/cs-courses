@@ -101,6 +101,8 @@ export const ALGORITHMS = [
   r('induction',      'Mathematical Induction','discrete', 'DS', { tagline: { en: 'Prove statements for all n', de: 'Aussagen fuer alle n beweisen' } }),
   r('logic-proofs',   'Logic & Proofs',       'discrete', 'DS', { tagline: { en: 'Propositions, truth tables, inference', de: 'Aussagen, Wahrheitstabellen, Schlussfolgerung' } }),
   r('relations',      'Sets, Relations, Functions','discrete', 'DS', { tagline: { en: 'The vocabulary everything is built on', de: 'Das Vokabular, auf dem alles aufbaut' } }),
+  r('recurrences',    'Recurrence Relations', 'discrete', 'DS', { tagline: { en: 'Solve linear recurrences with the characteristic equation', de: 'Lineare Rekurrenzen mit der charakteristischen Gleichung loesen' } }),
+  r('graph-theory',   'Graph Theory Basics',  'discrete', 'DS', { tagline: { en: 'Degree, trees, Euler vs Hamilton', de: 'Grad, Baeume, Euler vs Hamilton' } }),
 
   v('epsilon-delta',  'Epsilon-Delta Limit',  'calculus', 'MA', { tagline: { en: 'See for-all epsilon, exists delta', de: 'Sieh fuer-alle epsilon, existiert delta' }, star: true }),
   v('derivative',     'The Derivative',       'calculus', 'MA', { tagline: { en: 'Secant slope to tangent slope', de: 'Sekantensteigung zu Tangentensteigung' } }),
@@ -109,6 +111,9 @@ export const ALGORITHMS = [
   v('newton',         'Newton Method',        'calculus', 'MA', { tagline: { en: 'Find roots by following tangents', de: 'Nullstellen finden, indem man Tangenten folgt' } }),
   r('sequences',      'Sequences & Series',   'calculus', 'MA', { tagline: { en: 'Convergence and divergence', de: 'Konvergenz und Divergenz' } }),
   v('mean-value',     'Rolle & Mean Value Theorem', 'calculus', 'MA', { tagline: { en: 'The cornerstone existence theorems of calculus', de: 'Die zentralen Existenzsaetze der Analysis' }, star: true }),
+  r('elementary-functions','Elementary Functions', 'calculus', 'MA', { tagline: { en: 'Exp, log, trig, hyperbolic and inverses', de: 'Exp, Log, Trig, hyperbolisch und Umkehrungen' } }),
+  r('continuity',     'Limits & Continuity',  'calculus', 'MA', { tagline: { en: 'Continuity, IVT and the extreme value theorem', de: 'Stetigkeit, Zwischenwert- und Extremwertsatz' } }),
+  r('integration-techniques','Integration Techniques', 'calculus', 'MA', { tagline: { en: 'Substitution, by parts, partial fractions', de: 'Substitution, partiell, Partialbrueche' } }),
 
   r('big-o',          'Big-O & Complexity',   'programming', 'core', { tagline: { en: 'How runtime scales with input size', de: 'Wie die Laufzeit mit der Eingabegroesse waechst' }, star: true }),
   r('variables-types','Variables & Types',    'programming', 'P1', { tagline: { en: 'How data is named and stored', de: 'Wie Daten benannt und gespeichert werden' } }),
@@ -131,6 +136,7 @@ export const ALGORITHMS = [
   r('normalization',  'Normalization',        'databases', 'PB', { tagline: { en: '1NF to BCNF, functional dependencies', de: '1NF bis BCNF, funktionale Abhaengigkeiten' } }),
   v('btree-index',    'Indexes & B-Trees',    'databases', 'PB', { tagline: { en: 'Why a query with an index is fast', de: 'Warum eine Abfrage mit Index schnell ist' } }),
   r('transactions',   'Transactions & ACID',  'databases', 'PB', { tagline: { en: 'Atomicity, consistency, isolation, durability', de: 'Atomaritaet, Konsistenz, Isolation, Dauerhaftigkeit' } }),
+  r('sql-advanced',   'Advanced SQL',         'databases', 'PB', { tagline: { en: 'Aggregates, GROUP BY, subqueries, views', de: 'Aggregate, GROUP BY, Unterabfragen, Sichten' } }),
 
   v('number-systems', 'Number Systems',       'systems', 'ORS', { tagline: { en: 'Binary, decimal, hex, interactive', de: 'Binaer, Dezimal, Hex, interaktiv' }, star: true }),
   r('binary-arithmetic','Binary Arithmetic',  'systems', 'ORS', { tagline: { en: 'Twos complement, add and subtract', de: 'Zweierkomplement, addieren und subtrahieren' } }),

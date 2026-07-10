@@ -9,6 +9,7 @@ import { vizExtraContent } from './content/vizExtra.js'
 import { araExtraContent } from './content/araExtra.js'
 import { prog2Content } from './content/prog2.js'
 import { webContent } from './content/web.js'
+import { extraTopicsContent } from './content/extraTopics.js'
 
 export const CONTENT = {
   ...sortingGraphsContent,
@@ -20,4 +21,5 @@ export const CONTENT = {
   ...araExtraContent,
   ...prog2Content,
   ...webContent,
+  ...extraTopicsContent,
 }
