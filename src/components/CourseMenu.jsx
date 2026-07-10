@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { COURSE_ORDER, COURSE_SHORT, algosByCourse, prefetchComponent } from '../registry.js'
 import { useLang } from '../i18n.jsx'
 import KindIcon from './KindIcon.jsx'
+import SearchBar from './SearchBar.jsx'
 
 /**
  * Top course navigation bar. A long blue bar of course tabs; hovering a tab
@@ -40,7 +41,7 @@ export default function CourseMenu({ toggles }) {
     <nav className="course-bar" onMouseLeave={() => setOpen(null)}>
       <div className="course-bar-inner">
         <NavLink to="/" className="course-home" title="Home">▦</NavLink>
-        {courses.map((c) => (
+        {courses.map((c, idx) => (
           <div
             key={c.id}
             className={'course-tab' + (open === c.id ? ' open' : '')}
@@ -54,7 +55,7 @@ export default function CourseMenu({ toggles }) {
               <span className="course-tab-caret">▾</span>
             </button>
             {open === c.id && (
-              <div className="course-dropdown">
+              <div className={'course-dropdown' + (idx >= courses.length - 4 ? ' course-dropdown--right' : '')}>
                 {c.topics.map((topic) => (
                   <NavLink
                     key={topic.slug}
@@ -76,6 +77,7 @@ export default function CourseMenu({ toggles }) {
           </div>
         ))}
         <div className="course-bar-right">
+          <SearchBar />
           <NavLink to="/info" className="course-info-tab">{tk('infoLink')}</NavLink>
           {toggles}
         </div>

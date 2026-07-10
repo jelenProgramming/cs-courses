@@ -88,7 +88,8 @@ const DICT = {
   // misc
   notImplemented: { en: 'This module has not been implemented yet.', de: 'Dieses Modul ist noch nicht umgesetzt.' },
   loading: { en: 'Loading...', de: 'Lädt...' },
-  searchAlgos: { en: 'Search algorithms...', de: 'Algorithmen suchen...' },
+  searchAlgos: { en: 'Search topics...', de: 'Themen suchen...' },
+  noResults: { en: 'No matches', de: 'Keine Treffer' },
   interactive: { en: 'interactive', de: 'interaktiv' },
   algorithms: { en: 'algorithms', de: 'Algorithmen' },
   categories: { en: 'categories', de: 'Kategorien' },

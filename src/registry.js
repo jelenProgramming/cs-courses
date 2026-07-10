@@ -176,14 +176,14 @@ export function algosByCategory(catId) { return ALGORITHMS.filter((a) => a.categ
 
 export const COURSE_LABELS = {
   AIPS: { en: 'Algorithms & Data Structures', de: 'Algorithmen & Datenstrukturen' },
-  ARA: { en: 'Applications of Computer Algorithms', de: 'Anwendungen von Computeralgorithmen' },
-  DS: { en: 'Discrete Structures', de: 'Diskrete Strukturen' },
-  MA: { en: 'Mathematical Analysis', de: 'Mathematische Analysis' },
+  ARA: { en: 'Applied Algorithms', de: 'Angewandte Algorithmen' },
+  DS: { en: 'Discrete Mathematics', de: 'Diskrete Mathematik' },
+  MA: { en: 'Calculus & Analysis', de: 'Analysis' },
   P1: { en: 'Programming I', de: 'Programmierung I' },
   P2: { en: 'Programming II', de: 'Programmierung II' },
   PB: { en: 'Databases I', de: 'Datenbanken I' },
-  ORS: { en: 'Foundations of Computer Systems', de: 'Grundlagen der Computersysteme' },
-  OSS: { en: 'Foundations of the World Wide Web', de: 'Grundlagen des World Wide Web' },
+  ORS: { en: 'Computer Systems', de: 'Computersysteme' },
+  OSS: { en: 'Web Foundations', de: 'Grundlagen des Web' },
   core: { en: 'Universal CS core', de: 'Universeller Informatik-Kern' },
   extra: { en: 'Added beyond the curriculum', de: 'Ueber den Lehrplan hinaus ergaenzt' },
 }
@@ -198,13 +198,13 @@ export function algosByCourse(courseId) {
 export const COURSE_SHORT = {
   P1: { en: 'Programming I', de: 'Programmierung I' },
   P2: { en: 'Programming II', de: 'Programmierung II' },
-  AIPS: { en: 'Algorithms & DS', de: 'Algorithmen & DS' },
-  ARA: { en: 'Algorithm Applications', de: 'Algorithmen-Anwendungen' },
-  DS: { en: 'Discrete Structures', de: 'Diskrete Strukturen' },
-  MA: { en: 'Analysis', de: 'Analysis' },
+  AIPS: { en: 'Algorithms & Data Structures', de: 'Algorithmen & Datenstrukturen' },
+  ARA: { en: 'Applied Algorithms', de: 'Angewandte Algorithmen' },
+  DS: { en: 'Discrete Mathematics', de: 'Diskrete Mathematik' },
+  MA: { en: 'Calculus', de: 'Analysis' },
   PB: { en: 'Databases', de: 'Datenbanken' },
   ORS: { en: 'Computer Systems', de: 'Computersysteme' },
-  OSS: { en: 'World Wide Web', de: 'World Wide Web' },
+  OSS: { en: 'Web Foundations', de: 'Web-Grundlagen' },
   core: { en: 'CS Core', de: 'Informatik-Kern' },
   extra: { en: 'Extras', de: 'Extras' },
 }
