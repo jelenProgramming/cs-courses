@@ -10,6 +10,7 @@ import { araExtraContent } from './content/araExtra.js'
 import { prog2Content } from './content/prog2.js'
 import { webContent } from './content/web.js'
 import { extraTopicsContent } from './content/extraTopics.js'
+import { deepContent } from './content/deep.js'
 
 export const CONTENT = {
   ...sortingGraphsContent,
@@ -22,4 +23,5 @@ export const CONTENT = {
   ...prog2Content,
   ...webContent,
   ...extraTopicsContent,
+  ...deepContent,
 }
