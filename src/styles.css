@@ -1035,3 +1035,13 @@ h3.section { font-size: 14px; font-weight: 700; margin: 0 0 10px; color: var(--t
 .defs-panel { padding-left: 18px; }
 /* KaTeX math must blend into the def-card, not sit in a different-colored box */
 .def-card .def-body .formal-tex { background: transparent; padding: 6px 0 2px; }
+
+/* language code toggle */
+.codetabs { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-top: 4px; }
+.codetabs-bar { display: flex; gap: 2px; padding: 6px 6px 0; background: var(--panel-2); flex-wrap: wrap; }
+.codetab { border: none; background: transparent; color: var(--text-dim); font-family: var(--mono); font-size: 12.5px; font-weight: 600; padding: 6px 12px; border-radius: 8px 8px 0 0; cursor: pointer; transition: background 0.12s, color 0.12s; }
+.codetab:hover { color: var(--text); }
+.codetab.on { background: var(--bg); color: var(--accent-2); }
+.codetab.empty { opacity: 0.45; }
+.codetabs pre.code { margin: 0; border-radius: 0; }
+.code-na { padding: 16px 18px; font-size: 13.5px; color: var(--text-dim); font-style: italic; background: var(--bg); }

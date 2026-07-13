@@ -5,6 +5,7 @@ import ComplexityTable from './ComplexityTable.jsx'
 import DefCards from './DefCards.jsx'
 import Expandable from './Expandable.jsx'
 import { mathify } from './Math.jsx'
+import CodeTabs from './CodeTabs.jsx'
 
 /**
  * ReadPage - shared layout for explanation ("read") topics. All text fields
@@ -14,7 +15,7 @@ import { mathify } from './Math.jsx'
  * sections collapse to an "Explain more" button per section; expanding is
  * remembered across topics (useExpanded), with a reset control.
  */
-export default function ReadPage({ intro = [], defs = [], how = [], paper = [], pseudocode, cpp, complexity = [], example = null, pitfalls = [], children }) {
+export default function ReadPage({ intro = [], defs = [], how = [], paper = [], pseudocode, cpp, code = null, complexity = [], example = null, pitfalls = [], children }) {
   const { t, tk } = useLang()
   const { mode } = useMode()
   const calm = mode === 'calm'
@@ -41,6 +42,12 @@ export default function ReadPage({ intro = [], defs = [], how = [], paper = [], 
       <pre className="code">{cpp.code}</pre>
     </div>
   )
+  const codeEl = code && (
+    <div className="panel">
+      <h2 className="section">{t({ en: 'In code', de: 'Im Code' })}</h2>
+      <CodeTabs code={code} />
+    </div>
+  )
 
   return (
     <div className="cols">
@@ -57,6 +64,7 @@ export default function ReadPage({ intro = [], defs = [], how = [], paper = [], 
         {children}
         {pseudoEl && <Expandable calm={calm} open={isOpen('pseudocode')} onToggle={() => toggle('pseudocode')} label={tk('pseudocode')}>{pseudoEl}</Expandable>}
         {cppEl && <Expandable calm={calm} open={isOpen('cpp')} onToggle={() => toggle('cpp')} label={tk('inCpp')}>{cppEl}</Expandable>}
+        {codeEl && <Expandable calm={calm} open={isOpen('code')} onToggle={() => toggle('code')} label={t({ en: 'In code', de: 'Im Code' })}>{codeEl}</Expandable>}
       </div>
       <div>
         {complexity.length > 0 && (

@@ -2,7 +2,7 @@
 
 An interactive, bilingual (English / German) learning resource that animates the
 algorithms, data structures and core computer-science concepts taught in the
-**first year of Computer Science (RIT) at FERI, University of Maribor** - plus the
+**core computer science** - plus the
 universal CS foundation shared across programs like MIT, Cambridge, TU Graz and
 TU München.
 
@@ -135,7 +135,7 @@ runtime errors.
 ## References
 
 The standard algorithms are described in many textbooks; these are the works the
-corresponding FERI courses reference, listed for further reading (the
+corresponding reference works, listed for further reading (the
 explanations and code here are original):
 
 - Cormen, Leiserson, Rivest, Stein - *Introduction to Algorithms* (MIT Press)

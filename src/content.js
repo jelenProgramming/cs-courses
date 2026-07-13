@@ -11,6 +11,7 @@ import { prog2Content } from './content/prog2.js'
 import { webContent } from './content/web.js'
 import { extraTopicsContent } from './content/extraTopics.js'
 import { deepContent } from './content/deep.js'
+import { prog1Content } from './content/prog1.js'
 
 export const CONTENT = {
   ...sortingGraphsContent,
@@ -24,4 +25,5 @@ export const CONTENT = {
   ...webContent,
   ...extraTopicsContent,
   ...deepContent,
+  ...prog1Content,
 }
