@@ -6,6 +6,34 @@ export const prog2Content = {
       en: 'A <strong>constructor</strong> runs automatically when an object is created and sets up its initial state; a <strong>destructor</strong> runs when the object is destroyed and releases whatever it owns. C++ generates default versions, but the moment an object manages a resource you must take control of them.',
       de: 'Ein <strong>Konstruktor</strong> laeuft automatisch bei der Erzeugung eines Objekts und legt seinen Anfangszustand fest; ein <strong>Destruktor</strong> laeuft bei der Zerstoerung und gibt frei, was das Objekt besitzt. C++ erzeugt Standardversionen, doch sobald ein Objekt eine Ressource verwaltet, musst du sie selbst schreiben.',
     },
+    code: {
+      cpp: `class Point {
+  int x, y;
+public:
+  Point() : x(0), y(0) {}          // default constructor
+  Point(int a, int b) : x(a), y(b) {}
+  ~Point() {}                       // destructor
+};`,
+      python: `class Point:
+    def __init__(self, x=0, y=0):   # constructor
+        self.x, self.y = x, y
+    def __del__(self):              # destructor, rarely needed
+        pass`,
+      js: `class Point {
+  constructor(x = 0, y = 0) { this.x = x; this.y = y; }
+}   // no destructors; the garbage collector reclaims objects`,
+      java: `class Point {
+  int x, y;
+  Point() { this(0, 0); }
+  Point(int x, int y) { this.x = x; this.y = y; }
+}   // no destructors; finalizers are discouraged`,
+      csharp: `class Point {
+  int x, y;
+  public Point() : this(0, 0) {}
+  public Point(int x, int y) { this.x = x; this.y = y; }
+  ~Point() {}   // finalizer, rarely needed
+}`,
+    },
     intro: [
       { en: 'A constructor has the same name as the class and no return type. You can supply several, overloaded by their parameters: a <strong>default constructor</strong> (no arguments), <strong>parameterised constructors</strong>, a <strong>copy constructor</strong> <code>T(const T&amp;)</code>, and a <strong>conversion constructor</strong> that turns a single value into an object.',
         de: 'Ein Konstruktor traegt den Klassennamen und hat keinen Rueckgabetyp. Es kann mehrere geben, ueberladen nach ihren Parametern: einen <strong>Standardkonstruktor</strong> (ohne Argumente), <strong>parametrisierte Konstruktoren</strong>, einen <strong>Kopierkonstruktor</strong> <code>T(const T&amp;)</code> und einen <strong>Umwandlungskonstruktor</strong>, der aus einem einzelnen Wert ein Objekt macht.' },
@@ -33,6 +61,30 @@ export const prog2Content = {
       en: 'Objects can contain other objects. <strong>Composition</strong> is strong ownership: the part cannot exist without the whole and dies with it (a Car has an Engine). <strong>Aggregation</strong> is weak: the part is shared and outlives the whole (a Team has Players who exist independently). Both model a <strong>has-a</strong> relationship.',
       de: 'Objekte koennen andere Objekte enthalten. <strong>Komposition</strong> ist starker Besitz: der Teil existiert nicht ohne das Ganze und stirbt mit ihm (ein Auto hat einen Motor). <strong>Aggregation</strong> ist schwach: der Teil wird geteilt und ueberlebt das Ganze (ein Team hat Spieler, die unabhaengig existieren). Beide modellieren eine <strong>hat-ein</strong>-Beziehung.',
     },
+    code: {
+      cpp: `class Car {
+  Engine engine;    // composition: owned by value
+  Driver* driver;   // aggregation: referenced, not owned
+};`,
+      python: `class Car:
+    def __init__(self, driver):
+        self.engine = Engine()   # composition
+        self.driver = driver     # aggregation`,
+      js: `class Car {
+  constructor(driver) {
+    this.engine = new Engine();  // composition
+    this.driver = driver;        // aggregation
+  }
+}`,
+      java: `class Car {
+  private final Engine engine = new Engine();  // composition
+  private Driver driver;                        // aggregation
+}`,
+      csharp: `class Car {
+  private readonly Engine engine = new();  // composition
+  private Driver driver;                    // aggregation
+}`,
+    },
     intro: [
       { en: 'A data member can be of any type, including another class. When the containing object is built, its members are constructed first (in declaration order); when it is destroyed, its members are destroyed last, in reverse order.',
         de: 'Ein Datenmember kann jeden Typ haben, auch eine andere Klasse. Beim Bau des umschliessenden Objekts werden zuerst die Member konstruiert (in Deklarationsreihenfolge); bei der Zerstoerung werden sie zuletzt und in umgekehrter Reihenfolge abgebaut.' },
@@ -55,6 +107,22 @@ export const prog2Content = {
     tldr: {
       en: '<strong>Operator overloading</strong> gives operators like <code>+</code>, <code>==</code> and <code>&lt;&lt;</code> a custom meaning for your own types, so a <code>Complex</code> or <code>Vector</code> reads like a built-in number. It is a form of <strong>ad-hoc polymorphism</strong>: one symbol, different behaviour chosen by the operand types.',
       de: '<strong>Operatorueberladung</strong> gibt Operatoren wie <code>+</code>, <code>==</code> und <code>&lt;&lt;</code> eine eigene Bedeutung fuer deine Typen, sodass sich ein <code>Complex</code> oder <code>Vector</code> wie eine eingebaute Zahl liest. Es ist eine Form von <strong>Ad-hoc-Polymorphie</strong>: ein Symbol, unterschiedliches Verhalten je nach Operandentyp.',
+    },
+    code: {
+      cpp: `struct Vec {
+  double x, y;
+  Vec operator+(const Vec& o) const { return {x + o.x, y + o.y}; }
+};`,
+      python: `class Vec:
+    def __init__(self, x, y): self.x, self.y = x, y
+    def __add__(self, o):            # overload +
+        return Vec(self.x + o.x, self.y + o.y)`,
+      js: { na: 'JavaScript does not allow operator overloading. Write a named method instead, for example v.add(o).' },
+      java: { na: 'Java does not support operator overloading (apart from the built-in + on String). Use a named method like v.add(o).' },
+      csharp: `struct Vec {
+  public double X, Y;
+  public static Vec operator +(Vec a, Vec b) => new() { X = a.X + b.X, Y = a.Y + b.Y };
+}`,
     },
     intro: [
       { en: 'You define a function named <code>operator</code> followed by the symbol. It can be a <strong>member</strong> (the left operand is <code>this</code>) or a <strong>free function</strong> (often a <code>friend</code>), which you need when the left operand is not your type, for example <code>cout &lt;&lt; obj</code>, where the left side is a stream.',
@@ -81,6 +149,18 @@ export const prog2Content = {
       en: 'A class can inherit from <strong>several</strong> base classes at once, combining their data and methods. It is powerful but introduces the <strong>diamond problem</strong>: when two bases share a common ancestor, the grandchild ends up with two copies of it. <strong>Virtual inheritance</strong> collapses them back to one.',
       de: 'Eine Klasse kann von <strong>mehreren</strong> Basisklassen zugleich erben und deren Daten und Methoden vereinen. Das ist maechtig, bringt aber das <strong>Diamantproblem</strong>: teilen sich zwei Basen einen gemeinsamen Vorfahren, erhaelt das Enkelkind zwei Kopien davon. <strong>Virtuelle Vererbung</strong> fuehrt sie wieder zu einer zusammen.',
     },
+    code: {
+      cpp: `struct A { void f(); };
+struct B { void g(); };
+struct C : public A, public B {};   // inherits both`,
+      python: `class A: ...
+class B: ...
+class C(A, B):   # multiple inheritance; the MRO fixes the order
+    pass`,
+      js: { na: 'JavaScript has single-prototype inheritance only. Combine behaviour with mixins that copy methods onto the prototype.' },
+      java: { na: 'Java allows only single class inheritance. A class implements several interfaces to combine multiple types.' },
+      csharp: { na: 'C# allows only single class inheritance. Implement multiple interfaces to combine capabilities.' },
+    },
     intro: [
       { en: 'With <code>class C : public A, public B</code>, C has everything from both A and B. If a name exists in both, you must qualify it (<code>A::f()</code>) to resolve the ambiguity.',
         de: 'Bei <code>class C : public A, public B</code> hat C alles aus A und B. Existiert ein Name in beiden, musst du ihn qualifizieren (<code>A::f()</code>), um die Mehrdeutigkeit aufzuloesen.' },
@@ -103,6 +183,18 @@ export const prog2Content = {
     tldr: {
       en: 'C++11 added <strong>rvalue references</strong> (<code>T&amp;&amp;</code>) so an object can <strong>move</strong> resources out of a temporary instead of copying them: stealing a pointer is far cheaper than deep-copying an array. A <strong>move constructor</strong> and <strong>move assignment</strong> capture this, and <code>std::move</code> asks for it explicitly.',
       de: 'C++11 fuehrte <strong>Rvalue-Referenzen</strong> (<code>T&amp;&amp;</code>) ein, sodass ein Objekt Ressourcen aus einem temporaeren Objekt <strong>verschieben</strong> statt kopieren kann: einen Zeiger zu stehlen ist viel billiger als ein Feld tief zu kopieren. Ein <strong>Verschiebekonstruktor</strong> und eine <strong>Verschiebezuweisung</strong> fangen das ab, und <code>std::move</code> fordert es ausdruecklich an.',
+    },
+    code: {
+      cpp: `class Buf {
+  int* data;
+public:
+  Buf(Buf&& o) noexcept : data(o.data) { o.data = nullptr; }  // move constructor
+};
+Buf b = std::move(a);   // steal a's buffer instead of copying`,
+      python: { na: 'Python has no move semantics; it is garbage-collected and passes object references, so there is nothing to move by hand.' },
+      js: { na: 'JavaScript has no move semantics; objects are garbage-collected and handled through references.' },
+      java: { na: 'Java has no move semantics; the garbage collector manages object memory.' },
+      csharp: { na: 'C# has no move semantics for reference types (the GC manages them); value types are simply copied.' },
     },
     intro: [
       { en: 'An <strong>lvalue</strong> has a name and a lasting address; an <strong>rvalue</strong> is a temporary about to disappear. When the source is a disposable rvalue there is no reason to copy: the new object can take over its buffer and leave the empty husk to be destroyed.',

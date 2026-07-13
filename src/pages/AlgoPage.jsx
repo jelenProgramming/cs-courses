@@ -6,6 +6,7 @@ import { useMode } from '../mode.jsx'
 import { CONTENT } from '../content.js'
 import ReadPage from '../components/ReadPage.jsx'
 import { mathify } from '../components/Math.jsx'
+import CodeTabs from '../components/CodeTabs.jsx'
 
 // per-topic study pace, rushing (cram, condensed) vs chilling (full + animations)
 const PACE = {
@@ -61,7 +62,12 @@ export default function AlgoPage() {
       )}
 
       {Component ? (
-        <Component content={content} slug={slug} />
+        <>
+          <Component content={content} slug={slug} />
+          {content?.code && (
+            <div className="panel"><h2 className="section">{t({ en: 'In code', de: 'Im Code' })}</h2><CodeTabs code={content.code} /></div>
+          )}
+        </>
       ) : content ? (
         <ReadPage {...content} />
       ) : (
