@@ -160,4 +160,46 @@ export const extraTopicsContent = {
         de: 'Trigger laufen <strong>unsichtbar</strong>: ein simples INSERT kann eine Kette ausloesen, was Ueberraschungen schwer auffindbar macht. Halte jeden Trigger klein und huete dich vor Triggern, die andere Trigger ausloesen.' },
     ],
   },
+
+  'functions-mappings': {
+    tldr: {
+      en: 'A <strong>function</strong> (mapping) sends each input to <strong>exactly one</strong> output. The properties that matter: <strong>injective</strong> (one-to-one), <strong>surjective</strong> (onto), and <strong>bijective</strong> (both, and therefore invertible). Composition chains mappings; the inverse undoes a bijection.',
+      de: 'Eine <strong>Funktion</strong> (Abbildung) schickt jede Eingabe auf <strong>genau eine</strong> Ausgabe. Die wichtigen Eigenschaften: <strong>injektiv</strong> (eineindeutig), <strong>surjektiv</strong> (auf ganz Y) und <strong>bijektiv</strong> (beides, also umkehrbar). Verkettung reiht Abbildungen; die Umkehrung macht eine Bijektion rueckgaengig.',
+    },
+    intro: [
+      { en: 'A function $f: X \\to Y$ has a <strong>domain</strong> $X$, a <strong>codomain</strong> $Y$, and a rule assigning each $x$ a single $f(x)$. The <strong>image</strong> is the set of values actually hit.',
+        de: 'Eine Funktion $f: X \\to Y$ hat einen <strong>Definitionsbereich</strong> $X$, einen <strong>Wertevorrat</strong> $Y$ und eine Regel, die jedem $x$ ein einziges $f(x)$ zuordnet. Das <strong>Bild</strong> ist die Menge der tatsaechlich getroffenen Werte.' },
+    ],
+    how: [
+      { en: '<strong>Injective:</strong> different inputs give different outputs ($f(a) = f(b) \\Rightarrow a = b$). <strong>Surjective:</strong> every $y$ in the codomain is hit. <strong>Bijective:</strong> both, so $f$ has an inverse $f^{-1}$.',
+        de: '<strong>Injektiv:</strong> verschiedene Eingaben liefern verschiedene Ausgaben ($f(a) = f(b) \\Rightarrow a = b$). <strong>Surjektiv:</strong> jedes $y$ im Wertevorrat wird getroffen. <strong>Bijektiv:</strong> beides, also hat $f$ eine Umkehrung $f^{-1}$.' },
+      { en: '<strong>Composition:</strong> $(g \\circ f)(x) = g(f(x))$, applying $f$ first. It is associative but not commutative.',
+        de: '<strong>Verkettung:</strong> $(g \\circ f)(x) = g(f(x))$, zuerst $f$. Sie ist assoziativ, aber nicht kommutativ.' },
+    ],
+    pitfalls: [
+      { en: 'Surjectivity depends on the chosen codomain: $f(x) = x^2$ is onto $[0, \\infty)$ but not onto all of $\\mathbb{R}$. Only a <strong>bijection</strong> can be inverted.',
+        de: 'Surjektivitaet haengt vom gewaehlten Wertevorrat ab: $f(x) = x^2$ ist surjektiv auf $[0, \\infty)$, aber nicht auf ganz $\\mathbb{R}$. Nur eine <strong>Bijektion</strong> ist umkehrbar.' },
+    ],
+  },
+
+  'real-numbers': {
+    tldr: {
+      en: 'The <strong>real numbers</strong> complete the rationals by filling every gap on the line (numbers like $\\sqrt{2}$ and $\\pi$ that no fraction reaches). Their defining property is <strong>completeness</strong>: every set bounded above has a least upper bound, which is exactly what makes limits and calculus work.',
+      de: 'Die <strong>reellen Zahlen</strong> vervollstaendigen die rationalen, indem sie jede Luecke auf der Zahlengerade fuellen (Zahlen wie $\\sqrt{2}$ und $\\pi$, die kein Bruch erreicht). Ihre bestimmende Eigenschaft ist die <strong>Vollstaendigkeit</strong>: jede nach oben beschraenkte Menge hat eine kleinste obere Schranke, was genau Grenzwerte und Analysis moeglich macht.',
+    },
+    intro: [
+      { en: 'The rationals have holes: there is no fraction whose square is $2$. The reals patch every such hole, giving a continuous line with no gaps between the rationals, which are nonetheless <strong>dense</strong> (a rational sits arbitrarily close to any real).',
+        de: 'Die rationalen Zahlen haben Loecher: kein Bruch hat das Quadrat $2$. Die reellen fuellen jedes solche Loch und geben eine luechenlose, stetige Gerade, in der die rationalen dennoch <strong>dicht</strong> liegen (eine rationale Zahl liegt beliebig nah an jeder reellen).' },
+    ],
+    how: [
+      { en: 'The <strong>supremum</strong> (least upper bound) and <strong>infimum</strong> (greatest lower bound) generalise max and min to sets that never attain their bound, like the supremum $1$ of $\\{1 - 1/n\\}$.',
+        de: 'Das <strong>Supremum</strong> (kleinste obere Schranke) und <strong>Infimum</strong> (groesste untere Schranke) verallgemeinern Max und Min auf Mengen, die ihre Schranke nie erreichen, etwa das Supremum $1$ von $\\{1 - 1/n\\}$.' },
+      { en: 'The <strong>absolute value</strong> $|x|$ measures distance from zero and satisfies the triangle inequality $|a + b| \\le |a| + |b|$, the workhorse of every limit proof.',
+        de: 'Der <strong>Betrag</strong> $|x|$ misst den Abstand zu null und erfuellt die Dreiecksungleichung $|a + b| \\le |a| + |b|$, das Arbeitspferd jedes Grenzwertbeweises.' },
+    ],
+    pitfalls: [
+      { en: 'A supremum need not belong to the set: $\\{x : x^2 &lt; 2\\}$ has supremum $\\sqrt{2}$, which is not in it. That gap is precisely why the rationals are not complete.',
+        de: 'Ein Supremum muss nicht zur Menge gehoeren: $\\{x : x^2 &lt; 2\\}$ hat das Supremum $\\sqrt{2}$, das nicht darin liegt. Genau diese Luecke macht die rationalen Zahlen unvollstaendig.' },
+    ],
+  },
 }

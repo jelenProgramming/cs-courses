@@ -114,6 +114,8 @@ export const ALGORITHMS = [
   r('elementary-functions','Elementary Functions', 'calculus', 'MA', { tagline: { en: 'Exp, log, trig, hyperbolic and inverses', de: 'Exp, Log, Trig, hyperbolisch und Umkehrungen' } }),
   r('continuity',     'Limits & Continuity',  'calculus', 'MA', { tagline: { en: 'Continuity, IVT and the extreme value theorem', de: 'Stetigkeit, Zwischenwert- und Extremwertsatz' } }),
   r('integration-techniques','Integration Techniques', 'calculus', 'MA', { tagline: { en: 'Substitution, by parts, partial fractions', de: 'Substitution, partiell, Partialbrueche' } }),
+  r('functions-mappings','Functions & Mappings', 'calculus', 'MA', { tagline: { en: 'Injective, surjective, bijective, inverse', de: 'Injektiv, surjektiv, bijektiv, Umkehrung' } }),
+  r('real-numbers',   'Real Numbers & Completeness', 'calculus', 'MA', { tagline: { en: 'Supremum, density, why limits work', de: 'Supremum, Dichte, warum Grenzwerte funktionieren' } }),
 
   r('big-o',          'Big-O & Complexity',   'programming', 'core', { tagline: { en: 'How runtime scales with input size', de: 'Wie die Laufzeit mit der Eingabegroesse waechst' }, star: true }),
   r('variables-types','Variables & Types',    'programming', 'P1', { tagline: { en: 'How data is named and stored', de: 'Wie Daten benannt und gespeichert werden' } }),
