@@ -138,4 +138,26 @@ export const extraTopicsContent = {
         de: 'Jede Spalte im SELECT, die nicht in einem Aggregat steht, muss im GROUP BY erscheinen, sonst ist die Abfrage mehrdeutig und wird abgelehnt.' },
     ],
   },
+
+  'triggers': {
+    tldr: {
+      en: 'A <strong>trigger</strong> is a block of SQL the database runs <strong>automatically</strong> in response to an INSERT, UPDATE or DELETE on a table. A <strong>stored procedure</strong> is a named routine you call on demand. Both push logic into the database itself, close to the data.',
+      de: 'Ein <strong>Trigger</strong> ist ein SQL-Block, den die Datenbank <strong>automatisch</strong> bei einem INSERT, UPDATE oder DELETE auf einer Tabelle ausfuehrt. Eine <strong>gespeicherte Prozedur</strong> ist eine benannte Routine, die du bei Bedarf aufrufst. Beide verlagern Logik in die Datenbank, nah an die Daten.',
+    },
+    intro: [
+      { en: 'A trigger fires <strong>BEFORE</strong> or <strong>AFTER</strong> its event and runs <strong>FOR EACH ROW</strong> affected. Inside it, <code>NEW</code> is the incoming row and <code>OLD</code> the previous one, so you can validate, log, or keep a derived column in sync automatically.',
+        de: 'Ein Trigger feuert <strong>BEFORE</strong> oder <strong>AFTER</strong> seinem Ereignis und laeuft <strong>FOR EACH ROW</strong> pro betroffener Zeile. Darin ist <code>NEW</code> die neue und <code>OLD</code> die vorige Zeile, sodass du automatisch pruefen, protokollieren oder eine abgeleitete Spalte pflegen kannst.' },
+      { en: 'Common uses: an <strong>audit log</strong> that records every change, <strong>enforcing a rule</strong> the schema cannot express, or maintaining a running total or average without touching the application.',
+        de: 'Typische Zwecke: ein <strong>Aenderungsprotokoll</strong>, das jede Aenderung festhaelt, das <strong>Durchsetzen einer Regel</strong>, die das Schema nicht ausdruecken kann, oder das Pflegen einer laufenden Summe oder eines Durchschnitts ohne die Anwendung.' },
+    ],
+    pseudocode: `CREATE TRIGGER log_grade_change\nAFTER UPDATE ON enrolment\nFOR EACH ROW\n  INSERT INTO grade_history(student_id, old_grade, new_grade, changed_at)\n  VALUES (OLD.student_id, OLD.grade, NEW.grade, NOW());`,
+    how: [
+      { en: '<strong>Stored procedure:</strong> <code>CREATE PROCEDURE name(params) BEGIN ... END</code>, then <code>CALL name(args)</code>. It can take parameters and hold multi-step logic in one place.',
+        de: '<strong>Gespeicherte Prozedur:</strong> <code>CREATE PROCEDURE name(params) BEGIN ... END</code>, dann <code>CALL name(args)</code>. Sie nimmt Parameter und buendelt mehrstufige Logik an einem Ort.' },
+    ],
+    pitfalls: [
+      { en: 'Triggers run <strong>invisibly</strong>: a plain INSERT can set off a chain of them, which makes surprises hard to debug. Keep each trigger small and beware triggers that fire other triggers.',
+        de: 'Trigger laufen <strong>unsichtbar</strong>: ein simples INSERT kann eine Kette ausloesen, was Ueberraschungen schwer auffindbar macht. Halte jeden Trigger klein und huete dich vor Triggern, die andere Trigger ausloesen.' },
+    ],
+  },
 }

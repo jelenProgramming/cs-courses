@@ -137,6 +137,7 @@ export const ALGORITHMS = [
   v('btree-index',    'Indexes & B-Trees',    'databases', 'PB', { tagline: { en: 'Why a query with an index is fast', de: 'Warum eine Abfrage mit Index schnell ist' } }),
   r('transactions',   'Transactions & ACID',  'databases', 'PB', { tagline: { en: 'Atomicity, consistency, isolation, durability', de: 'Atomaritaet, Konsistenz, Isolation, Dauerhaftigkeit' } }),
   r('sql-advanced',   'Advanced SQL',         'databases', 'PB', { tagline: { en: 'Aggregates, GROUP BY, subqueries, views', de: 'Aggregate, GROUP BY, Unterabfragen, Sichten' } }),
+  r('triggers',       'Triggers & Stored Procedures', 'databases', 'PB', { tagline: { en: 'Automatic SQL on data events, and stored routines', de: 'Automatisches SQL bei Datenereignissen, gespeicherte Routinen' } }),
 
   v('number-systems', 'Number Systems',       'systems', 'ORS', { tagline: { en: 'Binary, decimal, hex, interactive', de: 'Binaer, Dezimal, Hex, interaktiv' }, star: true }),
   r('binary-arithmetic','Binary Arithmetic',  'systems', 'ORS', { tagline: { en: 'Twos complement, add and subtract', de: 'Zweierkomplement, addieren und subtrahieren' } }),
